@@ -1,0 +1,11 @@
+mixin catalog-card(data)
+    .catalog-card(data-tabItem=data.tabs)   
+        .image-wrapper 
+            img(src=data.img, alt="card")
+        .content 
+            h6.title #{data.title}
+            button.btn.circle 
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 6L6 6M6 6H0M6 6L6 0M6 6L6 12" stroke="white"/>
+                </svg>
+                

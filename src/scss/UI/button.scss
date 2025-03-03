@@ -1,0 +1,198 @@
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+.btn {
+  transition: var(--trs-cubic-600);
+
+  &.social {
+    @include size(width, 40);
+    @include size(height, 40);
+    border-radius: 999px;
+    border: 1px solid var(--line-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      svg {
+        path {
+          fill: var(--white-color);
+        }
+      }
+    }
+    &.wa {
+      &:hover {
+        background: var(--green-color);
+      }
+    }
+    &.tg {
+      &:hover {
+        background: var(--blue-color);
+      }
+    }
+  }
+  &.circle {
+    @include size(width, 40);
+    @include size(height, 40);
+    background: var(--gray-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    &:hover {
+      background: var(--accent-color);
+      svg {
+        path {
+          fill: var(--gray-color);
+        }
+      }
+    }
+  }
+  &.gray {
+    @include size(height, 40);
+    @include size(padding-top, 0);
+    @include size(padding-bottom, 0);
+    @include size(padding-left, 16);
+    @include size(padding-right, 16);
+    @include body-sb;
+    background: var(--back-color);
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background: var(--accent-color);
+    }
+  }
+  &.primary {
+    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @include body-sb;
+    @include size(height, 40);
+    @include size(padding-top, 0);
+    @include size(padding-bottom, 0);
+    @include size(padding-left, 28);
+    @include size(padding-right, 28);
+    border-radius: 999px;
+    p {
+      transition: var(--trs-cubic-600);
+    }
+    &.lg {
+      @include size(height, 70);
+      @include body-l;
+    }
+    &:hover {
+      background: var(--gray-color);
+      color: var(--white-color);
+      p {
+        color: var(--white-color);
+      }
+      svg {
+        rect {
+          fill: var(--accent-color);
+        }
+        rect,
+        line {
+          stroke: var(--gray-color);
+        }
+      }
+    }
+  }
+  &.secondary {
+    background: var(--gray-color);
+    @include body-mb;
+    @include size(height, 46);
+    @include size(padding-top, 0);
+    @include size(padding-bottom, 0);
+    @include size(padding-left, 28);
+    @include size(padding-right, 28);
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    @include size(gap, 16);
+    .burger {
+      display: flex;
+      flex-direction: column;
+      @include size(gap, 6);
+      @include size(width, 24);
+      span {
+        background: var(--white-color);
+        height: 1px;
+        transition: var(--trs-cubic-600);
+      }
+    }
+    p {
+      color: var(--white-color);
+      transition: var(--trs-cubic-600);
+    }
+    &:hover {
+      background: var(--accent-color);
+      .burger {
+        span {
+          background: var(--gray-color);
+        }
+      }
+      p {
+        color: var(--gray-color);
+      }
+    }
+  }
+  &.tab {
+    @include size(height, 46);
+    @include size(padding-left, 28);
+    @include size(padding-right, 28);
+    color: var(--gray-color);
+    border-radius: 999px;
+    background: var(--white-color);
+    transition: var(--trs-cubic-600);
+    @include body-m;
+
+    p {
+      transition: var(--trs-cubic-600);
+      @include body-m;
+      pointer-events: none;
+    }
+    &.active {
+      background: var(--gray-color);
+      color: var(--white-color);
+      p {
+        color: var(--white-color);
+      }
+    }
+  }
+  &.load {
+    @include size(height, 46);
+    border-radius: 999px;
+    @include size(padding-left, 52);
+    @include size(padding-right, 28);
+    @include body-m;
+    position: relative;
+
+    &:before {
+      content: "";
+      @include size(height, 28);
+      @include size(width, 28);
+      @include size(left, 12);
+      background: var(--gray-color);
+      border-radius: 999px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background-image: url("../img/plus-icon.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    &.white {
+      background: var(--white-color);
+    }
+    &:hover {
+      background: var(--accent-color);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@use "src/scss/common/files/mixins" as *;
+
+.catalog {
+  .tab-wrapper {
+    @include size(padding-top, 36);
+    display: flex;
+    justify-content: space-between;
+    .link {
+      height: calc(46 / var(--screensize) * 100vw) !important;
+      font-weight: 700 !important;
+      font-size: calc(16 / var(--screensize) * 100vw) !important;
+      line-height: calc(22 / var(--screensize) * 100vw) !important;
+    }
+  }
+  .catalog-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include size(gap, 24);
+    @include size(margin-top, 36);
+  }
+  .btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include size(margin-top, 36);
+  }
+}

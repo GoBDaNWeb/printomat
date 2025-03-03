@@ -1,0 +1,39 @@
+mixin hero()
+    .hero 
+        .hero-inner.container 
+            .hero-content
+                .text-block 
+                    .text
+                        h1 Printomat
+                        h3 Заказывайте печать быстро, просто, не выходя из дома!
+                    .btn-wrapper 
+                        button.btn.primary.lg Заказать в один клик
+                .video-block 
+                    video(src='./files/video.mp4' type='video/mp4' preload="auto" poster="./img/home/hero/hero.jpg")
+                    p.descr Узнайте все <br>о печати с Printomat <br>за 1 минуту
+                    button.play-btn 
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="37.5" stroke="#2C2C2C" fill="rgba(0,0,0,0)" stroke-width="5"/>
+                            <path d="M33 28L53 40L33 52V28Z" fill="#2C2C2C"/>
+                        </svg>
+            .hero-features
+                .feature-item 
+                    .icon-wrapper
+                        .icon 
+                            img(src="./img/home/hero/icon1.svg", alt="icon")
+                    p Работаем <br>с 2011
+                .feature-item 
+                    .icon-wrapper
+                        .icon 
+                            img(src="./img/home/hero/icon2.svg", alt="icon")
+                    p 225 пунктов <br>выдачи по РФ
+                .feature-item 
+                    .icon-wrapper
+                        .icon 
+                            img(src="./img/home/hero/icon3.svg", alt="icon")
+                    p Срочная печать <br>от 3 часов
+                .feature-item 
+                    .icon-wrapper
+                        .icon 
+                            img(src="./img/home/hero/icon4.svg", alt="icon")
+                    p Менеджер для каждого клиента

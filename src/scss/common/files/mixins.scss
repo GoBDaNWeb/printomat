@@ -1,0 +1,112 @@
+@mixin size($property, $value) {
+  #{$property}: calc(#{$value} / var(--screensize) * 100vw);
+}
+@mixin grid-columns($values...) {
+  $result: ();
+
+  @each $value in $values {
+    $result: append(
+      $result,
+      calc(#{$value} / var(--screensize) * 100vw),
+      space
+    );
+  }
+
+  grid-template-columns: $result;
+}
+
+@mixin h1 {
+  font-weight: 500;
+  @include size(font-size, 48);
+  @include size(line-height, 57);
+  @media (max-width: $tab-sm) {
+    @include size(font-size, 36);
+    @include size(line-height, 39);
+  }
+}
+@mixin h2 {
+  font-weight: 500;
+  @include size(font-size, 40);
+  @include size(line-height, 48);
+  @media (max-width: $tab-sm) {
+    @include size(font-size, 32);
+    @include size(line-height, 35);
+  }
+}
+@mixin h3 {
+  font-weight: 500;
+  @include size(font-size, 36);
+  @include size(line-height, 43);
+  @media (max-width: $tab-sm) {
+    @include size(font-size, 28);
+    @include size(line-height, 30);
+  }
+}
+@mixin h4 {
+  font-weight: 500;
+  @include size(font-size, 32);
+  @include size(line-height, 38);
+  @media (max-width: $tab-sm) {
+    @include size(font-size, 24);
+    @include size(line-height, 26);
+  }
+}
+@mixin h5 {
+  font-weight: 500;
+  @include size(font-size, 28);
+  @include size(line-height, 33);
+  @media (max-width: $tab-sm) {
+    @include size(font-size, 22);
+    @include size(line-height, 24);
+  }
+}
+@mixin h6 {
+  font-weight: 500;
+  @include size(font-size, 26);
+  @include size(line-height, 31);
+  @media (max-width: $tab-sm) {
+    @include size(font-size, 20);
+    @include size(line-height, 22);
+  }
+}
+@mixin body-l {
+  font-weight: 600;
+  @include size(font-size, 20);
+  @include size(line-height, 30);
+}
+@mixin body-m {
+  font-weight: 600;
+  @include size(font-size, 16);
+  @include size(line-height, 22);
+}
+@mixin body-mb {
+  font-weight: 700;
+  @include size(font-size, 16);
+  @include size(line-height, 22);
+}
+@mixin body-m {
+  font-weight: 500;
+  @include size(font-size, 16);
+  @include size(line-height, 22);
+}
+@mixin body-sb {
+  font-weight: 600;
+  @include size(font-size, 14);
+  @include size(line-height, 16);
+}
+@mixin body-s {
+  font-weight: 500;
+  @include size(font-size, 14);
+  @include size(line-height, 16);
+}
+@mixin body-xs {
+  font-weight: 400;
+  @include size(font-size, 12);
+  @include size(line-height, 14);
+}
+@mixin display-l {
+  font-weight: 500;
+  @include size(font-size, 88);
+  @include size(line-height, 84);
+  @include size(letter-spacing, -2);
+}

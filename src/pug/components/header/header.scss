@@ -1,0 +1,140 @@
+@use "src/scss/common/files/mixins" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--white-color);
+  .header-inner {
+    display: flex;
+    align-items: center;
+    @include size(gap, 24);
+    @include size(padding-top, 16);
+    @include size(padding-bottom, 14);
+
+    .logo {
+      @include size(min-width, 204);
+      @include size(min-height, 95);
+      @include size(max-width, 204);
+      @include size(max-height, 95);
+      @include size(border-radius, 20);
+      border: 1px solid var(--line-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        @include size(width, 158);
+        @include size(height, 72);
+      }
+    }
+    .header-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      @include size(gap, 7);
+      justify-content: space-between;
+      .header-content-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .contacts {
+          display: flex;
+          align-items: center;
+          @include size(gap, 10);
+          .socials {
+            display: flex;
+            align-items: center;
+            @include size(gap, 10);
+          }
+          .phone {
+            @include body-sb;
+            transition: var(--trs-cubic-600);
+            &:hover {
+              color: var(--accent-color);
+            }
+          }
+          .mail {
+            @include size(margin-left, 18);
+            display: flex;
+            align-items: center;
+            @include size(gap, 10);
+            &:hover {
+              p {
+                color: var(--accent-color);
+              }
+            }
+            p {
+              transition: var(--trs-cubic-600);
+
+              @include body-s;
+            }
+          }
+          .clock {
+            @include size(margin-left, 18);
+            display: flex;
+            align-items: center;
+            @include size(gap, 10);
+            p {
+              @include body-s;
+            }
+          }
+        }
+        .features {
+          display: flex;
+          align-items: center;
+          @include size(gap, 10);
+        }
+      }
+      .header-content-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .left-block {
+          display: flex;
+          align-items: center;
+          @include size(gap, 20);
+
+          .rating {
+            display: flex;
+            align-items: center;
+            @include size(gap, 12);
+            @include size(height, 46);
+            @include size(padding, 7);
+            border-radius: 999px;
+            border: 1px solid var(--line-color);
+
+            img {
+              @include size(width, 32);
+              @include size(height, 32);
+            }
+            p {
+              font-weight: 500;
+              @include size(font-size, 18);
+              @include size(line-height, 21);
+            }
+            .stars {
+              display: flex;
+              align-items: center;
+              @include size(gap, 4);
+              img {
+                @include size(width, 18);
+                @include size(height, 18);
+              }
+            }
+          }
+        }
+        .right-block {
+          display: flex;
+          align-items: center;
+          @include size(gap, 36);
+          button,
+          a {
+            @include body-mb;
+          }
+        }
+      }
+    }
+  }
+}

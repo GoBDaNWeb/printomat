@@ -1,0 +1,12 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "hero","production", "catalog", "catalog-card"])
+block header 
+    +header()
+block content
+  +hero()
+  +production()
+block footer 
+  +footer()
+    
