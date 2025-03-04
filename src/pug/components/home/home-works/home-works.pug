@@ -1,0 +1,32 @@
+mixin home-works()
+    .home-works
+        .home-works-inner.container
+            .home-works-swiper-wrapper 
+                .home-works-swiper-top 
+                    p.title Наши работы
+                    .navigation 
+                        button.btn.circle.work-prev 
+                            <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 8L8 1M1 8H21M1 8L8 15" stroke="white"/>
+                            </svg>
+                        button.btn.circle.work-next 
+                            <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 8L13 1M20 8H0M20 8L13 15" stroke="white"/>
+                            </svg>
+                .home-works-swiper 
+                    .swiper-wrapper 
+                        +portfolio-card({class: 'swiper-slide', title: 'Визитные карточки', badgeTitle: 'Визитки', img: './img/portfolio/1.jpg'})
+                        +portfolio-card({class: 'swiper-slide', title: 'Папка', badgeTitle: 'Полиграфия для офиса', img: './img/portfolio/2.jpg'})
+                        +portfolio-card({class: 'swiper-slide', title: 'Энергетический напиток Red Bull', badgeTitle: 'Упаковка и POS', img: './img/portfolio/3.jpg'})
+                        +portfolio-card({class: 'swiper-slide', title: 'Визитные карточки', badgeTitle: 'Визитки', img: './img/portfolio/1.jpg'})
+                        +portfolio-card({class: 'swiper-slide', title: 'Папка', badgeTitle: 'Полиграфия для офиса', img: './img/portfolio/2.jpg'})
+                        +portfolio-card({class: 'swiper-slide', title: 'Энергетический напиток Red Bull', badgeTitle: 'Упаковка и POS', img: './img/portfolio/3.jpg'})
+            .home-works-info 
+                .text-wrapper 
+                    p.title Мы производим качественную полиграфию для бизнеса: визитки, флаеры, бирки и упаковку на заказ.
+                    .text 
+                        p Текст для массы — «Принтомат» ориентируется на европейские стандарты качества. Репутация и мнение клиентов для нас важнее всего, потому невысокая цена и отменный уровень изготовления полиграфической продукции — это именно то, что может предоставить «Принтомат». Заказать изготовление визиток дешево можно здесь.
+                        p Высококачественное офсетное оборудование, на котором происходит печать визиток, не простаивает, а используется на полную мощность, и при этом — в наиболее экономичном режиме.
+                        p Кроме того, есть и ещё одно преимущество обращения в «Принтомат» — это удобная доставка.
+                .image-wrapper 
+                    img(src="./img/home/works/info.jpg", alt="info")

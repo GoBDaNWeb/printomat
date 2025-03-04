@@ -114,6 +114,8 @@ button {
     display: flex;
     align-items: center;
     @include size(gap, 16);
+    color: var(--white-color);
+
     .burger {
       display: flex;
       flex-direction: column;
@@ -130,6 +132,7 @@ button {
       transition: var(--trs-cubic-600);
     }
     &:hover {
+      color: var(--gray-color);
       background: var(--accent-color);
       .burger {
         span {

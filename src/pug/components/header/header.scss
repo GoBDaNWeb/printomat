@@ -39,7 +39,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        .contacts {
+        .header-contacts {
           display: flex;
           align-items: center;
           @include size(gap, 10);
@@ -101,7 +101,10 @@
             align-items: center;
             @include size(gap, 12);
             @include size(height, 46);
-            @include size(padding, 7);
+            @include size(padding-top, 7);
+            @include size(padding-left, 7);
+            @include size(padding-bottom, 7);
+            @include size(padding-right, 16);
             border-radius: 999px;
             border: 1px solid var(--line-color);
 

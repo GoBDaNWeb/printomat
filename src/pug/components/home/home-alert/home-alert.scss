@@ -1,0 +1,20 @@
+@use "src/scss/common/files/mixins" as *;
+
+.home-alert {
+  background-image: url("../img/home/alert/bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include size(padding-top, 180);
+  @include size(padding-bottom, 180);
+  @include size(margin-top, -20);
+  @include size(height, 590);
+  @include border-radius(0, 0, 20, 20);
+
+  .home-alert-inner {
+    .title {
+      @include h1;
+      @include size(max-width, 432);
+    }
+  }
+}

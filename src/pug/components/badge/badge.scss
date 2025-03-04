@@ -1,0 +1,14 @@
+@use "src/scss/common/files/mixins" as *;
+
+.badge {
+  background: var(--back-color);
+  border-radius: 999px;
+  @include body-xs;
+  @include size(height, 26);
+  @include size(padding-left, 16);
+  @include size(padding-right, 16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}

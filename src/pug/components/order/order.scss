@@ -1,0 +1,128 @@
+@use "src/scss/common/files/mixins" as *;
+
+.order {
+  @include size(padding-top, 136);
+  .order-inner {
+    display: grid;
+    @include size(gap, 48);
+    @include grid-columns(408, 888);
+    .text-block {
+      display: flex;
+      flex-direction: column;
+      @include size(gap, 24);
+
+      .title-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .title {
+          @include h1;
+        }
+        .image-wrapper {
+          display: flex;
+          justify-content: flex-end;
+          img {
+            @include size(width, 93);
+            @include size(height, 68);
+          }
+        }
+      }
+      .description {
+        @include size(padding-top, 28);
+        @include body-l;
+        border-top: 1px solid var(--line-color);
+      }
+    }
+    .form-block {
+      @include size(height, 544);
+      @include size(border-radius, 20);
+      @include size(padding, 48);
+      background: var(--white-color);
+      .inputs-wrapper {
+        display: flex;
+        flex-direction: column;
+        @include size(gap, 26);
+
+        .inputs {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          @include size(gap, 28);
+        }
+        .textarea-wrapper,
+        .input-wrapper {
+          display: flex;
+          flex-direction: column;
+          @include size(gap, 12);
+          p {
+            @include body-m;
+          }
+        }
+        .textarea-wrapper {
+          textarea {
+            @include size(height, 134);
+            resize: none;
+            width: 100%;
+          }
+        }
+      }
+      .file-wrapper {
+        @include size(margin-top, 23);
+        @include size(gap, 33);
+        display: grid;
+        @include grid-columns(240, 517);
+
+        & > p {
+          @include body-m;
+          span {
+            @include body-s;
+            color: var(--txt-gray-color);
+          }
+        }
+        .btn {
+          position: relative;
+          justify-content: flex-start;
+          @include size(gap, 10);
+          &:hover {
+            svg {
+              rect {
+                fill: var(--gray-color);
+                stroke: var(--accent-color);
+              }
+              line {
+                stroke: var(--accent-color);
+              }
+            }
+          }
+          input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 0;
+            cursor: pointer;
+          }
+        }
+      }
+      .form-submit {
+        @include size(padding-top, 28);
+        @include size(margin-top, 35);
+        @include size(gap, 28);
+        border-top: 1px solid var(--line-color);
+        display: flex;
+        align-items: center;
+        p {
+          @include body-s;
+          color: var(--txt-gray-color);
+        }
+        .btn {
+          @include size(width, 245);
+          @include size(height, 46);
+          @include body-mb;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

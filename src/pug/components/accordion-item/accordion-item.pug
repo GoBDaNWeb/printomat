@@ -1,0 +1,27 @@
+mixin accordion-item(data)
+    .accordion-item(class=data.class)
+        button.accordion-title 
+            if data.delivery === 'true'
+                .title-wrapper
+                    img(src=data.titleImg, alt="")
+                    h6 #{data.title}
+                .icon 
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#2C2C2C"/>
+                        <path d="M20 14H14M14 14H8M14 14L14 8M14 14V20" stroke="white"/>
+                    </svg>
+        .collapse.accordion-body
+            if data.delivery === 'true'
+                .text-wrapper 
+                    span Наш офис находится по адресу:
+                    .text 
+                        p  г. Москва, Нижний Сусальный пер., 9 стр. 6. Станция метро Курская.
+                        p Обратите внимание, что въезд на территорию бизнес центра платный - 200 руб./час.
+                .text-wrapper 
+                    span Вы можете забрать готовый заказ самостоятельно в офисе Printomat <br>с понедельника по пятницу в следующие часы:
+                    ul 
+                        li В день готовности Вашего заказа с 18:00 до 20:00 (СуперЭкспресс и Экспресс)
+                        li В день готовности Вашего заказа с 10:00 до 20:00 (Стандарт и Эконом)
+                        li В последующие дни с 10:00 до 20:00
+                .image-wrapper 
+                    img(src="./img/delivery/map.jpg", alt="map")

@@ -111,3 +111,16 @@ h6 {
 .hidden {
   display: none !important;
 }
+.sticky-block {
+  top: calc(120 / var(--screensize) * 100vw);
+  position: sticky;
+}
+.navigation {
+  display: flex;
+  @include size(gap, 12);
+  align-items: center;
+  .swiper-button-disabled {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+}

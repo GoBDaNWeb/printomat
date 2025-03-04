@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 @mixin size($property, $value) {
   #{$property}: calc(#{$value} / var(--screensize) * 100vw);
 }
@@ -13,6 +15,32 @@
   }
 
   grid-template-columns: $result;
+}
+@mixin border-radius($values...) {
+  $result: ();
+
+  @each $value in $values {
+    $result: append(
+      $result,
+      calc(#{$value} / var(--screensize) * 100vw),
+      space
+    );
+  }
+
+  border-radius: $result;
+}
+@mixin padding($values...) {
+  $result: ();
+
+  @each $value in $values {
+    $result: append(
+      $result,
+      calc(#{$value} / var(--screensize) * 100vw),
+      space
+    );
+  }
+
+  padding: $result;
 }
 
 @mixin h1 {
