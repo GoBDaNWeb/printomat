@@ -1,11 +1,10 @@
 extends ./pug/templates/template.pug
 
 block head 
-  +head(["header", ])
+  +head(["header", "footer"])
 block header 
-    +header()
 block content
-  a(href="home.html") 
+  .container
+    a(href="home.html" style="color: #000") Главная 
 block footer 
-  +footer()
     
