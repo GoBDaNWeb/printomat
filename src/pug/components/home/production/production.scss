@@ -3,5 +3,6 @@
 .production {
   background: var(--back-color);
   @include size(padding-top, 128);
+  @include size(padding-bottom, 128);
   @include size(border-radius, 20);
 }

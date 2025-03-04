@@ -1,0 +1,104 @@
+@use "src/scss/common/files/mixins" as *;
+
+.contacts {
+  @include size(padding-top, 128);
+  background: var(--back-color);
+  @include border-radius(20, 20, 0, 0);
+
+  .contacts-inner {
+    .title {
+      @include h1;
+    }
+    .contacts-info {
+      @include size(margin-top, 36);
+      @include size(gap, 32);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include size(padding-bottom, 68);
+
+      .contacts-info-item {
+        background: var(--white-color);
+        @include size(padding, 48);
+        @include size(border-radius, 20);
+
+        span {
+          @include body-m;
+          color: var(--txt-gray-color);
+        }
+        .content {
+          @include size(margin-top, 21);
+          @include size(padding-top, 28);
+          border-top: 1px solid var(--line-color);
+          .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            a {
+              @include h5;
+            }
+            .socials {
+              display: flex;
+              align-items: center;
+              @include size(gap, 10);
+            }
+          }
+        }
+      }
+    }
+  }
+  .contacts-map {
+    @include size(height, 500);
+    @include border-radius(20, 20, 0, 0);
+    overflow: hidden;
+    position: relative;
+    .contacts-map-content {
+      position: absolute;
+      @include size(top, 48);
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      pointer-events: none;
+      .map-info {
+        pointer-events: all;
+
+        background: var(--white-color);
+        @include padding(48, 36, 48, 48);
+        @include size(width, 432);
+        @include border-radius(20);
+        .title {
+          @include size(margin-bottom, 21);
+        }
+        .info {
+          @include size(padding-top, 28);
+          @include size(gap, 17);
+          display: flex;
+          flex-direction: column;
+          .info-item {
+            display: flex;
+            align-items: center;
+            @include size(gap, 12);
+            p {
+              @include body-m;
+            }
+          }
+        }
+        .btns {
+          display: flex;
+          align-items: center;
+          @include size(gap, 12);
+          @include size(margin-top, 28);
+        }
+      }
+    }
+    #map {
+      height: 100%;
+      .pins {
+        display: none;
+      }
+      .ymaps-2-1-79-map {
+        height: 100%;
+      }
+    }
+  }
+}

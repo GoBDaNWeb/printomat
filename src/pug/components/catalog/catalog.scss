@@ -5,6 +5,11 @@
     @include size(padding-top, 36);
     display: flex;
     justify-content: space-between;
+    .tabs {
+      display: flex;
+      align-items: center;
+      @include size(gap, 10);
+    }
     .link {
       height: calc(46 / var(--screensize) * 100vw) !important;
       font-weight: 700 !important;

@@ -1,0 +1,21 @@
+@use "src/scss/common/files/mixins" as *;
+@use "src/scss/common/files/variables" as *;
+
+.delivery {
+  @include size(padding-top, 128);
+  .delivery-inner {
+    display: grid;
+    @include size(gap, 230);
+    @include grid-columns(220, 888);
+    .title-block {
+      p {
+        @include h1;
+      }
+    }
+    .content-block {
+      display: flex;
+      flex-direction: column;
+      @include size(gap, 12);
+    }
+  }
+}

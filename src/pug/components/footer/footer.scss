@@ -1,0 +1,139 @@
+@use "src/scss/common/files/mixins" as *;
+
+.footer {
+  @include size(padding-top, 48);
+  @include size(padding-bottom, 32);
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include size(gap, 24);
+    .partners {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      @include size(gap, 24);
+      @include size(margin-top, 33);
+      .partner-item {
+        border: 1px solid var(--line-color);
+        @include border-radius(12);
+        @include size(height, 56);
+
+        position: relative;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          margin: auto;
+          width: 80%;
+          height: 90%;
+        }
+      }
+    }
+    .col {
+      display: flex;
+      flex-direction: column;
+      &.control {
+        @include size(height, 349);
+        @include padding(48);
+        @include border-radius(12);
+        border: 1px solid var(--line-color);
+        img {
+          @include size(height, 80);
+          @include size(width, 80);
+        }
+        .content {
+          @include size(margin-top, 32);
+          display: flex;
+          flex-direction: column;
+          @include size(gap, 16);
+        }
+      }
+      .col-content {
+        flex: 1;
+      }
+      .title {
+        @include body-l;
+      }
+      .address {
+        @include body-sb;
+        @include size(margin-top, 12);
+        span {
+          @include body-s;
+        }
+      }
+      .inn {
+        @include body-sb;
+        @include size(margin-top, 12);
+        span {
+          @include body-s;
+        }
+      }
+      .rating {
+        display: flex;
+        align-items: center;
+        @include size(gap, 16);
+        @include size(height, 88);
+        @include padding(20, 24);
+        border: 1px solid var(--line-color);
+        @include border-radius(12);
+
+        img {
+          @include size(width, 48);
+          @include size(height, 48);
+        }
+        p {
+          @include h6;
+        }
+        .stars {
+          display: flex;
+          align-items: center;
+          @include size(gap, 4);
+          img {
+            @include size(width, 18);
+            @include size(height, 18);
+          }
+        }
+      }
+      .links-col {
+        @include size(margin-top, 34);
+        display: flex;
+        flex-direction: column;
+        @include size(gap, 4);
+        a {
+          @include body-l;
+        }
+      }
+      .links-row {
+        @include size(margin-top, 34);
+        display: flex;
+        flex-direction: column;
+        @include size(gap, 4);
+        a {
+          @include body-s;
+        }
+        .row {
+          display: flex;
+          align-items: center;
+          @include size(gap, 16);
+        }
+      }
+      .btn {
+        @include size(margin-top, 12);
+        width: fit-content;
+      }
+      .copy {
+        @include size(margin-top, 36);
+        @include body-s;
+      }
+      .paradigma {
+        @include size(margin-top, 7);
+        @include size(gap, 16);
+        @include body-s;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

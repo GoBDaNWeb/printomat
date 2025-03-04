@@ -1,12 +1,18 @@
 extends ./pug/templates/template.pug
 
 block head 
-  +head(["header", "hero","production", "catalog", "catalog-card"])
+  +head(["header", "hero","production", "catalog", "catalog-card", "delivery", "accordion-item","payment", "badge", "order", "home-about", "home-alert", "portfolio-card", "home-works", "contacts", "selector", "footer"])
 block header 
     +header()
 block content
   +hero()
   +production()
+  +delivery()
+  +payment()
+  +home-about()
+  +home-alert()
+  +home-works()
+  +contacts()
 block footer 
   +footer()
     

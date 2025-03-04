@@ -26,7 +26,7 @@ export const path = {
     php: `${srcFolder}/php/**/*.*`,
   },
   watch: {
-    js: `${srcFolder}/js/**/*.js`,
+    js: `${srcFolder}/**/*.js`,
     images: `${srcFolder}/img/**/*.{jpg,jpeg,svg,png,gif,webp}`,
     scss: `${srcFolder}/**/*.scss`,
     html: `${srcFolder}/**/*.html`,

@@ -1,0 +1,48 @@
+mixin order()
+    .order
+        .order-inner.container
+            .text-block 
+                .title-wrapper 
+                    p.title Индивидуальный заказ
+                    .image-wrapper
+                        img(src="./img/order.svg", alt="bird")
+                p.description Не нашли то, что искали? Сделайте индивидульный заказ. Написать поясняющий текст к форме.
+            form.form-block
+                .inputs-wrapper 
+                    .inputs
+                        .input-wrapper 
+                            p Ваше имя
+                            input(type="text" placeholder="Имя")
+                        .input-wrapper 
+                            p Телефон
+                            input(type="text" placeholder="+7 (")
+                        .input-wrapper 
+                            p Почта
+                            input(type="text" placeholder="Введите")
+                    .textarea-wrapper 
+                        p Комментарий
+                        textarea(placeholder='Дополнительная информация (если требуется)')
+                .file-wrapper 
+                    p Прикрепить файл <br>
+                        span ТЗ, фирстиль, готовый макет и тд.
+                    button.btn.gray(type='button')
+                        <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1461_6678)">
+                            <rect width="14" height="18" fill="#F2DC00"/>
+                            <rect x="2.5" y="2.5" width="9" height="7" stroke="#2C2C2C"/>
+                            <line x1="2" y1="12.5" x2="6" y2="12.5" stroke="#2C2C2C"/>
+                            <line x1="8" y1="12.5" x2="12" y2="12.5" stroke="#2C2C2C"/>
+                            <line x1="2" y1="15.5" x2="12" y2="15.5" stroke="#2C2C2C"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1461_6678">
+                            <rect width="14" height="18" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        p Выбрать
+                        input(type="file")
+                .form-submit 
+                    p Нажимая кнопку «Отправить» Вы даёте своё согласие с
+                        a(href="#" target='_blank')  правилами обработки персональных данных
+                    button.btn.primary Отправить

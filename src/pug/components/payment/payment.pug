@@ -1,0 +1,26 @@
+mixin payment()
+    .payment
+        .payment-inner.container 
+            p.title Оплата
+            .payment-content 
+                .payment-item 
+                    .payment-item-content
+                        +badge({title: 'Для физических лиц'})
+                        span Онлайн
+                        p через систему электронных платежей ASSIST
+                    .image-wrapper 
+                        img(src="./img/payment/1.png", alt="")
+                .payment-item 
+                    .payment-item-content
+                        +badge({title: 'Для юридических лиц'})
+                        span По счету
+                        p Тут дописать описание способа оплаты
+                    .image-wrapper 
+                        img(src="./img/payment/2.png", alt="")
+                .payment-item 
+                    .payment-item-content
+                        +badge({title: 'Для физических лиц'})
+                        span По счету
+                        p через систему банк-клиент или в отделении Сбербанка
+                    .image-wrapper 
+                        img(src="./img/payment/3.png", alt="")

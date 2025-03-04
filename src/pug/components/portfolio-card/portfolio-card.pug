@@ -1,0 +1,7 @@
+mixin portfolio-card(data)
+    .portfolio-card(class=data.class)
+        .image-wrapper 
+            img(src=data.img, alt="portfolio")
+        .content 
+            +badge({title: data.badgeTitle})
+            h6 #{data.title}

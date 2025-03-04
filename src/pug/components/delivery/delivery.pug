@@ -1,0 +1,12 @@
+mixin delivery()
+    .delivery
+        .delivery-inner.container 
+            .title-block
+                .sticky-block 
+                    p Доставка
+            .content-block.accordion 
+                +accordion-item({class: 'outline', delivery: 'true', title:'Самовывоз из московского офиса — м. Курская', titleImg: './img/delivery/1.jpg'})
+                +accordion-item({class: 'outline', delivery: 'true', title:'Пункты выдачи CDEK', titleImg: './img/delivery/2.jpg'})
+                +accordion-item({class: 'outline', delivery: 'true', title:'Курьерская доставка по МСК и МО', titleImg: './img/delivery/3.jpg'})
+                +accordion-item({class: 'outline', delivery: 'true', title:'Курьерская доставка по РФ', titleImg: './img/delivery/4.jpg'})
+               
