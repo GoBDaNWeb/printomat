@@ -1,0 +1,15 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "crumbs", "production-about", "equipment-item", "equipments", "order-alert", "contacts", "selector", "footer"])
+block header 
+    +header()
+block content
+    +crumbs({items: [{title: 'Производство', href: '#'}]})
+    +production-about()
+    +equipments()
+    +order-alert()
+    +contacts()
+block footer 
+    +footer()
+    

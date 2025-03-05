@@ -69,7 +69,7 @@
         .title {
           @include size(margin-bottom, 21);
         }
-        .info {
+        .contacts-map-info {
           @include size(padding-top, 28);
           @include size(gap, 17);
           display: flex;

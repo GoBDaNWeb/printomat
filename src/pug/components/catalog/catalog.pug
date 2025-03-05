@@ -1,18 +1,80 @@
 mixin catalog(data)
-    .catalog.tabs-wrapper
+    .catalog.tabs-wrapper.tabs-multiple
         h1 #{data.title}
         .tab-wrapper
             .tabs 
                 button.btn.tab.active(data-tab='0') Все
                 button.btn.tab(data-tab='1') 
+                    <svg width="15" height="20" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1554_9950)">
+                        <path d="M1 1H8.71008L14 5.98713V19H1V1Z" fill="white" stroke="#2C2C2C" stroke-width="2"/>
+                        <rect x="2" y="11" width="11" height="7" fill="#F2DC00"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1554_9950">
+                        <rect width="15" height="20" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
                     p Для офиса
                 button.btn.tab(data-tab='2') 
+                    <svg width="15" height="20" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1554_9956)">
+                        <path d="M1 1H14V5.55556V19H1V1Z" fill="white" stroke="#2C2C2C" stroke-width="2"/>
+                        <rect x="2" y="2" width="11" height="4" fill="#F2DC00"/>
+                        <circle cx="7.5" cy="12.5" r="2.5" stroke="#2C2C2C" stroke-width="2"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1554_9956">
+                        <rect width="15" height="20" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
                     p Для мероприятий
                 button.btn.tab(data-tab='3') 
+                    <svg width="15" height="20" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1554_9963)">
+                        <path d="M1 1H14V5.55556V19H1V1Z" fill="white" stroke="#2C2C2C" stroke-width="2"/>
+                        <rect x="2" y="2" width="5" height="16" fill="#F2DC00"/>
+                        <line x1="6" y1="5" x2="11" y2="5" stroke="#2C2C2C" stroke-width="2"/>
+                        <line x1="6" y1="9" x2="11" y2="9" stroke="#2C2C2C" stroke-width="2"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1554_9963">
+                        <rect width="15" height="20" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
                     p Для HoReCa
-                button.btn.tab(data-tab='4') 
+                button.btn.tab(data-tab='4')
+                    <svg width="15" height="20" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1554_9970)">
+                        <path d="M1 1H14V5.55556V19H1V1Z" fill="white" stroke="#2C2C2C" stroke-width="2"/>
+                        <rect x="2" y="2" width="11" height="7" fill="#F2DC00"/>
+                        <line x1="5" y1="5" x2="10" y2="5" stroke="#2C2C2C" stroke-width="2"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1554_9970">
+                        <rect width="15" height="20" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg> 
                     p Упаковка
                 button.btn.tab(data-tab='5') 
+                    <svg width="15" height="20" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1554_9976)">
+                        <path d="M1 1H14V4.16667V14H1V1Z" fill="white" stroke="#2C2C2C" stroke-width="2"/>
+                        <line x1="8.74228e-08" y1="19" x2="15" y2="19" stroke="#2C2C2C" stroke-width="2"/>
+                        <line x1="11" y1="20" x2="11" y2="13" stroke="#2C2C2C" stroke-width="2"/>
+                        <line x1="4" y1="20" x2="4" y2="13" stroke="#2C2C2C" stroke-width="2"/>
+                        <path d="M8 2H13V13H8V2Z" fill="#F2DC00"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1554_9976">
+                        <rect width="15" height="20" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
                     p POS материалы
             a(href="#").btn.primary.link В каталог
         .catalog-list

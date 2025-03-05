@@ -1,0 +1,25 @@
+@use "src/scss/common/files/mixins" as *;
+
+.portfolio-content {
+  @include size(margin-top, 20);
+  @include size(padding-bottom, 148);
+  .portfolio-content-inner {
+    .tabs {
+      @include size(margin-top, 48);
+      @include size(gap, 10);
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .portfolio-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      @include size(gap, 24);
+      @include size(margin-top, 48);
+    }
+    .btn-wrapper {
+      display: flex;
+      justify-content: center;
+      @include size(margin-top, 36);
+    }
+  }
+}

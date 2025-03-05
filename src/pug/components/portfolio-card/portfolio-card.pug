@@ -1,5 +1,5 @@
 mixin portfolio-card(data)
-    .portfolio-card(class=data.class)
+    .portfolio-card&attributes(attributes)
         .image-wrapper 
             img(src=data.img, alt="portfolio")
         .content 

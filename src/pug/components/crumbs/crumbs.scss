@@ -1,0 +1,18 @@
+@use "src/scss/common/files/mixins" as *;
+
+.crumbs {
+  display: flex;
+  align-items: center;
+  @include size(gap, 8);
+  @include size(margin-top, 156);
+
+  a {
+    @include body-xs;
+    color: var(--txt-gray-color);
+  }
+  img {
+    &:last-child {
+      display: none;
+    }
+  }
+}

@@ -112,7 +112,7 @@ h6 {
   display: none !important;
 }
 .sticky-block {
-  top: calc(120 / var(--screensize) * 100vw);
+  top: calc(150 / var(--screensize) * 100vw);
   position: sticky;
 }
 .navigation {

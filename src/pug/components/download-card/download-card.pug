@@ -1,0 +1,7 @@
+mixin download-card(data)
+    a(href='#' download).download-card
+        .image-wrapper 
+            img(src="./img/download/img.jpg", alt="download")
+        .content 
+            p.title #{data.title}
+            button.btn.primary Скачать
