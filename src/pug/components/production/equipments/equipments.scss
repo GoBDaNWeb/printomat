@@ -1,0 +1,14 @@
+@use "src/scss/common/files/mixins" as *;
+
+.equipments {
+  @include size(padding-top, 128);
+  @include size(padding-bottom, 128);
+  background: var(--back-color);
+  @include border-radius(20, 20, 0, 0);
+  .equipments-list {
+    display: flex;
+    flex-direction: column;
+    @include size(gap, 24);
+    @include size(margin-top, 28);
+  }
+}

@@ -1,0 +1,10 @@
+mixin equipment-item(data)
+    .equipment-item(class=data.class)
+        .image-wrapper 
+            img(src=data.img, alt="equipments")
+        .content 
+            h3 #{data.title}
+            span #{data.subTitle}
+            ul 
+                each item in data.list
+                    li #{item}

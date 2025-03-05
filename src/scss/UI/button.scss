@@ -144,8 +144,10 @@ button {
       }
     }
   }
+  &.tab-inner,
   &.tab {
     @include size(height, 46);
+    @include size(gap, 10);
     @include size(padding-left, 28);
     @include size(padding-right, 28);
     color: var(--gray-color);
@@ -153,7 +155,17 @@ button {
     background: var(--white-color);
     transition: var(--trs-cubic-600);
     @include body-m;
-
+    display: flex;
+    align-items: center;
+    &.gray {
+      background: var(--back-color);
+    }
+    &.outline {
+      border: 1px solid var(--line-color);
+    }
+    svg {
+      pointer-events: none;
+    }
     p {
       transition: var(--trs-cubic-600);
       @include body-m;
@@ -162,10 +174,30 @@ button {
     &.active {
       background: var(--gray-color);
       color: var(--white-color);
+      svg {
+        path {
+          stroke: var(--accent-color);
+        }
+        rect {
+          fill: var(--gray-color);
+        }
+        line {
+          stroke: var(--accent-color);
+        }
+        circle {
+          stroke: var(--accent-color);
+        }
+      }
       p {
         color: var(--white-color);
       }
     }
+  }
+  &.tab-inner {
+    @include size(height, 26);
+    @include body-xs;
+    @include size(padding-left, 16);
+    @include size(padding-right, 16);
   }
   &.load {
     @include size(height, 46);
@@ -193,6 +225,9 @@ button {
     }
     &.white {
       background: var(--white-color);
+    }
+    &.gray {
+      background: var(--back-color);
     }
     &:hover {
       background: var(--accent-color);

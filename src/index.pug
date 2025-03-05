@@ -4,7 +4,10 @@ block head
   +head(["header", "footer"])
 block header 
 block content
-  .container
+  .container(style='display: flex; flex-direction: column; gap: 20px;')
     a(href="home.html" style="color: #000") Главная 
+    a(href="production.html" style="color: #000") Производство 
+    a(href="portfolio.html" style="color: #000") Портфолио 
+    a(href="info.html" style="color: #000") Полезная информация 
 block footer 
     

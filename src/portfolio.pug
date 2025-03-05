@@ -1,0 +1,14 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "crumbs","badge", "portfolio-content", "portfolio-card", "order-alert", "contacts", "selector", "footer"])
+block header 
+    +header()
+block content
+    +crumbs({items: [{title: 'Портфолио', href: '#'}]})
+    +portfolio-content()
+    +order-alert()
+    +contacts()
+block footer 
+    +footer()
+    

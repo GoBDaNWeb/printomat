@@ -9,3 +9,4 @@ swiper();
 map();
 
 import "../pug/components/selector/selector.js";
+import "../pug/components/info/info-content/info-content.js";

@@ -1,0 +1,220 @@
+@use "src/scss/common/files/mixins" as *;
+
+.info-content {
+  @include size(margin-top, 20);
+  @include size(padding-bottom, 148);
+  .info-content-inner {
+    .tabs {
+      @include size(margin-top, 48);
+
+      @include size(gap, 10);
+      display: flex;
+      align-items: center;
+    }
+    .tab-content {
+      @include size(margin-top, 48);
+      &.grid {
+        display: grid;
+        @include grid-columns(392, 888);
+        @include size(gap, 64);
+      }
+      &.grid2 {
+        display: grid;
+        @include grid-columns(360, 888);
+        @include size(gap, 96);
+        // align-items: flex-start;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        @include size(gap, 6);
+        // @include size(margin-top, 24);
+        li {
+          position: relative;
+          @include size(padding-left, 30);
+          transition: var(--trs-cubic-600);
+          &.active {
+            color: var(--accent-color);
+            &:before {
+              background: var(--accent-color);
+            }
+          }
+          &:before {
+            transition: var(--trs-cubic-600);
+            content: "";
+            position: absolute;
+            left: 0;
+            @include size(width, 8);
+            @include size(top, 7);
+            @include size(height, 8);
+            background: var(--txt-gray-color);
+            border-radius: 999px;
+          }
+        }
+      }
+      .tab-content-order-list {
+        display: flex;
+        flex-direction: column;
+        @include size(gap, 64);
+        .tab-content-order-item {
+          display: grid;
+          @include grid-columns(605, 661);
+          @include size(gap, 48);
+          .text-block {
+            display: flex;
+            flex-direction: column;
+            @include size(gap, 30);
+            .title-wrapper {
+              display: flex;
+              @include size(gap, 20);
+              span {
+                @include size(min-width, 48);
+                @include size(max-width, 48);
+                @include size(min-height, 48);
+                @include size(max-height, 48);
+                background: var(--accent-color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 999px;
+                @include body-l;
+              }
+              .title {
+                @include body-l;
+              }
+            }
+            ul {
+              @include size(gap, 10);
+              margin-top: 0;
+              li {
+                &:before {
+                  background: var(--accent-color);
+                }
+              }
+            }
+            .quote {
+              @include size(margin-top, 49);
+              @include border-radius(20);
+              @include padding(28);
+              width: 100%;
+              border: 1px solid var(--line-color);
+              display: flex;
+              align-items: center;
+              @include size(gap, 20);
+              align-items: flex-start;
+              img {
+                @include size(height, 64);
+                @include size(width, 64);
+              }
+              p {
+                @include body-l;
+              }
+            }
+          }
+          .image-wrapper {
+            border: 10px solid var(--gray-color);
+            @include border-radius(20);
+            overflow: hidden;
+            position: relative;
+            @include size(height, 469);
+
+            img {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+      .tab-content-list {
+        &.templates-list {
+          display: flex;
+          flex-direction: column;
+          @include size(gap, 12);
+        }
+        .templates-item {
+          @include padding(48);
+          @include border-radius(20);
+          border: 1px solid var(--line-color);
+          display: flex;
+          flex-direction: column;
+          @include size(gap, 24);
+          .text {
+            display: flex;
+            flex-direction: column;
+            @include size(gap, 10);
+
+            p {
+              @include body-m;
+            }
+          }
+          .image-wrapper {
+            @include border-radius(12);
+            overflow: hidden;
+            @include size(height, 445);
+            position: relative;
+            img {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          ul {
+            margin-top: 0;
+            li {
+              &:before {
+                background: var(--accent-color);
+              }
+            }
+          }
+          .mail-block {
+            display: flex;
+            align-items: center;
+            @include size(gap, 20);
+            img {
+              @include size(height, 64);
+              @include size(width, 64);
+            }
+            p {
+              @include body-mb;
+              a {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+      .download-list {
+        display: flex;
+        flex-direction: column;
+        @include size(gap, 80);
+        .download-row {
+          .download-items {
+            @include size(margin-top, 24);
+            @include size(gap, 24);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+      }
+      .tabs-inner {
+        display: flex;
+        flex-wrap: wrap;
+        @include size(gap, 6);
+      }
+      .tab-article-list-wrapper {
+        .tab-article-list {
+          display: flex;
+          flex-direction: column;
+          @include size(gap, 12);
+        }
+        .load {
+          @include size(margin-top, 36);
+        }
+      }
+    }
+  }
+}
