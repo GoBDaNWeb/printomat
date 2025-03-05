@@ -1,0 +1,13 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "crumbs", "delivery-content", "delivery", "accordion-item","payment", "badge","contacts", "selector", "footer"])
+block header 
+    +header()
+block content
+    +crumbs({items: [{title: 'Доставка и оплата', href: '#'}]})
+    +delivery-content()
+    +contacts()
+block footer 
+    +footer()
+    

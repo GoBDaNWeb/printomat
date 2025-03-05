@@ -1,0 +1,30 @@
+@use "src/scss/common/files/mixins" as *;
+.delivery-content {
+  @include size(margin-top, 20);
+  @include size(padding-bottom, 148);
+  .delivery {
+    @include size(padding-top, 36);
+    .title-block {
+      p {
+        font-weight: 500;
+        font-size: calc(40 / var(--screensize) * 100vw) !important;
+        line-height: calc(48 / var(--screensize) * 100vw) !important;
+        @media (max-width: $tab-sm) {
+          font-size: calc(32 / var(--screensize) * 100vw) !important;
+          line-height: calc(35 / var(--screensize) * 100vw) !important;
+        }
+      }
+    }
+  }
+  .payment {
+    .title {
+      font-weight: 500;
+      font-size: calc(40 / var(--screensize) * 100vw) !important;
+      line-height: calc(48 / var(--screensize) * 100vw) !important;
+      @media (max-width: $tab-sm) {
+        font-size: calc(32 / var(--screensize) * 100vw) !important;
+        line-height: calc(35 / var(--screensize) * 100vw) !important;
+      }
+    }
+  }
+}
