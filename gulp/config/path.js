@@ -19,7 +19,11 @@ export const path = {
     js: `${srcFolder}/js/app.js`,
     images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
     svg: `${srcFolder}/img/**/*.svg`,
-    scss: [`${srcFolder}/scss/*.scss`, `${srcFolder}/pug/components/**/*.scss`],
+    scss: [
+      `${srcFolder}/scss/*.scss`,
+      `${srcFolder}/pug/components/**/*.scss`,
+      `${srcFolder}/pug/pages/**/*.scss`,
+    ],
     html: `${srcFolder}/*.html`,
     pug: `${srcFolder}/*.pug`,
     files: `${srcFolder}/files/**/*.*`,

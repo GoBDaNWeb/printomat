@@ -41,6 +41,10 @@ button {
     align-items: center;
     justify-content: center;
     border-radius: 999px;
+    &.lg {
+      @include size(width, 48);
+      @include size(height, 48);
+    }
     &:hover {
       background: var(--accent-color);
       svg {

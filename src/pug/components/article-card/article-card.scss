@@ -6,6 +6,25 @@
   @include padding(10);
   display: flex;
   @include size(gap, 48);
+  &.sm {
+    @include size(gap, 20);
+    .image-wrapper {
+      @include border-radius(12);
+      @include size(min-width, 96);
+      @include size(min-height, 96);
+      @include size(max-width, 96);
+      @include size(max-height, 96);
+    }
+    .content {
+      @include padding(10, 10, 10, 0);
+      justify-content: flex-start;
+      @include size(gap, 12);
+
+      h6 {
+        @include body-mb;
+      }
+    }
+  }
   .image-wrapper {
     @include border-radius(12);
     @include size(min-width, 194);
