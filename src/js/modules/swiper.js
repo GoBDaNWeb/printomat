@@ -10,4 +10,13 @@ export const swiper = () => {
       nextEl: ".work-next",
     },
   });
+  const articleSwiper = new Swiper(".article-swiper ", {
+    modules: [Pagination, Navigation],
+    slidesPerView: 1,
+    spaceBetween: 24,
+    navigation: {
+      prevEl: ".article-prev",
+      nextEl: ".article-next",
+    },
+  });
 };

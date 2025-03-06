@@ -1,0 +1,14 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "crumbs", "article-content", "order-alert","article-card","badge","contacts", "selector", "footer"])
+block header 
+    +header()
+block content
+    +crumbs({items: [{title: 'Полезная информация', href: 'info.html'},{title: 'Статьи', href: 'info.html'},{title: 'Печать брошюры', href: 'info'}]})
+    +article-content()
+    +order-alert()
+    +contacts()
+block footer 
+    +footer()
+    
