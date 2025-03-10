@@ -1,0 +1,451 @@
+@use "src/scss/common/files/mixins" as *;
+.orders__content {
+	background: var(--back-color);
+    padding-top: calc(28 / var(--screensize)* 100vw);
+    padding-bottom: calc(128 / var(--screensize)* 100vw);
+    border-radius: calc(20 / var(--screensize)* 100vw);
+}
+
+.orders__head  {
+	display: flex;
+	@include size(gap, 24);
+	@include size(max-width, 1003);
+
+	.field-wrap {
+		flex: 1;
+	}
+
+	@media (max-width: $mob) {
+		align-items: center;
+		@include size(gap, 8);
+		.field-wrap {
+			
+			span {
+				display: none;
+			}
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+		}
+	}
+}
+
+.orders__order {
+	background: #fff;
+	@include size(border-radius, 12);
+	@include size(padding-top, 18);
+	@include size(padding-left, 28);
+	@include size(padding-right, 28);
+	@include size(padding-bottom, 28);
+
+	@media (max-width: $mob) {
+		@include size(padding-top, 16);
+		@include size(padding-left, 16);
+		@include size(padding-right, 16);
+		@include size(padding-bottom, 16);
+	}
+}
+
+.orders__order__head {
+	display: grid;
+	grid-template-columns: calc(250 / var(--screensize) * 100vw) calc(540 / var(--screensize) * 100vw) 1fr;
+	@include size(gap, 63);
+	@include size(padding-bottom, 16);
+	border-bottom: 1px solid rgba(63, 63, 63, .15);
+	@include size(margin-bottom, 20);
+
+	@media (max-width: $mob) {
+		display: flex;
+		flex-direction: column;
+		@include size(gap, 8);
+	}
+}
+
+.orders__order__handle {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	@include size(gap, 10);
+	text-align: left;
+	@include size(font-size, 20);
+	padding: 0;
+	font-weight: 700;
+
+
+	span {
+		border-bottom-style: dotted;
+		@include size(border-width, 1);
+
+	}
+
+	@media (max-width: $mob) {
+		@include size(font-size, 16);
+		img {
+			display: none;
+		}
+	}
+}
+
+.orders__order__status {
+	@include size(font-size, 12);
+	@include size(padding-top, 6);
+	@include size(padding-left, 12);
+	@include size(padding-right, 12);
+	@include size(padding-bottom, 6);
+	@include size(border-radius, 96);
+
+	&.working {
+		background-color: #BFEEC9;
+	}
+
+	&.mistakes {
+		background-color: #FFABAB;
+	}
+
+	&.finished {
+		background-color: #EEEEEE;
+	}
+
+	@media (max-width: $mob) {
+		@include size(padding-top, 4);
+		@include size(padding-left, 8);
+		@include size(padding-right, 8);
+		@include size(padding-bottom, 4);
+	}
+}
+
+.orders__order__info {
+	display: flex;
+	align-items: center;
+	@include size(gap, 19);
+
+	@media (max-width: $mob) {
+		flex-direction: column;
+		align-items: flex-start;
+		@include size(gap, 8);
+	}
+}
+
+.orders__order__date {
+	@include size(font-size, 12);
+	color: #A0A0A0;
+}
+
+.orders__body {
+	@include size(margin-top, 36);
+}
+
+.orders__order__buttons  {
+	display: flex;
+	@include size(gap, 12);
+	justify-content: flex-end;
+
+	a {
+		@include size(font-size, 14);
+	}
+
+	svg {
+		@include size(width, 20);
+	}
+
+	@media (max-width: $mob) {
+		flex-direction: column;
+
+		.btn {
+			text-align: center;
+			justify-content: center;
+			@include size(font-size, 14);
+		}
+	}
+}
+
+.orders__order__body__row  {
+	grid-template-columns: calc(250 / var(--screensize) * 100vw) calc(279 / var(--screensize) * 100vw) calc(220 / var(--screensize) * 100vw)  1fr;
+	@include size(gap, 63);
+	display: grid;
+	@include size(row-gap, 12);
+
+	.btn.primary {
+		width: fit-content;
+	}
+
+	span {
+		@include size(font-size, 14);
+		display: block;
+		@include size(margin-bottom, 10);
+		color: #A0A0A0;
+		line-height: 120%;
+	}
+
+	b {
+		@include size(font-size, 16);
+		font-weight: 700;
+	}
+
+	p {
+		@include size(font-size, 16);
+	}
+
+	@media (max-width: $mob) {
+		grid-template-columns: 1fr 1fr;
+		@include size(gap, 16);
+
+		span {
+			@include size(margin-bottom, 6);
+		}
+		.orders__order__body__row__payment,
+		.orders__order__body__row__address  {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+
+		.orders__order__body__row__address {
+			p {
+				@include size(font-size, 14);
+			}
+		}
+
+
+
+	}
+}
+
+.orders__order__payment {
+	display: flex;
+	align-items: center;
+	@include size(gap, 12);
+	position: relative;
+
+	svg {
+		@include size(width, 20);
+		@include size(height, 20);
+
+		&:last-child {
+			@include size(width, 28);
+			@include size(height, 28);
+		}
+	}
+
+	&:hover {
+		.orders__order__payment__notice {
+			transition: .3s ease;
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.orders__order {
+	@include size(margin-bottom, 20);
+}
+
+.orders__order__bottom {
+	@include size(margin-top, 52);
+	display: none;
+}
+.orders__order__bottom__row {
+	grid-template-columns: calc(250 / var(--screensize) * 100vw) calc(279 / var(--screensize) * 100vw) calc(220 / var(--screensize) * 100vw)  1fr;
+	display: grid;
+	@include size(gap, 63);
+	align-items: center;
+	@include size(padding-bottom, 24);
+	border-bottom: 1px solid rgba(63, 63, 63, .15);
+	@include size(margin-bottom, 11);
+	@include size(row-gap, 11);
+	.btn.primary {
+		width: fit-content;
+	}
+
+	span {
+		@include size(font-size, 14);
+		color: #A0A0A0;
+		line-height: 120%;
+	}
+
+	.orders__order__bottom__row__more {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		@include size(gap, 32);
+
+		p {
+			@include size(font-size, 14);
+		}
+	}
+
+	@media (max-width: $mob) {
+		display: flex;
+		flex-direction: column;
+		@include size(gap, 12);
+		align-items: flex-start;
+
+		.orders__order__bottom__row__more  {
+			display: flex;
+			flex-direction: column;
+			@include size(gap, 12);
+		}
+	}
+}
+
+.orders__order__bottom__row__maket {
+	display: flex;
+	align-items: center;
+	@include size(gap, 13);
+	img {
+		@include size(width, 48);
+		@include size(height, 48);
+		@include size(padding, 2);
+		border: 1px solid rgba(63, 63, 63, .15);
+		object-fit: contain;
+		@include size(border-radius, 6);
+	}
+
+	p {
+		text-decoration: underline;
+		@include size(font-size, 14);
+	}
+}
+
+.orders__order__bottom__row__status {
+	display: flex;
+	align-items: center;
+	@include size(gap, 12);
+	@include size(font-size, 14);
+	flex-wrap: wrap;
+	position: relative;
+	svg {
+		@include size(width, 20);
+		@include size(height, 20);
+		flex-shrink: 0;
+	}
+
+	&.success {
+		p {
+			color: #60BA74;
+		}
+	}
+
+	&.checking {
+		p {
+			color: #F6B51E;
+		}
+	}
+
+	&.error {
+		p {
+			color: #F26161;
+		}
+	}
+
+	&:hover {
+		.orders__order__bottom__row__status__notice {
+			visibility: visible;
+			opacity: 1;
+			transition: .3s ease;
+		}
+	}
+}
+
+span.orders__order__bottom__row__status__notice,
+span.orders__order__payment__notice {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	bottom: 100%;
+	left: 25%;
+	@include size(width, 260);
+	@include size(padding, 16);
+	background: #fff;/* Tooltip */
+	box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+	@include size(border-radius, 10);
+	color: #111111;
+	@include size(font-size, 12);
+	transition: .3s ease;
+}
+span.orders__order__payment__notice  {
+	@include size(max-width, 260);
+	width: fit-content;
+}
+.orders__order {
+	&.active {
+		.orders__order__handle {
+			img {
+				transform: rotate(180deg);
+				transition: .3s ease;
+			}
+		}
+
+		.orders__order__bottom {
+			display: block;
+		}
+	}
+}
+
+.orders__order__bottom__head {
+	@media (max-width: $mob) {
+		display: none;
+	}
+}
+
+.orders__order__bottom__row {
+	div {
+		span {
+			display: none;
+
+			@media (max-width: $mob) {
+				display: block;
+			}
+		}
+	}
+}
+
+.product-selector {
+	.selector-btn {
+		background: #fff;
+	}
+}
+
+.orders__head__search, 
+.orders__head__dates {
+	svg {
+		@include size(width, 28);
+		@include size(height, 28);
+		position: absolute;
+		@include size(right, 12);
+		@include size(bottom, 10);
+	}
+
+	@media (max-width: $mob) {
+		display: none;
+	}
+}
+
+.orders__head__search-mob,
+.orders__head__dates-mob {
+	display: none;
+
+	@media (max-width: $mob) {
+		display: block;
+		svg {
+			@include size(width, 46);
+			@include size(height, 46);
+		}
+	}
+}
+
+.orders__order__handle-mob  {
+	display: none;
+
+	@media (max-width: $mob) {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		@include size(margin-top, 16);
+
+		img {
+			display: block;
+		}
+	}
+}
+

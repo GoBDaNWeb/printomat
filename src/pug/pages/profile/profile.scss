@@ -1,0 +1,132 @@
+@use "src/scss/common/files/mixins" as *;
+
+.profile {
+	@include size(margin-top, 20);
+}
+
+.profile__head  {
+	display: flex;
+	justify-content: space-between;
+	@include size(margin-bottom, 28);
+
+	@media (max-width: $mob) {
+		flex-direction: column;
+		@include size(gap, 16);
+	}
+}
+
+.profile__head__notification {
+	svg {
+		@include size(width, 46);
+		@include size(height, 46);
+	}
+}
+
+
+
+.profile__head__btns {
+	display: flex;
+	@include size(gap, 10);
+	align-items: center;
+}
+
+.profile__content {
+	background: var(--back-color);
+    padding-top: calc(48 / var(--screensize)* 100vw);
+    padding-bottom: calc(128 / var(--screensize)* 100vw);
+    border-radius: calc(20 / var(--screensize)* 100vw);
+
+	@media (max-width: $mob) {
+		padding-top: calc(24 / var(--screensize)* 100vw);
+		padding-bottom: calc(48 / var(--screensize)* 100vw);
+	}
+}
+
+.profile__block {
+	background: #fff;
+	@include size(border-radius, 12);
+	@include size(padding-bottom, 48);
+	@include size(padding-left, 48);
+	@include size(padding-right, 48);
+	@include size(padding-top, 28);
+	@include size(margin-bottom, 24);
+
+	@media (max-width: $mob) {
+		@include size(border-radius, 12);
+		@include size(padding-bottom, 32);
+		@include size(padding-left, 24);
+		@include size(padding-right, 24);
+		@include size(padding-top, 24);
+		@include size(margin-bottom, 16);
+	}
+}
+
+.profile__block__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include size(margin-bottom, 12);
+
+	img {
+		flex-shrink: 0;
+		@include size(width, 64);
+		@include size(height, 64);
+	}
+
+	h6 {
+		svg {
+			@include size(margin-left, 10);
+			@include size(width, 28);
+			@include size(height, 28);
+		}
+	}
+
+	@media (max-width: $mob) {
+		img {
+			@include size(width, 48);
+			@include size(height, 48);
+		}
+	}
+}
+
+.profile__wrapper  {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	@include size(gap, 24);
+
+	@media (max-width: $mob) {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.profile__block__body {
+	display: flex;
+	flex-direction: column;
+	@include size(gap, 24);
+
+	.btn {
+		max-width: fit-content;
+	}
+
+	.section-subtitle {
+		font-weight: 700;
+		@include size(font-size, 16);
+
+		&.section-subtitle-2 {
+			@include size(margin-top, 24);
+		}
+	}
+}
+
+.field-wrap {
+	position: relative;
+	.remove-address {
+		position: absolute;
+		@include size(width, 28);
+		@include size(height, 28);
+		@include size(right, 12);
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+}

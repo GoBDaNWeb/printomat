@@ -1,0 +1,94 @@
+mixin profile()
+	.profile 
+		.container
+			.profile__head 
+				h1 Профиль
+				.profile__head__btns 
+					button.btn.outline.tab Мои заказы
+					button.btn.secondary Профиль
+		.profile__content 
+			.container 
+				.profile__wrapper 
+					.profile__part
+						.profile__block 
+							.profile__block__head 
+								h6 Личные данные
+								img(src="./img/profile/selfdata.svg", alt="")
+							.profile__block__body
+								label.field-wrap
+									span Имя
+									input(type="text", placeholder="Ваше имя" value="Константин" readonly) 
+								.double-field.var-2
+									label.field-wrap
+										span Телефон
+										input(type="text", placeholder="Ваш телефон" value="+7 (962) 368-47-12" readonly) 
+									label.field-wrap
+										span E-mail
+										input(type="email", placeholder="Ваш e-mail" value="ivanov.konstantin@gmail.com" readonly) 
+								button.btn.primary(data-modal-target="change-password-modal") Изменить пароль
+						
+						.profile__block 
+							.profile__block__head 
+								h6 Адреса доставки
+								img(src="./img/profile/location.svg", alt="")
+							.profile__block__body
+								label.field-wrap
+									input(type="text", placeholder="" value="Москва, Садовая-Кудринская, 25, 124" readonly)
+									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="remove-address">
+										<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#2C2C2C"/>
+										<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="white"/>
+									</svg>
+ 
+								label.field-wrap
+									input(type="text", placeholder="Ваше имя" value="СПб, Пионерская, 25, 124, 124" readonly) 
+									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="remove-address">
+										<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#2C2C2C"/>
+										<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="white"/>
+									</svg>
+								button.btn.primary(data-modal-target="add-address-modal") Добавить адрес
+
+					.profile__part 
+						.profile__block 
+							.profile__block__head 
+								h6 Юридическое лицо
+									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect width="28" height="28" rx="14" fill="#2C2C2C"/>
+									<path d="M16.4355 8.06066C16.6308 7.8654 16.9474 7.8654 17.1426 8.06066L19.9389 10.857C20.1342 11.0522 20.1342 11.3688 19.9389 11.5641L12.4278 19.0752C12.3615 19.1415 12.278 19.1878 12.1867 19.2089L8.55145 20.0478C8.19141 20.1309 7.86874 19.8082 7.95182 19.4481L8.79072 15.8129C8.81179 15.7216 8.8581 15.6381 8.92436 15.5718L16.4355 8.06066Z" stroke="white"/>
+									<line x1="9.18558" y1="15.2777" x2="12.4138" y2="18.5059" stroke="white"/>
+									</svg>
+
+								img(src="./img/profile/ur.svg", alt="")
+							.profile__block__body
+								p.section-subtitle Реквизиты ЮЛ
+								.double-field 
+									label.field-wrap
+										span ИНН
+										input(type="text", placeholder="ИНН" value="7721793895") 
+									label.field-wrap
+										span КПП
+										input(type="text", placeholder="КПП" value="772201001") 
+								label.field-wrap
+										span Название организации
+										input(type="text", placeholder="Название организации" value="ООО «Комус»") 
+								label.field-wrap
+										span Юридический адрес
+										input(type="text", placeholder="Юридический адрес" value="111250, г. Москва, Вн. Тер. г. Муниципальный округ Лефортово") 
+								label.field-wrap
+										span Фактический адрес
+										input(type="text", placeholder="Фактический адрес" value="111250, г. Москва, Вн. Тер. г. Муниципальный округ Лефортово") 
+								p.section-subtitle.section-subtitle-2  Банковские реквизиты
+								.double-field 
+									label.field-wrap
+										span *БИК
+										input(type="text", placeholder="*БИК" value="283741243") 
+									label.field-wrap
+										span Корр. счет
+										input(type="text", placeholder="Корр. счет" value="772201001") 
+								label.field-wrap
+										span Название банка
+										input(type="text", placeholder="Название банка" value="СБЕР") 
+								label.field-wrap
+										span *Расчетный счет
+										input(type="text", placeholder="*Расчетный счет" value="772201001772201001") 
+							
+						

@@ -1,0 +1,47 @@
+.field-wrap {
+	position: relative;
+	span {
+		@include size(font-size, 16);
+		display: block;
+		@include size(margin-bottom, 8);
+		color: #2C2C2C;
+	}
+
+	input {
+		border-color: rgba(62, 62, 62, 0.15);
+		@include size(border-width, 1);
+		border-style: solid;
+		@include size(border-radius, 96);
+		@include size(padding-left, 28);
+		@include size(padding-right, 28);
+		@include size(padding-top, 12);
+		@include size(padding-bottom, 12);
+		@include size(font-size, 16);
+		outline: none;
+		width: 100%;
+	}
+}
+
+.double-field {
+	display: flex;
+	@include size(gap, 24);
+
+	.field-wrap {
+		flex: 1;
+	}
+
+	&.var-2 {
+		display: grid;
+		grid-template-columns: .7fr 1fr;
+
+	}
+
+	@media (max-width: $mob) {
+		flex-direction: column;
+
+		&.var-2 {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}

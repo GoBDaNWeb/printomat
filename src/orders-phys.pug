@@ -1,0 +1,12 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "crumbs", "badge", "orders-phys", "orders","profile", "download-card", "article-card", "selector", "footer"])
+block header 
+    +header()
+block content
+    +crumbs({items: [{title: 'Профиль', href: '#'}]})
+    +orders-phys()
+block footer 
+    +footer()
+    

@@ -1,0 +1,110 @@
+mixin popup()
+	.overlay.modal.signin-modal
+		.popup 
+			img(src="./img/bird.svg", alt="").popup__bird
+			button(type="button").close-popup.close-modal
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+					<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="#2C2C2C"/>
+				</svg>
+			h3 Войти
+			form.popup__form
+				label.field-wrap
+					span Почта
+					input(type="text")  
+				label.field-wrap
+					span Пароль
+					input(type="password")  
+				.popup__form__bottom 	
+					button(type="button").btn.primary Войти
+					a(href="#").forgot-password
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="#F2DC00"/>
+							<rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#F2DC00"/>
+							<path d="M11.3232 14.1711L16.0918 8.77664L13.3946 6.39231" stroke="#2C2C2C"/>
+							<path d="M12.1181 13.272L14.5024 10.5748L11.8052 8.19048" stroke="#2C2C2C"/>
+							<circle cx="10.3959" cy="15.22" r="1.9" transform="rotate(-138.523 10.3959 15.22)" stroke="#2C2C2C"/>
+						</svg> Забыли пароль?
+
+	.overlay.modal.forgot-password-modal
+		.popup 
+			img(src="./img/bird.svg", alt="").popup__bird
+			button(type="button").close-popup.close-modal
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+					<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="#2C2C2C"/>
+				</svg>
+			h3 Восстановление пароля
+			form.popup__form
+				label.field-wrap
+					span Введите почту, указанную при регистрации
+					input(type="text")  
+				.popup__form__bottom 	
+					button(type="button").btn.primary Отправить
+
+	.overlay.modal.change-password-modal
+		.popup 
+			img(src="./img/bird.svg", alt="").popup__bird
+			button(type="button").close-popup.close-modal
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+					<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="#2C2C2C"/>
+				</svg>
+			h3 Сменить пароль
+			form.popup__form
+				label.field-wrap
+					span Старый пароль
+					input(type="password") 
+					span.show-password
+						img(src="./img/close-eye.svg", alt="") 
+						img(src="./img/open-eye.svg", alt="") 
+
+				label.field-wrap
+					span Новый пароль
+					input(type="password")#new-pass  
+					span.show-password
+						img(src="./img/close-eye.svg", alt="") 
+						img(src="./img/open-eye.svg", alt="") 
+				label.field-wrap
+					span Повторите новый пароль
+					input(type="password")#new-pass-repeat  
+					span.show-password
+						img(src="./img/close-eye.svg", alt="") 
+						img(src="./img/open-eye.svg", alt="") 
+				.popup__form__bottom 	
+					button(type="button").btn.primary Сохранить
+					p.error-text Новые пароли не совпадают!
+
+
+	.overlay.modal.confirm-code
+		.popup.text-centered 
+			button(type="button").close-popup.close-modal
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+					<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="#2C2C2C"/>
+				</svg>
+			h3 Код подтверждения<br>выслан на новую почту
+			button(type="button").btn.primary.close-modal Ок 
+	
+	.overlay.modal.add-address-modal
+		.popup 
+			button(type="button").close-popup.close-modal
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+					<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="#2C2C2C"/>
+				</svg>
+			h3 Новый адрес доставки
+			form.popup__form
+				.field-wrap 
+					span Адрес доставки
+					input(type="text")
+				.double-field 
+					.field-wrap 
+						span Подъезд
+						input(type="text")
+					.field-wrap 
+						span Квартира / офис
+						input(type="text")
+				.double-field
+					button(type="button").btn.outline.tab.close-modal Отменить
+					button(type="button").btn.primary Сохранить
