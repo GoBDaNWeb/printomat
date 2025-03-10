@@ -49,6 +49,14 @@ export const tabs = () => {
         });
       });
     } else {
+      const firstTab = tabs[0];
+
+      tabsContent.forEach((content, index) => {
+        if (!content.dataset.tab.split(" ").includes(firstTab.dataset.tab)) {
+          content.classList.add("hidden");
+        }
+      });
+
       tabs.forEach((tab) => {
         tab.addEventListener("click", (e) => {
           const activeTab = wrapper.querySelector(".tab.active");

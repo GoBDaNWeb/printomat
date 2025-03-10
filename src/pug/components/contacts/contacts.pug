@@ -66,8 +66,8 @@ mixin contacts()
                             img(src="./img/clock.svg", alt="clock")
                             p Понедельник - пятница с 10:00 до 20:00
                     .btns 
-                        button.btn.gray Как добраться
-                        button.btn.gray Выдача заказов
+                        button.btn.gray(data-modal-target='route-modal') Как добраться
+                        button.btn.gray(data-modal-target='orders-modal') Выдача заказов
             #map(data-center='55.7667743589071 37.62554051227237')
                 .pins 
                     .pin(data-coords='55.77288069875858 37.63236891178968' data-id='0' data-phone='+7 (499) 322-15-14')

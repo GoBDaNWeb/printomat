@@ -45,6 +45,14 @@ button {
       @include size(width, 48);
       @include size(height, 48);
     }
+    &.sm {
+      @include size(width, 28);
+      @include size(height, 28);
+      padding: 0;
+    }
+    &.gray {
+      background: var(--back-color);
+    }
     &:hover {
       background: var(--accent-color);
       svg {

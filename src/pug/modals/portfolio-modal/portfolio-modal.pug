@@ -1,0 +1,47 @@
+mixin portfolio-modal()
+    .portfolio-modal.modal 
+        .modal-content-wrapper
+            .close-modal-wrapper
+                button.btn.circle.sm.gray.close-modal 
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.24257 0.757359L4.99993 5M4.99993 5L0.757289 9.24264M4.99993 5L0.75729 0.757359M4.99993 5L9.24257 9.24264" stroke="#2C2C2C"/>
+                    </svg>
+            h3 Энергетический напиток Red Bull
+            +badge({title: 'Упаковка и POS'})
+            .modal-content
+                .portfolio-modal-swiper-wrapper
+                    .portfolio-modal-swiper
+                        .swiper-wrapper 
+                            .swiper-slide 
+                                img(src="./img/portfolio/3.jpg", alt="portfolio")
+                            .swiper-slide 
+                                img(src="./img/portfolio/3.jpg", alt="portfolio")
+                            .swiper-slide 
+                                img(src="./img/portfolio/3.jpg", alt="portfolio")
+                            .swiper-slide 
+                                img(src="./img/portfolio/3.jpg", alt="portfolio")
+                            .swiper-slide 
+                                img(src="./img/portfolio/3.jpg", alt="portfolio")
+                        .navigation 
+                            button.btn.circle.lg.portfolio-modal-prev 
+                                <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 8L8 1M1 8H21M1 8L8 15" stroke="white"/>
+                                </svg>
+                            button.btn.circle.lg.portfolio-modal-next 
+                                <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 8L13 1M20 8H0M20 8L13 15" stroke="white"/>
+                                </svg>
+                .text-block 
+                    .text 
+                        p Для клиента мы разработали и произвели наклейки с контурной резкой, идеально подходящие для брендинга и рекламы.
+                        p Продукт выполнен с высоким качеством печати и точной вырубкой по заданным формам, что позволило подчеркнуть индивидуальность и стиль клиента.
+                    .portfolio-modal-info 
+                        .portfolio-modal-info-item 
+                            span Тариф
+                            p Стандарт
+                        .portfolio-modal-info-item 
+                            span Тираж, шт
+                            p 10 000
+                        .portfolio-modal-info-item 
+                            span Срок
+                            p 3 дня

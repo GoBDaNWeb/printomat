@@ -1,0 +1,25 @@
+mixin route-modal()
+    .route-modal.modal 
+        .modal-content-wrapper
+            .close-modal-wrapper
+                button.btn.circle.sm.gray.close-modal 
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.24257 0.757359L4.99993 5M4.99993 5L0.757289 9.24264M4.99993 5L0.75729 0.757359M4.99993 5L9.24257 9.24264" stroke="#2C2C2C"/>
+                    </svg>
+            h3 Как добраться
+            .modal-content
+                .image-wrapper 
+                    img(src="./img/route/img.jpg", alt="route")
+                .tabs-wrapper 
+                    .tabs 
+                        button.btn.tab.outline.active(data-tab='0') Пешком
+                        button.btn.tab.outline(data-tab='1') На машине
+                    .tab-content(data-tab='0')
+                        .text 
+                            p Выход из метро Курская, с Арбатско-Покровской или Кольцевой линии в сторону театра имени Гоголя.
+                            p В переходе под железнодорожными путями - налево по указателю "улица Казакова". После перехода, через 50 метров, с правой стороны будет шлагбаум и проход на территорию завода "Арма". По территории завода пройти прямо по центральной улице сто метров до Т-образного перекрёстка.
+                            p Слева перед вами будет стоять торцом двухэтажное здание 9/6. Его нужно обогнуть с левой стороны, наша дверь под желтым козырьком.
+                    .tab-content(data-tab='1')
+                        .text 
+                            p Внимание, въезд на территорию на машине платный - <br>200 руб./час.
+                            p Возможно доп описание

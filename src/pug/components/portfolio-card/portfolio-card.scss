@@ -5,6 +5,11 @@
   @include size(border-radius, 20);
   @include size(padding, 28);
   height: auto;
+  cursor: pointer;
+  transition: var(--trs-cubic-600);
+  &:hover {
+    border-color: var(--accent-color);
+  }
   .image-wrapper {
     @include size(height, 376);
     width: 100%;

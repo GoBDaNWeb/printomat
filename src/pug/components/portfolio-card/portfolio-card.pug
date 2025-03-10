@@ -1,5 +1,5 @@
 mixin portfolio-card(data)
-    .portfolio-card&attributes(attributes)
+    .portfolio-card(data-modal-target='portfolio-modal')&attributes(attributes)
         .image-wrapper 
             img(src=data.img, alt="portfolio")
         .content 

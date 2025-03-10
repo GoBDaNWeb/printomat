@@ -23,6 +23,7 @@ export const path = {
       `${srcFolder}/scss/*.scss`,
       `${srcFolder}/pug/components/**/*.scss`,
       `${srcFolder}/pug/pages/**/*.scss`,
+      `${srcFolder}/pug/modals/**/*.scss`,
     ],
     html: `${srcFolder}/*.html`,
     pug: `${srcFolder}/*.pug`,

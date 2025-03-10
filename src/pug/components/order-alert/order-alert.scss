@@ -40,6 +40,7 @@
         }
         .btn {
           @include size(margin-top, 60);
+          @include size(height, 46);
           @include body-mb;
         }
       }

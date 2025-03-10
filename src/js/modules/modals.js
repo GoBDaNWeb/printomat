@@ -12,9 +12,11 @@ export const modals = () => {
 
   const closeModal = (modal) => {
     modal.classList.remove("active");
-    document.body.style.overflow = originalOverflow;
-    document.body.style.paddingRight = "0px";
-    if (header) header.style.paddingRight = "0px";
+    setTimeout(() => {
+      document.body.style.overflow = originalOverflow;
+      document.body.style.paddingRight = "0px";
+      if (header) header.style.paddingRight = "0px";
+    }, 300);
   };
 
   const bindModalEvents = () => {

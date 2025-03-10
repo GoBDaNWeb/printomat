@@ -1,0 +1,32 @@
+mixin orders-modal()
+    .orders-modal.modal 
+        .modal-content-wrapper
+            .close-modal-wrapper
+                button.btn.circle.sm.gray.close-modal 
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.24257 0.757359L4.99993 5M4.99993 5L0.757289 9.24264M4.99993 5L0.75729 0.757359M4.99993 5L9.24257 9.24264" stroke="#2C2C2C"/>
+                    </svg>
+            h3 Выдача заказов
+            .order-modal-info 
+                p.title Время выдачи заказов
+                ul 
+                    li В день готовности Вашего заказа с 18:00 до 20:00 (СуперЭкспресс и Экспресс)
+                    li В день готовности Вашего заказа с 10:00 до 20:00 (Стандарт и Эконом)
+                    li В последующие дни с 10:00 до 20:00
+            .order-modal-info 
+                p.title Условия
+                ul 
+                    li Сотрудники пункта самовывоза проверяют комплектность заказа
+                    li Хранение товара осуществляется в течение 30 календарных дней.
+                    li Консультации по товару не производятся!
+            .order-modal-contacts 
+                p.title Обратитесь в службу технической поддержки, если вы не получили товар
+                .order-modal-contacts-list
+                    a(href="tel:+7 499 322 15 14").order-modal-contacts-item
+                        .image-wrapper
+                            img(src="./img/user-icon.svg", alt="user")
+                        h6 +7 499 322 15 14
+                    a(href="mailto:info@printomat.ru").order-modal-contacts-item
+                        .image-wrapper
+                            img(src="./img/mail-icon.svg", alt="user")
+                        h6 info@printomat.ru
