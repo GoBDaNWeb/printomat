@@ -1,0 +1,79 @@
+@use "src/scss/common/files/mixins" as *;
+
+.portfolio-modal {
+  .modal-content-wrapper {
+    @include size(width, 1116);
+    h3 {
+      @include size(margin-bottom, 12);
+    }
+    .modal-content {
+      @include size(margin-top, 28);
+      @include size(gap, 48);
+      display: grid;
+      @include grid-columns(498, 473);
+      .portfolio-modal-swiper-wrapper {
+        position: relative;
+        @include size(width, 498);
+        @include size(height, 498);
+        @include size(max-width, 498);
+        @include size(max-height, 498);
+        .portfolio-modal-swiper {
+          overflow: hidden;
+          @include size(width, 498);
+          @include size(height, 498);
+          @include size(max-width, 498);
+          @include size(max-height, 498);
+          img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .navigation {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          @include size(left, -24);
+          @include size(right, -24);
+
+          margin: auto;
+          z-index: 2;
+          justify-content: space-between;
+        }
+      }
+      .text-block {
+        .text {
+          display: flex;
+          flex-direction: column;
+          @include size(gap, 10);
+          p {
+            @include body-m;
+          }
+        }
+        .portfolio-modal-info {
+          @include size(margin-top, 28);
+          display: flex;
+          flex-direction: column;
+          @include size(gap, 12);
+          .portfolio-modal-info-item {
+            @include size(height, 62);
+            border: 1px solid var(--line-color);
+            @include border-radius(12);
+            @include padding(0, 28);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            span {
+              @include body-m;
+              color: var(--txt-gray-color);
+            }
+            p {
+              @include body-mb;
+            }
+          }
+        }
+      }
+    }
+  }
+}
