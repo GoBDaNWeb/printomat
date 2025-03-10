@@ -1,0 +1,14 @@
+.custom-textarea,
+.custom-input {
+  border: 1px solid var(--line-color);
+  outline: none;
+  border-radius: 999px;
+  @include size(height, 46);
+  @include padding(0, 28);
+  width: 100%;
+}
+
+.custom-textarea {
+  @include border-radius(12);
+  @include padding(12, 28);
+}

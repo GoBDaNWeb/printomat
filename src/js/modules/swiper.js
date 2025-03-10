@@ -19,4 +19,13 @@ export const swiper = () => {
       nextEl: ".article-next",
     },
   });
+  const portfolioModalSwiper = new Swiper(".portfolio-modal-swiper ", {
+    modules: [Pagination, Navigation],
+    slidesPerView: 1,
+    spaceBetween: 24,
+    navigation: {
+      prevEl: ".portfolio-modal-prev",
+      nextEl: ".portfolio-modal-next",
+    },
+  });
 };

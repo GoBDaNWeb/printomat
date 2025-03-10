@@ -12,16 +12,20 @@ mixin order()
                     .inputs
                         .input-wrapper 
                             p Ваше имя
-                            input(type="text" placeholder="Имя")
+                            .input__row
+                                input(type="text" placeholder="Имя").custom-input.input.form__input-value.input__valid-name
+                                .input__item-small
                         .input-wrapper 
                             p Телефон
-                            input(type="text" placeholder="+7 (")
+                            .input__row
+                                input(type="tel" placeholder='+7 (').custom-input.input.form__input-value.input__valid-phone
+                                .input__item-small
                         .input-wrapper 
                             p Почта
-                            input(type="text" placeholder="Введите")
+                            input(type="text" placeholder="Введите").custom-input
                     .textarea-wrapper 
                         p Комментарий
-                        textarea(placeholder='Дополнительная информация (если требуется)')
+                        textarea(placeholder='Дополнительная информация (если требуется)').custom-textarea
                 .file-wrapper 
                     p Прикрепить файл <br>
                         span ТЗ, фирстиль, готовый макет и тд.

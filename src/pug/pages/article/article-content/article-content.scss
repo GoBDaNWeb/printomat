@@ -65,7 +65,7 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            @include size(gap, 6);
+            @include size(gap, 10);
             li {
               position: relative;
               @include size(padding-left, 30);
