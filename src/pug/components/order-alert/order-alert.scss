@@ -7,13 +7,22 @@
   background-size: contain;
   background-repeat: no-repeat;
   @include size(padding-top, 128);
-  @include size(margin-top, -20);
   @include size(padding-bottom, 128);
+  @include size(margin-top, -20);
   @include border-radius(20, 20, 0, 0);
+  @media (max-width: $tab-sm) {
+    @include size(padding-top, 24);
+    @include size(padding-bottom, 32);
+    background-position: top;
+  }
   .order-alert-inner {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     @include size(gap, 24);
+    @media (max-width: $tab-sm) {
+      grid-template-columns: repeat(1, 1fr);
+      @include size(gap, 16);
+    }
     .order-alert-item {
       @include padding(10);
       @include size(gap, 24);
@@ -21,10 +30,16 @@
       @include grid-columns(314, 308);
       background: var(--white-color);
       justify-content: space-between;
-
       display: grid;
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include padding(8);
+      }
       .content {
         @include padding(38, 0, 38, 38);
+        @media (max-width: $tab-sm) {
+          @include padding(16, 16, 0, 16);
+        }
         span {
           @include body-m;
           color: var(--txt-gray-color);
@@ -33,6 +48,9 @@
           @include size(padding-top, 48);
           @include size(margin-top, 20);
           border-top: 1px solid var(--line-color);
+          @media (max-width: $tab-sm) {
+            @include size(padding-top, 16);
+          }
           p {
             @include size(margin-top, 16);
             @include body-m;
@@ -42,6 +60,9 @@
           @include size(margin-top, 60);
           @include size(height, 46);
           @include body-mb;
+          @media (max-width: $tab-sm) {
+            @include size(margin-top, 24);
+          }
         }
       }
       .image-block {
@@ -49,6 +70,10 @@
         background: var(--back-color);
         overflow: hidden;
         position: relative;
+        @media (max-width: $tab-sm) {
+          @include size(width, 296);
+          @include size(height, 222);
+        }
         .image-wrapper {
           @include border-radius(20);
           overflow: hidden;
@@ -61,6 +86,11 @@
           bottom: 0;
           margin: auto;
           border: 10px solid var(--gray-color);
+          @media (max-width: $tab-sm) {
+            @include size(width, 291);
+            @include size(height, 207);
+            @include size(left, 108);
+          }
           img {
             position: absolute;
             width: 100%;

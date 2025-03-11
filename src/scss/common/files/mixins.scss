@@ -138,3 +138,9 @@
   @include size(line-height, 84);
   @include size(letter-spacing, -2);
 }
+@mixin display-m {
+  font-weight: 500;
+  @include size(font-size, 64);
+  @include size(line-height, 61);
+  @include size(letter-spacing, -2);
+}

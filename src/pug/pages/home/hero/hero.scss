@@ -3,11 +3,91 @@
 .hero {
   @include size(margin-top, 208);
   @include size(margin-bottom, 128);
+  @media (max-width: $tab-sm) {
+    @include size(margin-top, 88);
+    @include size(margin-bottom, 40);
+  }
+  &.hero-2 {
+    .hero-features {
+      @media (max-width: $tab-sm) {
+        display: none !important;
+      }
+    }
+  }
+  &.hero-3 {
+    .hero-features {
+      @media (max-width: $tab-sm) {
+        display: none !important;
+      }
+    }
+    .hero-content {
+      .text-block {
+        .btn-wrapper {
+          display: flex;
+          border-top: none;
+          .btn {
+            @include size(height, 46);
+            width: 100%;
+            justify-content: center;
+          }
+        }
+      }
+    }
+    .hero-features-swiper {
+      display: none;
+      @include size(margin-top, 64);
+      @media (max-width: $tab-sm) {
+        display: block;
+      }
+      .feature-item {
+        @include size(border-radius, 20);
+        @include size(padding, 24);
+        background: var(--back-color);
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        .icon-wrapper {
+          display: flex;
+          justify-content: flex-end;
+          img {
+            @include size(width, 64);
+            @include size(height, 64);
+          }
+        }
+        p {
+          @include body-l;
+          @include body-m;
+        }
+      }
+    }
+  }
   .hero-inner {
     .hero-content {
       display: grid;
       @include size(gap, 48);
       @include grid-columns(409, 888);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include size(gap, 32);
+      }
+      .btn-wrapper {
+        @include size(padding-top, 28);
+        border-top: 1px solid var(--line-color);
+        @media (max-width: $tab-sm) {
+          display: none;
+        }
+        &.mob {
+          display: none;
+          @media (max-width: $tab-sm) {
+            display: flex;
+          }
+          button {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+      }
       .text-block {
         display: flex;
         flex-direction: column;
@@ -16,11 +96,10 @@
           h1 {
             @include display-l;
             @include size(margin-bottom, 16);
+            @media (max-width: $tab-sm) {
+              @include display-m;
+            }
           }
-        }
-        .btn-wrapper {
-          @include size(padding-top, 28);
-          border-top: 1px solid var(--line-color);
         }
       }
       .video-block {
@@ -29,6 +108,10 @@
         border: 10px solid var(--gray-color);
         position: relative;
         overflow: hidden;
+        @media (max-width: $tab-sm) {
+          @include size(height, 176);
+          border-width: 4px;
+        }
         video {
           position: absolute;
           width: 100%;
@@ -40,6 +123,12 @@
           @include size(bottom, 58);
           @include size(left, 61);
           @include body-l;
+          @media (max-width: $tab-sm) {
+            @include body-m;
+            @include size(bottom, 24);
+            @include size(left, 24);
+            @include size(max-width, 150);
+          }
         }
         .play-btn {
           position: absolute;
@@ -65,6 +154,12 @@
       @include size(margin-top, 80);
       display: flex;
       @include size(gap, 24);
+      @media (max-width: $tab-sm) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @include size(gap, 16);
+        @include size(margin-top, 32);
+      }
       .feature-item {
         @include size(width, 318);
 
@@ -74,16 +169,28 @@
         background: var(--back-color);
         display: flex;
         flex-direction: column;
+        @media (max-width: $tab-sm) {
+          @include size(width, 148);
+          @include size(padding, 16);
+          @include size(gap, 8);
+        }
         .icon-wrapper {
           display: flex;
           justify-content: flex-end;
           img {
             @include size(width, 104);
             @include size(height, 104);
+            @media (max-width: $tab-sm) {
+              @include size(width, 64);
+              @include size(height, 64);
+            }
           }
         }
         p {
           @include body-l;
+          @media (max-width: $tab-sm) {
+            @include body-m;
+          }
         }
       }
     }

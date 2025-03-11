@@ -2,29 +2,56 @@
 
 .order {
   @include size(padding-top, 136);
+  @media (max-width: $tab-sm) {
+    @include size(padding-top, 48);
+  }
   .order-inner {
     display: grid;
     @include size(gap, 48);
     @include grid-columns(408, 888);
+    @media (max-width: $tab-sm) {
+      grid-template-columns: 1fr;
+    }
     .text-block {
       display: flex;
       flex-direction: column;
       @include size(gap, 24);
-
+      @media (max-width: $tab-sm) {
+        background: var(--white-color);
+        @include padding(28, 22);
+        @include border-radius(20);
+        @include size(gap, 12);
+      }
       .title-wrapper {
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @media (max-width: $tab-sm) {
+          flex-direction: column-reverse;
+          align-items: flex-start;
+        }
         .title {
           @include h1;
+          @media (max-width: $tab-sm) {
+            @include size(padding-top, 24);
+            @include size(margin-top, 24);
+            border-top: 1px solid var(--line-color);
+            font-size: calc(32 / var(--screensize) * 100vw) !important;
+            line-height: calc(32 / var(--screensize) * 100vw) !important;
+          }
         }
         .image-wrapper {
           display: flex;
           justify-content: flex-end;
+
           img {
             @include size(width, 93);
             @include size(height, 68);
+            @media (max-width: $tab-sm) {
+              @include size(width, 64);
+              @include size(height, 48);
+            }
           }
         }
       }
@@ -32,6 +59,11 @@
         @include size(padding-top, 28);
         @include body-l;
         border-top: 1px solid var(--line-color);
+        @media (max-width: $tab-sm) {
+          @include size(padding-top, 0);
+          border-top: none;
+          @include body-mb;
+        }
       }
     }
     .form-block {
@@ -39,6 +71,9 @@
       @include size(border-radius, 20);
       @include size(padding, 48);
       background: var(--white-color);
+      @media (max-width: $tab-sm) {
+        display: none;
+      }
       .inputs-wrapper {
         display: flex;
         flex-direction: column;

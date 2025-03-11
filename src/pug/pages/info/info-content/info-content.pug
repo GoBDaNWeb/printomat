@@ -7,6 +7,12 @@ mixin info-content()
                 button.btn.tab.outline(data-tab='1') Как сделать заказ
                 button.btn.tab.outline(data-tab='2') Шаблоны макетов
                 button.btn.tab.outline(data-tab='3') Статьи
+            +selector({name: 'info-tabs', title:'Подготовка макетов',  class: 'primary', items: [
+                {title: 'Подготовка макетов', value: 0},
+                {title: 'Как сделать заказ', value: 1},
+                {title: 'Шаблоны макетов', value: 2},
+                {title: 'Статьи', value: 3},
+            ],isTabsSelector: true})
             .tab-content.grid(data-tab='0')
                 .list-wrapper
                     ul.sticky-block 
@@ -232,51 +238,68 @@ mixin info-content()
                 .tab-content-list.download-list 
                     .download-row.tab-content-item 
                         h6 Макеты штанц-форм для изготовления вырубных папок
-                        .download-items
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'})
-                            +download-card({title: 'Папка с корешком'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
+                     
+                        .download-items-swiper 
+                            .swiper-wrapper 
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                                +download-card({title: 'Папка с корешком'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                            .pagination.download-pagination
                     .download-row.tab-content-item
                         h6 Макеты штанц-форм для изготовления вырубных изделий
-                        .download-items
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'})
-                            +download-card({title: 'Папка с корешком'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'})
-                            +download-card({title: 'Папка с корешком'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
-                    .download-row.tab-content-item 
-                        h6 Макеты штанц-форм для изготовления вырубных папок
-                        .download-items
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'})
                     
+                        .download-items-swiper
+                            .swiper-wrapper
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                                +download-card({title: 'Папка с корешком'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                                +download-card({title: 'Папка с корешком'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                            .pagination.download-pagination
                     .download-row.tab-content-item 
                         h6 Макеты штанц-форм для изготовления вырубных папок
-                        .download-items
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'})
-                            +download-card({title: 'Папка с корешком'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
+                   
+                        .download-items-swiper
+                            .swiper-wrapper
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                            .pagination.download-pagination
+                    .download-row.tab-content-item 
+                        h6 Макеты штанц-форм для изготовления вырубных папок
+                   
+                        .download-items-swiper
+                            .swiper-wrapper
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                                +download-card({title: 'Папка с корешком'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                            .pagination.download-pagination
                     .download-row.tab-content-item 
                         h6 Макеты штанц-форм для изготовления вырубных изделий
-                        .download-items
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'})
-                            +download-card({title: 'Папка с корешком'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'})
-                            +download-card({title: 'Папка с корешком'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
+                    
+                        .download-items-swiper
+                            .swiper-wrapper
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                                +download-card({title: 'Папка с корешком'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                                +download-card({title: 'Папка с корешком'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                            .pagination.download-pagination
                     .download-row.tab-content-item 
                         h6 Макеты штанц-форм для изготовления вырубных папок
-                        .download-items
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой'})
-                            +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'})
+                   
+                        .download-items-swiper
+                            .swiper-wrapper
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                            .pagination.download-pagination
             .tab-content.tabs-inner-wrapper.tabs-multiple.grid2(data-tab="3")
                 .tabs-inner-block
                     .tabs-inner.sticky-block 

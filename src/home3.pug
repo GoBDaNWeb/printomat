@@ -1,12 +1,12 @@
 extends ./pug/templates/template.pug
 
 block head 
-  +head(["header","mobile-menu", "hero","production", "catalog", "catalog-card", "delivery", "accordion-item","payment", "badge", "order", "home-about", "home-alert", "portfolio-card", "home-works", "contacts", "selector", "footer", "portfolio-modal", "orders-modal", "route-modal", "requisites-modal", "request-status-modal", "request-status-success-modal", "request-modal", "request-success-modal"])
+  +head(["header", "mobile-menu", "hero","production", "catalog", "catalog-card", "delivery", "accordion-item","payment", "badge", "order", "home-about", "home-alert", "portfolio-card", "home-works", "contacts", "selector", "footer", "portfolio-modal", "orders-modal", "route-modal", "requisites-modal", "request-status-modal", "request-status-success-modal", "request-modal", "request-success-modal"])
 block header 
     +header()
     +mobile-menu()
 block content
-  +hero()
+  +hero-3()
   +production()
   +delivery()
   +payment()

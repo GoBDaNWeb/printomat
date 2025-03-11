@@ -1,5 +1,5 @@
-mixin hero()
-    .hero 
+mixin hero-3()
+    .hero.hero-3
         .hero-inner.container 
             .hero-content
                 .text-block 
@@ -16,8 +16,6 @@ mixin hero()
                             <circle cx="40" cy="40" r="37.5" stroke="#2C2C2C" fill="rgba(0,0,0,0)" stroke-width="5"/>
                             <path d="M33 28L53 40L33 52V28Z" fill="#2C2C2C"/>
                         </svg>
-                .btn-wrapper.mob 
-                    button.btn.primary.lg(data-modal-target='request-modal') Заказать в один клик
             .hero-features
                 .feature-item 
                     .icon-wrapper
@@ -39,3 +37,26 @@ mixin hero()
                         .icon 
                             img(src="./img/home/hero/icon4.svg", alt="icon")
                     p Менеджер для каждого клиента
+            .hero-features-swiper 
+                .swiper-wrapper 
+                    .feature-item.swiper-slide
+                        .icon-wrapper
+                            .icon 
+                                img(src="./img/home/hero/icon1.svg", alt="icon")
+                        p Работаем <br>с 2011
+                    .feature-item.swiper-slide
+                        .icon-wrapper
+                            .icon 
+                                img(src="./img/home/hero/icon2.svg", alt="icon")
+                        p 225 пунктов <br>выдачи по РФ
+                    .feature-item.swiper-slide
+                        .icon-wrapper
+                            .icon 
+                                img(src="./img/home/hero/icon3.svg", alt="icon")
+                        p Срочная печать <br>от 3 часов
+                    .feature-item.swiper-slide
+                        .icon-wrapper
+                            .icon 
+                                img(src="./img/home/hero/icon4.svg", alt="icon")
+                        p Менеджер для каждого клиента
+                .pagination.hero-features-pagination

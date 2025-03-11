@@ -3,6 +3,9 @@
 .info-content {
   @include size(margin-top, 20);
   @include size(padding-bottom, 148);
+  @media (max-width: $tab-sm) {
+    @include size(padding-bottom, 50);
+  }
   .info-content-inner {
     .tabs {
       @include size(margin-top, 48);
@@ -10,19 +13,86 @@
       @include size(gap, 10);
       display: flex;
       align-items: center;
+      @media (max-width: $tab-sm) {
+        display: none;
+      }
+    }
+    .selector {
+      @include size(margin-top, 24);
+      display: none;
+
+      @media (max-width: $tab-sm) {
+        display: block;
+      }
     }
     .tab-content {
       @include size(margin-top, 48);
+      @media (max-width: $tab-sm) {
+        @include size(margin-top, 32);
+      }
       &.grid {
         display: grid;
         @include grid-columns(392, 888);
         @include size(gap, 64);
+        @media (max-width: $tab-sm) {
+          display: flex;
+          flex-direction: column;
+          // grid-template-columns: 1fr;
+        }
       }
       &.grid2 {
         display: grid;
         @include grid-columns(360, 888);
         @include size(gap, 96);
         // align-items: flex-start;
+        @media (max-width: $tab-sm) {
+          display: flex;
+          flex-direction: column;
+          // grid-template-columns: 1fr;
+        }
+      }
+      .list-wrapper {
+        ul {
+          li {
+            cursor: pointer;
+          }
+        }
+        @media (max-width: $tab-sm) {
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          z-index: 20;
+        }
+        ul {
+          @media (max-width: $tab-sm) {
+            flex-direction: row;
+            @include size(gap, 4);
+            @include size(height, 50);
+            @include padding(0, 24);
+            overflow: auto;
+            align-items: center;
+            background: var(--white-color);
+            li {
+              @include size(height, 26);
+              @include padding(0, 16);
+              background: var(--back-color);
+              @include body-xs;
+              border-radius: 999px;
+              white-space: nowrap;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              &.active {
+                color: var(--white-color);
+                background: var(--gray-color);
+              }
+              &:before {
+                display: none;
+              }
+            }
+          }
+        }
       }
       ul {
         list-style: none;
@@ -33,6 +103,7 @@
         li {
           position: relative;
           @include size(padding-left, 30);
+          @include body-m;
           transition: var(--trs-cubic-600);
           &.active {
             color: var(--accent-color);
@@ -61,10 +132,17 @@
           display: grid;
           @include grid-columns(605, 661);
           @include size(gap, 48);
+          @media (max-width: $tab-sm) {
+            grid-template-columns: 1fr;
+            @include size(gap, 40);
+          }
           .text-block {
             display: flex;
             flex-direction: column;
             @include size(gap, 30);
+            @media (max-width: $tab-sm) {
+              @include size(gap, 16);
+            }
             .title-wrapper {
               display: flex;
               @include size(gap, 20);
@@ -82,6 +160,9 @@
               }
               .title {
                 @include body-l;
+                @media (max-width: $tab-sm) {
+                  @include body-mb;
+                }
               }
             }
             ul {
@@ -103,6 +184,9 @@
               align-items: center;
               @include size(gap, 20);
               align-items: flex-start;
+              @media (max-width: $tab-sm) {
+                display: none;
+              }
               img {
                 @include size(height, 64);
                 @include size(width, 64);
@@ -118,7 +202,9 @@
             overflow: hidden;
             position: relative;
             @include size(height, 469);
-
+            @media (max-width: $tab-sm) {
+              @include size(height, 221);
+            }
             img {
               position: absolute;
               width: 100%;
@@ -141,6 +227,10 @@
           display: flex;
           flex-direction: column;
           @include size(gap, 24);
+          @media (max-width: $tab-sm) {
+            @include padding(24);
+            @include size(gap, 16);
+          }
           .text {
             display: flex;
             flex-direction: column;
@@ -155,6 +245,9 @@
             overflow: hidden;
             @include size(height, 445);
             position: relative;
+            @media (max-width: $tab-sm) {
+              @include size(height, 177);
+            }
             img {
               position: absolute;
               width: 100%;
@@ -180,6 +273,9 @@
             }
             p {
               @include body-mb;
+              @media (max-width: $tab-sm) {
+                @include body-sb;
+              }
               a {
                 text-decoration: underline;
               }
@@ -191,19 +287,65 @@
         display: flex;
         flex-direction: column;
         @include size(gap, 80);
+        @media (max-width: $tab-sm) {
+          @include size(gap, 40);
+        }
         .download-row {
           .download-items {
-            @include size(margin-top, 24);
-            @include size(gap, 24);
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            display: none;
           }
+          .download-items-swiper {
+            position: relative;
+            // @include size(height, 324);
+
+            .swiper-wrapper {
+              @include size(margin-top, 24);
+              @include size(gap, 24);
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              .swiper-slide {
+                @media (max-width: $tab-sm) {
+                  height: auto;
+                }
+              }
+              @media (max-width: $tab-sm) {
+                // position: absolute;
+                display: flex;
+                @include size(gap, 0);
+              }
+            }
+          }
+        }
+      }
+      .tabs-inner-block {
+        @media (max-width: $tab-sm) {
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          z-index: 20;
         }
       }
       .tabs-inner {
         display: flex;
         flex-wrap: wrap;
         @include size(gap, 6);
+        @media (max-width: $tab-sm) {
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          top: auto;
+          flex-wrap: nowrap;
+          @include size(height, 50);
+          @include padding(0, 24);
+          overflow: auto;
+          align-items: center;
+          background: var(--white-color);
+          .btn {
+            white-space: nowrap;
+          }
+        }
       }
       .tab-article-list-wrapper {
         .tab-article-list {

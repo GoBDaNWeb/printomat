@@ -5,20 +5,36 @@
   @include padding(48);
   display: grid;
   @include border-radius(20);
-
+  @media (max-width: $tab-sm) {
+    @include padding(20);
+  }
   &.txt-left {
     @include grid-columns(700, 499);
     @include size(gap, 48);
+    @media (max-width: $tab-sm) {
+      grid-template-columns: 1fr;
+      @include size(gap, 24);
+    }
     .content {
       order: 0;
+      @media (max-width: $tab-sm) {
+        order: 1;
+      }
     }
     .image-wrapper {
       order: 1;
+      @media (max-width: $tab-sm) {
+        order: 0;
+      }
     }
   }
   &.txt-right {
     @include grid-columns(499, 700);
     @include size(gap, 48);
+    @media (max-width: $tab-sm) {
+      grid-template-columns: 1fr;
+      @include size(gap, 24);
+    }
     .content {
       order: 1;
     }
@@ -32,6 +48,10 @@
     @include border-radius(12);
     position: relative;
     overflow: hidden;
+    @media (max-width: $tab-sm) {
+      @include size(width, 272);
+      @include size(height, 181);
+    }
     img {
       position: absolute;
       width: 100%;
@@ -51,11 +71,13 @@
       flex-direction: column;
       @include size(gap, 6);
       @include size(margin-top, 24);
-
+      @media (max-width: $tab-sm) {
+        @include size(margin-top, 16);
+      }
       li {
         position: relative;
         @include size(padding-left, 30);
-
+        @include body-m;
         &:before {
           content: "";
           position: absolute;

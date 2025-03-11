@@ -1,0 +1,40 @@
+mixin mobile-menu()
+    .mobile-menu
+        .mobile-menu-inner.container
+            button.btn.secondary 
+                .burger 
+                    span
+                    span
+                    span
+                p Каталог продукции
+            nav.accordion
+                +accordion-item({navigation: true, title: 'Подготовка макетов', class: 'acc-nav'})
+                a(href="#") Производство
+                a(href="#") Доставка и оплата
+                a(href="#") Портфолио
+                a(href="#") Контакты
+            .mobile-menu-info 
+                a(href="mailto:info@printomat.ru").mail  
+                    img(src="./img/mail.svg", alt="mail")
+                    p info@printomat.ru
+                .clock  
+                    img(src="./img/clock.svg", alt="clock")
+                    p Пн-Пт 10:00-20:00
+            .mobile-menu-bottom 
+                a(href="#" data-modal-target='request-status-modal').btn.gray Статус заказа 
+                a(href="#").btn.primary 
+                    <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1955_3421)">
+                        <rect width="14" height="18" fill="#2C2C2C"/>
+                        <rect x="2.5" y="2.5" width="9" height="7" stroke="#F2DC00"/>
+                        <line x1="2" y1="12.5" x2="6" y2="12.5" stroke="#F2DC00"/>
+                        <line x1="8" y1="12.5" x2="12" y2="12.5" stroke="#F2DC00"/>
+                        <line x1="2" y1="15.5" x2="12" y2="15.5" stroke="#F2DC00"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1955_3421">
+                        <rect width="14" height="18" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    p Онлайн-конструктор

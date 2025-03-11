@@ -6,26 +6,41 @@
   .production-about-inner {
     position: relative;
     @include size(padding-bottom, 138);
-
+    @media (max-width: $tab-sm) {
+      @include size(padding-bottom, 98);
+    }
     h1 {
       @include size(margin-bottom, 48);
+      @media (max-width: $tab-sm) {
+        @include size(margin-bottom, 16);
+      }
     }
     .production-about-list {
       @include size(margin-top, 24);
       @include size(gap, 28);
       display: flex;
       flex-wrap: wrap;
+      @media (max-width: $tab-sm) {
+        @include size(gap, 16);
+      }
       .production-item {
         @include padding(10);
         border: 1px solid var(--line-color);
         @include border-radius(20);
+        @media (max-width: $tab-sm) {
+          @include padding(20);
+        }
         .content {
           @include padding(38, 0, 38, 38);
+          @media (max-width: $tab-sm) {
+            padding: 0;
+          }
           .text {
             @include size(margin-top, 16);
             display: flex;
             flex-direction: column;
             @include size(gap, 10);
+
             p {
               @include body-m;
             }
@@ -50,9 +65,24 @@
           display: grid;
           @include grid-columns(360, 194);
           justify-content: space-between;
+          @media (max-width: $desktop-sm) {
+            @include size(width, 686);
+          }
+          @media (max-width: $tab-sm) {
+            display: flex;
+            flex-direction: column;
+            @include size(gap, 24);
+            height: auto;
+          }
           .image-wrapper {
             @include size(width, 194);
             @include size(height, 330);
+            @media (max-width: $tab-sm) {
+              width: 100%;
+              @include size(min-height, 100);
+              @include size(max-height, 100);
+              @include size(height, 100);
+            }
           }
         }
         &:nth-child(3),
@@ -61,11 +91,25 @@
           @include size(width, 429);
           display: flex;
           flex-direction: column;
+          @media (max-width: $desktop-sm) {
+            @include size(width, 448);
+          }
+          @media (max-width: $tab-sm) {
+            display: flex;
+            flex-direction: column;
+            @include size(gap, 24);
+          }
           .content {
             flex: 1;
           }
           .image-wrapper {
             @include size(height, 150);
+            @media (max-width: $tab-sm) {
+              width: 100%;
+              @include size(min-height, 100);
+              @include size(max-height, 100);
+              @include size(height, 100);
+            }
           }
         }
       }
@@ -73,8 +117,11 @@
     h5 {
       @include size(max-width, 660);
       @include size(padding-top, 128);
-
       margin: auto;
+      @media (max-width: $tab-sm) {
+        max-width: 100%;
+        @include size(padding-top, 48);
+      }
     }
     .birds {
       img {
@@ -84,12 +131,23 @@
           @include size(height, 162);
           @include size(right, 342);
           @include size(bottom, -88);
+          @media (max-width: $tab-sm) {
+            @include size(width, 95);
+            @include size(height, 62);
+            @include size(right, 178);
+            @include size(bottom, -34);
+          }
         }
         &:nth-child(2) {
           @include size(width, 235);
           @include size(height, 172);
           @include size(right, 115);
           bottom: 0;
+          @media (max-width: $tab-sm) {
+            @include size(width, 90);
+            @include size(height, 66);
+            @include size(right, 89);
+          }
         }
       }
     }

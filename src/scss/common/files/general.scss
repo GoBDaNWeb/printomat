@@ -119,8 +119,33 @@ h6 {
   display: flex;
   @include size(gap, 12);
   align-items: center;
+  @media (max-width: $tab-sm) {
+    display: none;
+  }
   .swiper-button-disabled {
     pointer-events: none;
     opacity: 0.2;
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  @include size(margin-top, 24);
+  @include size(gap, 16);
+  display: none;
+  @media (max-width: $tab-sm) {
+    display: flex;
+  }
+  .swiper-pagination-bullet {
+    @include size(width, 6);
+    @include size(height, 6);
+    background: var(--gray-color);
+    opacity: 1;
+    transition: var(--trs-300);
+    &.swiper-pagination-bullet-active {
+      @include size(width, 18);
+      background: var(--accent-color);
+      border-radius: 20px;
+    }
   }
 }

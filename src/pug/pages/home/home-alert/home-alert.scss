@@ -10,7 +10,10 @@
   @include size(margin-top, -20);
   @include size(height, 590);
   @include border-radius(0, 0, 20, 20);
-
+  @media (max-width: $tab-sm) {
+    @include size(height, 521);
+    @include size(padding-top, 88);
+  }
   .home-alert-inner {
     .title {
       @include h1;

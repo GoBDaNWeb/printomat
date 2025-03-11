@@ -5,10 +5,14 @@
   align-items: center;
   @include size(gap, 8);
   @include size(margin-top, 156);
-
+  @media (max-width: $tab-sm) {
+    @include size(margin-top, 80);
+    flex-wrap: wrap;
+  }
   a {
     @include body-xs;
     color: var(--txt-gray-color);
+    white-space: nowrap;
   }
   img {
     &:last-child {

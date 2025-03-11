@@ -2,6 +2,9 @@
 
 .payment {
   @include size(padding-top, 128);
+  @media (max-width: $tab-sm) {
+    @include size(padding-top, 48);
+  }
   .payment-inner {
     .title {
       @include h1;
@@ -11,7 +14,11 @@
       @include size(gap, 24);
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include size(margin-top, 24);
+        @include size(gap, 16);
+      }
       .payment-item {
         border: 1px solid var(--line-color);
         @include size(border-radius, 20);
@@ -22,7 +29,12 @@
         flex-direction: column;
         justify-content: space-between;
         @include size(gap, 83);
-
+        @media (max-width: $tab-sm) {
+          @include size(padding-top, 20);
+          @include size(padding-left, 20);
+          @include size(padding-right, 20);
+          @include size(gap, 25);
+        }
         .payment-item-content {
           display: flex;
           flex-direction: column;
@@ -31,6 +43,9 @@
             @include h2;
             display: block;
             @include size(margin-top, 10);
+            @media (max-width: $tab-sm) {
+              @include size(margin-top, 6);
+            }
           }
           p {
             @include body-m;
@@ -41,6 +56,9 @@
           @include size(height, 220);
           position: relative;
           overflow: hidden;
+          @media (max-width: $tab-sm) {
+            @include size(height, 180);
+          }
           img {
             position: absolute;
             width: 100%;

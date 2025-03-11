@@ -2,16 +2,27 @@
 .request-status-modal {
   .modal-content-wrapper {
     @include size(width, 888);
+    @media (max-width: $tab-sm) {
+      @include size(width, 312);
+    }
     .modal-content {
       @include size(gap, 24);
       align-items: center;
       display: flex;
       .form {
+        h3 {
+          @media (max-width: $tab-sm) {
+            @include size(max-width, 236);
+          }
+        }
         .inputs {
           @include size(margin-top, 28);
           @include size(gap, 24);
           display: flex;
           flex-direction: column;
+          @media (max-width: $tab-sm) {
+            @include size(margin-top, 24);
+          }
           .input-wrapper {
             @include size(gap, 12);
             display: flex;
@@ -20,6 +31,10 @@
               display: grid;
               @include grid-columns(270, 203);
               @include size(gap, 24);
+              @media (max-width: $tab-sm) {
+                grid-template-columns: 1fr;
+                @include size(gap, 12);
+              }
               .hint {
                 color: var(--txt-gray-color);
                 @include body-s;
@@ -42,6 +57,9 @@
         border: 10px solid var(--gray-color);
         position: relative;
         overflow: hidden;
+        @media (max-width: $tab-sm) {
+          display: none;
+        }
         img {
           position: absolute;
           width: 100%;

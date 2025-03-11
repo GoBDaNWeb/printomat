@@ -7,6 +7,9 @@
   height: auto;
   cursor: pointer;
   transition: var(--trs-cubic-600);
+  @media (max-width: $tab-sm) {
+    @include size(padding, 24);
+  }
   &:hover {
     border-color: var(--accent-color);
   }
@@ -16,6 +19,9 @@
     @include size(border-radius, 12);
     overflow: hidden;
     position: relative;
+    @media (max-width: $tab-sm) {
+      @include size(height, 264);
+    }
     img {
       position: absolute;
       width: 100%;
@@ -29,7 +35,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    @media (max-width: $tab-sm) {
+      @include size(margin-top, 16);
+    }
     h6 {
       text-align: center;
     }

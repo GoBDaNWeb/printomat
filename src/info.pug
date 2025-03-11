@@ -1,9 +1,10 @@
 extends ./pug/templates/template.pug
 
 block head 
-  +head(["header", "crumbs", "badge", "info-content", "download-card", "article-card", "contacts", "selector", "footer", "orders-modal", "route-modal", "requisites-modal"])
+  +head(["header", "mobile-menu", "crumbs", "badge", "info-content", "download-card", "article-card", "contacts", "selector", "footer", "orders-modal", "route-modal", "requisites-modal"])
 block header 
     +header()
+    +mobile-menu()
 block content
     +crumbs({items: [{title: 'Полезная информация', href: '#'}]})
     +info-content()

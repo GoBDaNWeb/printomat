@@ -5,10 +5,26 @@
   @include size(padding-bottom, 128);
   background: var(--back-color);
   @include border-radius(20, 20, 0, 0);
+  @media (max-width: $tab-sm) {
+    @include size(padding-top, 68);
+    @include size(padding-bottom, 48);
+  }
   .equipments-list {
     display: flex;
     flex-direction: column;
     @include size(gap, 24);
     @include size(margin-top, 28);
+    @media (max-width: $tab-sm) {
+      @include size(margin-top, 32);
+      @include size(gap, 16);
+    }
+  }
+  .btn-wrapper {
+    display: none;
+    @media (max-width: $tab-sm) {
+      display: flex;
+      justify-content: center;
+      @include size(margin-top, 24);
+    }
   }
 }

@@ -11,11 +11,18 @@
       display: grid;
       @include grid-columns(888, 360);
       @include size(gap, 96);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include size(gap, 32);
+        @include size(margin-top, 24);
+      }
       .article-content-block {
         display: flex;
         flex-direction: column;
         @include size(gap, 64);
-
+        @media (max-width: $tab-sm) {
+          @include size(gap, 48);
+        }
         .article-swiper-wrapper {
           position: relative;
 
@@ -24,6 +31,11 @@
             @include size(width, 888);
             @include size(height, 500);
             @include border-radius(12);
+            @media (max-width: $tab-sm) {
+              @include size(width, 312);
+              @include size(height, 312);
+              @include size(padding-bottom, 30);
+            }
             .swiper-slide {
               img {
                 position: absolute;
@@ -43,6 +55,9 @@
             margin: auto;
             z-index: 2;
             justify-content: space-between;
+            @media (max-width: $tab-sm) {
+              display: none;
+            }
           }
         }
         .text-wrapper {
@@ -69,7 +84,7 @@
             li {
               position: relative;
               @include size(padding-left, 30);
-
+              @include body-m;
               &:before {
                 content: "";
                 position: absolute;
@@ -95,6 +110,9 @@
             }
             p {
               @include body-mb;
+              @media (max-width: $tab-sm) {
+                @include body-sb;
+              }
               a {
                 text-decoration: underline;
               }
@@ -108,13 +126,18 @@
             @include size(margin-top, 20);
             @include size(margin-bottom, 20);
             border: 1px solid var(--line-color);
-
+            @media (max-width: $tab-sm) {
+              flex-direction: column;
+            }
             img {
               @include size(width, 64);
               @include size(height, 64);
             }
             p {
               @include body-l;
+              @media (max-width: $tab-sm) {
+                @include body-mb;
+              }
               a {
                 text-decoration: underline;
               }

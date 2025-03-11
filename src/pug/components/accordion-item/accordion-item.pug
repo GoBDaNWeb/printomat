@@ -10,6 +10,14 @@ mixin accordion-item(data)
                         <rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#2C2C2C"/>
                         <path d="M20 14H14M14 14H8M14 14L14 8M14 14V20" stroke="white"/>
                     </svg>
+            else 
+                .title-wrapper
+                    h6 #{data.title}
+                .icon 
+                    <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L8 9L15 1" stroke="#2C2C2C"/>
+                    </svg>
+
         .collapse.accordion-body
             if data.delivery === 'true'
                 .text-wrapper 
@@ -25,3 +33,11 @@ mixin accordion-item(data)
                         li В последующие дни с 10:00 до 20:00
                 .image-wrapper 
                     img(src="./img/delivery/map.jpg", alt="map")
+            else if data.navigation
+                ul 
+                    li
+                        a(href="#")  Подготовка макетов
+                    li 
+                        a(href="#")  Подготовка макетов
+                    li 
+                        a(href="#")  Подготовка макетов

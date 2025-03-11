@@ -3,6 +3,9 @@
 .requisites-modal {
   .modal-content-wrapper {
     @include size(width, 888);
+    @media (max-width: $tab-sm) {
+      @include size(width, 312);
+    }
     ul {
       @include size(margin-top, 16);
       @include size(margin-bottom, 23);
@@ -12,6 +15,10 @@
         display: grid;
         @include grid-columns(283, 498);
         border-top: 1px solid var(--line-color);
+        @media (max-width: $tab-sm) {
+          grid-template-columns: 1fr;
+          @include size(gap, 8);
+        }
         &:last-child {
           border-bottom: 1px solid var(--line-color);
         }

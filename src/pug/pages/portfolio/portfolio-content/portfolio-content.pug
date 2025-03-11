@@ -200,6 +200,22 @@ mixin portfolio-content()
                         </defs>
                     </svg>
                     p Печать с отделкой и на нестандартных бумагах
+            +selector({name: 'portfolio-tab', title:'Все',  class: 'primary', items: [
+                {title: 'Все', value: 0},
+                {title: 'Визитки', value: 1},
+                {title: 'Упаковка', value: 2},
+                {title: 'POS материалы', value: 3},
+                {title: 'Для офиса', value: 4},
+                {title: 'Для мероприятий', value: 5},
+                {title: 'Для HoReCa', value: 6},
+                {title: 'Наклейки', value: 7},
+                {title: 'Блокноты', value: 8},
+                {title: 'Календари', value: 9},
+                {title: 'Листовки и буклеты', value: 10},
+                {title: 'Брошюры и каталоги', value: 11},
+                {title: 'Открытки и пригласительные', value: 12},
+                {title: 'Печать с отделкой и на нестандартных бумагах', value: 13},
+            ],isTabsSelector: true})
             .portfolio-list 
                 +portfolio-card({title: 'Визитные карточки', badgeTitle: 'Визитки', img: './img/portfolio/1.jpg'})(data-tabItem='0 13 12')
                 +portfolio-card({title: 'Папка', badgeTitle: 'Полиграфия для офиса', img: './img/portfolio/2.jpg'})(data-tabItem='0 2 8 11')

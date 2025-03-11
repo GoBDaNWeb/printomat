@@ -87,5 +87,18 @@ mixin catalog(data)
             +catalog-card({img: './img/catalog/7.jpg', title: 'Полиграфия для офиса', tabs: '0 1 5'})
             +catalog-card({img: './img/catalog/8.jpg', title: 'Календари', tabs: '0 1 2'})
             +catalog-card({img: './img/catalog/9.jpg', title: 'Печать с отделкой на нестандартных бумагах', tabs: '0 5'})
+        if data.catalogSlider
+            .catalog-swiper
+                .swiper-wrapper 
+                    +catalog-card({img: './img/catalog/1.jpg', title: 'Визитные карточки', tabs: '0 1 2'}).swiper-slide
+                    +catalog-card({img: './img/catalog/2.jpg', title: 'Листовки и буклеты', tabs: '0 2 3'}).swiper-slide
+                    +catalog-card({img: './img/catalog/3.jpg', title: 'Наклейки', tabs: '0 1 4'}).swiper-slide
+                    +catalog-card({img: './img/catalog/4.jpg', title: 'Брошюры и каталоги', tabs: '0 3 5'}).swiper-slide
+                    +catalog-card({img: './img/catalog/5.jpg', title: 'Открытки и пригласительные', tabs: '0 4'}).swiper-slide
+                    +catalog-card({img: './img/catalog/6.jpg', title: 'Блокноты', tabs: '0 2 3'}).swiper-slide
+                    +catalog-card({img: './img/catalog/7.jpg', title: 'Полиграфия для офиса', tabs: '0 1 5'}).swiper-slide
+                    +catalog-card({img: './img/catalog/8.jpg', title: 'Календари', tabs: '0 1 2'}).swiper-slide
+                    +catalog-card({img: './img/catalog/9.jpg', title: 'Печать с отделкой на нестандартных бумагах', tabs: '0 5'}).swiper-slide
+                .pagination.catalog-pagination
         .btn-wrapper 
             button.btn.load-more.load.white Показать ещё
