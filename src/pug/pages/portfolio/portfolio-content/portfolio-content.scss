@@ -3,18 +3,37 @@
 .portfolio-content {
   @include size(margin-top, 20);
   @include size(padding-bottom, 148);
+  @media (max-width: $tab-sm) {
+    @include size(padding-bottom, 68);
+  }
   .portfolio-content-inner {
     .tabs {
       @include size(margin-top, 48);
       @include size(gap, 10);
       display: flex;
       flex-wrap: wrap;
+      @media (max-width: $tab-sm) {
+        display: none;
+      }
+    }
+    .selector {
+      @include size(margin-top, 24);
+      display: none;
+
+      @media (max-width: $tab-sm) {
+        display: block;
+      }
     }
     .portfolio-list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       @include size(gap, 24);
       @include size(margin-top, 48);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: repeat(1, 1fr);
+        @include size(margin-top, 24);
+        @include size(gap, 16);
+      }
     }
     .btn-wrapper {
       display: flex;

@@ -35,6 +35,9 @@
     @include size(height, 500);
     max-height: calc(100vh - 106px);
     height: fit-content;
+    @media (max-width: $tab-sm) {
+      @include padding(32, 24);
+    }
     .close-modal-wrapper {
       display: flex;
       justify-content: flex-end;
@@ -42,11 +45,16 @@
       @include size(top, 0);
       @include size(right, 0);
       z-index: 10;
-
+      @media (max-width: $tab-sm) {
+        @include size(top, 34);
+      }
       .close-modal {
         padding: 0;
         @include size(margin-top, -20);
         @include size(margin-right, -20);
+        @media (max-width: $tab-sm) {
+          @include size(margin-right, 0);
+        }
       }
     }
   }

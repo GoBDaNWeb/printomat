@@ -4,7 +4,9 @@
   @include size(padding-top, 128);
   background: var(--back-color);
   @include border-radius(20, 20, 0, 0);
-
+  @media (max-width: $tab-sm) {
+    @include size(padding-top, 48);
+  }
   .contacts-inner {
     .title {
       @include h1;
@@ -15,12 +17,19 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       @include size(padding-bottom, 68);
-
+      @media (max-width: $tab-sm) {
+        grid-template-columns: repeat(1, 1fr);
+        @include size(margin-top, 22);
+        @include size(gap, 16);
+        @include size(padding-bottom, 40);
+      }
       .contacts-info-item {
         background: var(--white-color);
         @include size(padding, 48);
         @include size(border-radius, 20);
-
+        @media (max-width: $tab-sm) {
+          @include size(padding, 20);
+        }
         span {
           @include body-m;
           color: var(--txt-gray-color);
@@ -29,10 +38,19 @@
           @include size(margin-top, 21);
           @include size(padding-top, 28);
           border-top: 1px solid var(--line-color);
+          @media (max-width: $tab-sm) {
+            @include size(margin-top, 16);
+            @include size(padding-top, 16);
+          }
           .row {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @media (max-width: $tab-sm) {
+              flex-direction: column;
+              @include size(gap, 10);
+              align-items: flex-start;
+            }
             a {
               @include h5;
             }
@@ -40,6 +58,12 @@
               display: flex;
               align-items: center;
               @include size(gap, 10);
+              svg {
+                @media (max-width: $tab-sm) {
+                  @include size(width, 20);
+                  @include size(height, 18);
+                }
+              }
             }
           }
         }
@@ -51,6 +75,10 @@
     @include border-radius(20, 20, 0, 0);
     overflow: hidden;
     position: relative;
+    @media (max-width: $tab-sm) {
+      @include size(height, 658);
+      @include border-radius(0);
+    }
     .contacts-map-content {
       position: absolute;
       @include size(top, 48);
@@ -59,6 +87,10 @@
       right: 0;
       z-index: 2;
       pointer-events: none;
+      @media (max-width: $tab-sm) {
+        @include size(top, 24);
+        bottom: auto;
+      }
       .map-info {
         pointer-events: all;
 
@@ -66,6 +98,10 @@
         @include padding(48, 36, 48, 48);
         @include size(width, 432);
         @include border-radius(20);
+        @media (max-width: $tab-sm) {
+          @include padding(20);
+          width: 100%;
+        }
         .title {
           @include size(margin-bottom, 21);
         }
@@ -78,6 +114,12 @@
             display: flex;
             align-items: center;
             @include size(gap, 12);
+            img {
+              @media (max-width: $tab-sm) {
+                @include size(width, 20);
+                @include size(height, 20);
+              }
+            }
             p {
               @include body-m;
             }
@@ -88,6 +130,15 @@
           align-items: center;
           @include size(gap, 12);
           @include size(margin-top, 28);
+          @media (max-width: $tab-sm) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+          }
+          button {
+            @media (max-width: $tab-sm) {
+              padding: 0;
+            }
+          }
         }
       }
     }

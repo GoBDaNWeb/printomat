@@ -14,6 +14,9 @@
     @include size(border-radius, 12);
     overflow: hidden;
     position: relative;
+    @media (max-width: $tab-sm) {
+      @include size(height, 195);
+    }
     img {
       position: absolute;
       width: 100%;
@@ -32,8 +35,17 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: $tab-sm) {
+      @include size(margin-top, 19);
+    }
     .title {
       text-align: center;
+    }
+    .btn {
+      svg {
+        @include size(width, 12);
+        @include size(height, 12);
+      }
     }
   }
 }

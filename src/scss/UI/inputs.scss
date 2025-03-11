@@ -12,3 +12,13 @@
   @include border-radius(12);
   @include padding(12, 28);
 }
+.input-wrapper {
+  p {
+    @include body-m;
+  }
+  input {
+    &:placeholder-shown {
+      @include body-m;
+    }
+  }
+}

@@ -13,7 +13,10 @@
     @include size(gap, 24);
     @include size(padding-top, 16);
     @include size(padding-bottom, 14);
-
+    @media (max-width: $tab-sm) {
+      @include size(padding-bottom, 16);
+      justify-content: space-between;
+    }
     .logo {
       @include size(min-width, 204);
       @include size(min-height, 95);
@@ -24,9 +27,75 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @media (max-width: $tab-sm) {
+        @include size(min-width, 84);
+        @include size(min-height, 40);
+        @include size(max-width, 84);
+        @include size(max-height, 40);
+        @include size(border-radius, 12);
+      }
       img {
         @include size(width, 158);
         @include size(height, 72);
+        @media (max-width: $tab-sm) {
+          @include size(width, 66);
+          @include size(height, 30);
+        }
+      }
+    }
+    .header-content-mob {
+      display: none;
+      align-items: center;
+      @include size(gap, 8);
+      @media (max-width: $tab-sm) {
+        display: flex;
+      }
+      a {
+        svg {
+          @media (max-width: $tab-sm) {
+            @include size(width, 18);
+            @include size(height, 18);
+          }
+        }
+      }
+      .burger {
+        display: flex;
+        flex-direction: column;
+        // @include size(gap, 6);
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        &.active {
+          span {
+            &:nth-child(1) {
+              transform: rotate(45deg);
+              @include size(top, 20);
+            }
+            &:nth-child(3) {
+              transform: rotate(-45deg);
+              @include size(top, 20);
+            }
+            &:nth-child(2) {
+              width: 0;
+            }
+          }
+        }
+        span {
+          @include size(width, 24);
+          @include size(height, 1);
+          background: var(--white-color);
+          transition: var(--trs-cubic-600);
+          position: absolute;
+          &:nth-child(1) {
+            @include size(top, 14);
+          }
+          &:nth-child(2) {
+            @include size(top, 20);
+          }
+          &:nth-child(3) {
+            @include size(top, 26);
+          }
+        }
       }
     }
     .header-content {
@@ -35,6 +104,9 @@
       flex-direction: column;
       @include size(gap, 7);
       justify-content: space-between;
+      @media (max-width: $tab-sm) {
+        display: none;
+      }
       .header-content-top {
         display: flex;
         align-items: center;
@@ -47,6 +119,12 @@
             display: flex;
             align-items: center;
             @include size(gap, 10);
+            a {
+              svg {
+                @include size(width, 18);
+                @include size(height, 18);
+              }
+            }
           }
           .phone {
             @include body-sb;

@@ -3,12 +3,15 @@
 .orders-modal {
   .modal-content-wrapper {
     @include size(width, 888);
-
+    @media (max-width: $tab-sm) {
+      @include size(width, 312);
+    }
     .title {
       @include body-mb;
     }
     .order-modal-info {
       @include size(margin-top, 28);
+
       ul {
         list-style: none;
         display: flex;
@@ -19,7 +22,9 @@
         li {
           position: relative;
           @include size(padding-left, 30);
-
+          @media (max-width: $tab-sm) {
+            @include body-m;
+          }
           &:before {
             content: "";
             position: absolute;
@@ -35,12 +40,17 @@
     }
     .order-modal-contacts {
       @include size(margin-top, 36);
+      @media (max-width: $tab-sm) {
+        @include size(margin-top, 24);
+      }
       .order-modal-contacts-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         @include size(gap, 24);
         @include size(margin-top, 16);
-
+        @media (max-width: $tab-sm) {
+          grid-template-columns: 1fr;
+        }
         .order-modal-contacts-item {
           border: 1px solid var(--line-color);
           transition: var(--trs-cubic-600);
@@ -49,7 +59,10 @@
           @include size(gap, 21);
           @include padding(28);
           @include border-radius(12);
-
+          @media (max-width: $tab-sm) {
+            @include padding(24);
+            @include size(gap, 34);
+          }
           &:hover {
             border-color: var(--accent-color);
           }

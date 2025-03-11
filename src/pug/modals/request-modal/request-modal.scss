@@ -2,19 +2,31 @@
 .request-modal {
   .modal-content-wrapper {
     @include size(width, 888);
+    @media (max-width: $tab-sm) {
+      @include size(width, 312);
+    }
     .modal-content {
       @include size(gap, 24);
       align-items: center;
       display: flex;
+      @media (max-width: $tab-sm) {
+        flex-direction: column;
+      }
       .form {
         .title {
           @include size(margin-top, 12);
           @include body-l;
+          @media (max-width: $tab-sm) {
+            @include size(margin-top, 24);
+          }
         }
         .policy {
           color: var(--txt-gray-color);
           @include body-s;
           @include size(margin-top, 24);
+          @media (max-width: $tab-sm) {
+            @include size(margin-top, 16);
+          }
           a {
             color: var(--txt-gray-color);
             text-decoration: underline;
@@ -26,6 +38,10 @@
           display: flex;
           flex-direction: column;
           @include size(width, 384);
+          @media (max-width: $tab-sm) {
+            @include size(width, 264);
+            @include size(margin-top, 24);
+          }
           .input-wrapper {
             @include size(gap, 12);
             display: flex;
@@ -47,6 +63,9 @@
         position: relative;
         overflow: hidden;
         background: var(--back-color);
+        @media (max-width: $tab-sm) {
+          display: none;
+        }
         img {
           position: absolute;
           width: 100%;

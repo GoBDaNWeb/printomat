@@ -1,0 +1,27 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "mobile-menu", "hero","production", "catalog", "catalog-card", "delivery", "accordion-item","payment", "badge", "order", "home-about", "home-alert", "portfolio-card", "home-works", "contacts", "selector", "footer", "portfolio-modal", "orders-modal", "route-modal", "requisites-modal", "request-status-modal", "request-status-success-modal", "request-modal", "request-success-modal"])
+block header 
+    +header()
+    +mobile-menu()
+block content
+  +hero-2()
+  +production-2()
+  +delivery()
+  +payment()
+  +home-about()
+  +home-alert()
+  +home-works()
+  +contacts()
+block footer 
+  +footer()
+block modals 
+  +portfolio-modal()
+  +orders-modal()
+  +route-modal()
+  +requisites-modal()
+  +request-status-modal()
+  +request-status-success-modal()
+  +request-modal()
+  +request-success-modal()

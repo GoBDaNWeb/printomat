@@ -1,5 +1,5 @@
 mixin catalog-card(data)
-    .catalog-card(data-tabItem=data.tabs)   
+    .catalog-card(data-tabItem=data.tabs)&attributes(attributes)  
         .image-wrapper 
             img(src=data.img, alt="card")
         .content 

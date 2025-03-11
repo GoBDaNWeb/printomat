@@ -4,7 +4,10 @@
   overflow: hidden;
   @include size(padding-top, 128);
   @include size(padding-bottom, 128);
-
+  @media (max-width: $tab-sm) {
+    @include size(padding-top, 48);
+    @include size(padding-bottom, 48);
+  }
   .home-works-inner {
     .home-works-swiper-wrapper {
       .home-works-swiper-top {
@@ -16,6 +19,9 @@
       }
       .home-works-swiper {
         @include size(padding-top, 36);
+        @media (max-width: $tab-sm) {
+          @include size(padding-top, 24);
+        }
       }
     }
     .home-works-info {
@@ -23,12 +29,20 @@
       @include size(padding-top, 128);
       display: grid;
       @include grid-columns(635, 661);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include size(gap, 24);
+        @include size(padding-top, 48);
+      }
       .text-wrapper {
         .title {
           @include h2;
         }
         .text {
           @include size(padding-top, 28);
+          @media (max-width: $tab-sm) {
+            @include size(padding-top, 16);
+          }
           p {
             display: flex;
             flex-direction: column;
@@ -43,6 +57,9 @@
         border: 10px solid var(--gray-color);
         @include size(border-radius, 20);
         @include size(height, 469);
+        @media (max-width: $tab-sm) {
+          @include size(height, 222);
+        }
         img {
           position: absolute;
           width: 100%;

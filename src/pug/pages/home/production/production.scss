@@ -5,4 +5,53 @@
   @include size(padding-top, 128);
   @include size(padding-bottom, 128);
   @include size(border-radius, 20);
+  @media (max-width: $tab-sm) {
+    @include size(padding-top, 40);
+    @include size(padding-bottom, 48);
+  }
+}
+
+.production-features {
+  @include size(margin-top, 80);
+  @include size(gap, 24);
+  display: none;
+  @media (max-width: $tab-sm) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include size(gap, 16);
+    @include size(margin-top, 32);
+  }
+  .feature-item {
+    @include size(width, 318);
+
+    @include size(border-radius, 20);
+    @include size(padding, 28);
+    @include size(gap, 24);
+    background: var(--back-color);
+    display: flex;
+    flex-direction: column;
+    @media (max-width: $tab-sm) {
+      @include size(width, 148);
+      @include size(padding, 16);
+      @include size(gap, 8);
+    }
+    .icon-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      img {
+        @include size(width, 104);
+        @include size(height, 104);
+        @media (max-width: $tab-sm) {
+          @include size(width, 64);
+          @include size(height, 64);
+        }
+      }
+    }
+    p {
+      @include body-l;
+      @media (max-width: $tab-sm) {
+        @include body-m;
+      }
+    }
+  }
 }

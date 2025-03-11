@@ -8,21 +8,42 @@
   background: var(--back-color);
   position: relative;
   z-index: 2;
+  @media (max-width: $tab-sm) {
+    @include size(padding-top, 48);
+    @include size(padding-bottom, 48);
+    @include size(margin-top, 48);
+  }
   .home-about-inner {
     display: flex;
     flex-direction: column;
     @include size(gap, 128);
+    @media (max-width: $tab-sm) {
+      @include size(gap, 40);
+    }
     .home-about-item {
       display: grid;
       @include size(gap, 48);
+      @media (max-width: $tab-sm) {
+        @include size(gap, 32);
+      }
 
       &.txt-left {
         @include grid-columns(636, 661);
+        @media (max-width: $tab-sm) {
+          grid-template-columns: 1fr;
+        }
       }
       &.txt-right {
         @include grid-columns(661, 636);
+        @media (max-width: $tab-sm) {
+          grid-template-columns: 1fr;
+        }
         .text-block {
           order: 1;
+
+          @media (max-width: $tab-sm) {
+            order: 0;
+          }
         }
       }
       .text-block {
@@ -33,6 +54,9 @@
           .title {
             @include h1;
             @include size(margin-bottom, 28);
+            @media (max-width: $tab-sm) {
+              @include size(margin-bottom, 16);
+            }
           }
           .image-wrapper {
             position: relative;
@@ -40,11 +64,24 @@
             @include size(height, 160);
             @include size(border-radius, 16);
             overflow: hidden;
+            @media (max-width: $tab-sm) {
+              @include size(width, 312);
+              @include size(height, 196);
+            }
             img {
               position: absolute;
               width: 100%;
               height: 100%;
               object-fit: cover;
+              @media (max-width: $tab-sm) {
+                display: none;
+              }
+              &.mob {
+                display: none;
+                @media (max-width: $tab-sm) {
+                  display: block;
+                }
+              }
             }
           }
           .text {
@@ -62,6 +99,10 @@
           border-top: 1px solid var(--line-color);
           display: flex;
           flex-direction: column;
+          @media (max-width: $tab-sm) {
+            @include size(padding-top, 24);
+            @include size(margin-top, 24);
+          }
           .descr {
             @include body-l;
           }
@@ -77,6 +118,10 @@
         @include size(height, 469);
         @include size(border-radius, 20);
         overflow: hidden;
+        @media (max-width: $tab-sm) {
+          @include size(width, 316);
+          @include size(height, 224);
+        }
         img {
           position: absolute;
           width: 100%;

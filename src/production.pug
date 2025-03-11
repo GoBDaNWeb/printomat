@@ -1,9 +1,10 @@
 extends ./pug/templates/template.pug
 
 block head 
-  +head(["header", "crumbs", "production-about", "equipment-item", "equipments", "order-alert", "contacts", "selector", "footer", "orders-modal", "route-modal", "requisites-modal"])
+  +head(["header", "mobile-menu", "crumbs", "production-about", "equipment-item", "equipments", "order-alert", "contacts", "selector", "footer", "orders-modal", "route-modal", "requisites-modal"])
 block header 
     +header()
+    +mobile-menu()
 block content
     +crumbs({items: [{title: 'Производство', href: '#'}]})
     +production-about()

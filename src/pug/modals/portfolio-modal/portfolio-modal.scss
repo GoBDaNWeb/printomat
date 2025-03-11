@@ -3,32 +3,65 @@
 .portfolio-modal {
   .modal-content-wrapper {
     @include size(width, 1116);
+    @media (max-width: $tab-sm) {
+      @include size(width, 312);
+    }
     h3 {
       @include size(margin-bottom, 12);
+      @media (max-width: $tab-sm) {
+        @include size(margin-bottom, 16);
+        @include size(max-width, 240);
+      }
     }
     .modal-content {
       @include size(margin-top, 28);
       @include size(gap, 48);
       display: grid;
       @include grid-columns(498, 473);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include size(gap, 40);
+        @include size(margin-top, 24);
+      }
       .portfolio-modal-swiper-wrapper {
         position: relative;
         @include size(width, 498);
         @include size(height, 498);
         @include size(max-width, 498);
         @include size(max-height, 498);
+        @media (max-width: $tab-sm) {
+          @include size(width, 264);
+          @include size(height, 264);
+          @include size(max-width, 264);
+          @include size(max-height, 264);
+        }
         .portfolio-modal-swiper {
           overflow: hidden;
           @include size(width, 498);
           @include size(height, 498);
           @include size(max-width, 498);
           @include size(max-height, 498);
+
+          @media (max-width: $tab-sm) {
+            @include size(width, 264);
+            @include size(height, 264);
+            @include size(max-width, 264);
+            @include size(max-height, 264);
+            @include size(padding-bottom, 22);
+          }
+
           img {
             position: absolute;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            @media (max-width: $tab-sm) {
+              @include border-radius(6);
+            }
           }
+        }
+        .pagination {
+          @include size(margin-top, 16);
         }
         .navigation {
           position: absolute;

@@ -3,17 +3,26 @@
 .route-modal {
   .modal-content-wrapper {
     @include size(width, 1116);
+    @media (max-width: $tab-sm) {
+      @include size(width, 312);
+    }
     .modal-content {
       display: grid;
       @include grid-columns(498, 474);
       @include size(gap, 48);
       @include size(margin-top, 28);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include size(gap, 16);
+      }
       .image-wrapper {
         @include border-radius(12);
         position: relative;
         overflow: hidden;
         @include size(height, 349);
-
+        @media (max-width: $tab-sm) {
+          @include size(height, 185);
+        }
         img {
           position: absolute;
           width: 100%;
@@ -29,6 +38,9 @@
         }
         .tab-content {
           @include size(margin-top, 28);
+          @media (max-width: $tab-sm) {
+            @include size(margin-top, 24);
+          }
           .text {
             display: flex;
             flex-direction: column;

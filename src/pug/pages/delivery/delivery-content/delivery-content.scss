@@ -2,8 +2,14 @@
 .delivery-content {
   @include size(margin-top, 20);
   @include size(padding-bottom, 148);
+  @media (max-width: $tab-sm) {
+    @include size(padding-bottom, 50);
+  }
   .delivery {
     @include size(padding-top, 36);
+    @media (max-width: $tab-sm) {
+      @include size(padding-top, 24);
+    }
     .title-block {
       p {
         font-weight: 500;

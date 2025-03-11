@@ -24,6 +24,8 @@ import "../pug/components/selector/selector.js";
 import "../pug/pages/info/info-content/info-content.js";
 import "../pug/pages/profile/orders/orders.js";
 import "../pug/components/popup/popup.js";
+import "../pug/components/mobile-menu/mobile-menu.js";
+
 document.querySelectorAll(".input__valid-phone").forEach((el) => {
   IMask(el, {
     mask: "+7 (000) 000-00-00",

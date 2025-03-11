@@ -1,6 +1,19 @@
 mixin footer()
     footer.footer
         .footer-inner.container 
+            .partners 
+                .partner-item 
+                    img(src="./img/footer/1.jpg", alt="partner")
+                .partner-item 
+                    img(src="./img/footer/2.jpg", alt="partner")
+                .partner-item 
+                    img(src="./img/footer/3.jpg", alt="partner")
+                .partner-item 
+                    img(src="./img/footer/1.jpg", alt="partner")
+                .partner-item 
+                    img(src="./img/footer/2.jpg", alt="partner")
+                .partner-item 
+                    img(src="./img/footer/3.jpg", alt="partner")
             .col 
                 .col-content
                     p.title ООО «Печатаем вместе»
@@ -17,13 +30,7 @@ mixin footer()
                             <path d="M12 8.50002H8.00002V12.5H12V8.50002Z" fill="#2C2C2C"/>
                         </svg>
                         p Разработка сайта — Paradigma
-                .partners 
-                    .partner-item 
-                        img(src="./img/footer/1.jpg", alt="partner")
-                    .partner-item 
-                        img(src="./img/footer/2.jpg", alt="partner")
-                    .partner-item 
-                        img(src="./img/footer/3.jpg", alt="partner")
+                
             .col 
                 .col-content
                     .rating 
@@ -43,16 +50,21 @@ mixin footer()
                         .row 
                             a(href="#") Служба качества  
                             a(href="#") Договор-оферта
-                .partners 
-                    .partner-item 
-                        img(src="./img/footer/1.jpg", alt="partner")
-                    .partner-item 
-                        img(src="./img/footer/2.jpg", alt="partner")
-                    .partner-item 
-                        img(src="./img/footer/3.jpg", alt="partner")
             .col.control 
                 img(src="./img/mail-icon.svg", alt="mail")
                 .content 
                     h6 Контроль качества
                     p По любым жалобам и предложениям вы можете обратиться к нашему директору
                     button.btn.primary Написать обращение
+            .col.footer-info-mob
+                p © ООО «Печатаем Вместе», 2024 <br> Все права защищены.
+                a(href="https://paradigma-digital.ru/" target="_blank").paradigma 
+                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 5.5L20 9.5V20.5H8V16.5H16V5.5Z" fill="#2C2C2C"/>
+                        <path d="M4 15.5L0 11.5V0.5H11L15 4.5L3.96666 4.46667L4 15.5Z" fill="#2C2C2C"/>
+                        <path d="M12 8.50002H8.00002V12.5H12V8.50002Z" fill="#2C2C2C"/>
+                    </svg>
+                    p Разработка сайта — Paradigma
+                a(href="#") Политика конфиденциальности
+                a(href="#") Служба качества  
+                a(href="#") Договор-оферта

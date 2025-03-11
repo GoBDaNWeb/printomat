@@ -5,16 +5,25 @@
     @include size(padding-top, 36);
     display: flex;
     justify-content: space-between;
+    @media (max-width: $tab-sm) {
+      flex-direction: column;
+      @include size(gap, 24);
+      @include size(padding-top, 24);
+    }
     .tabs {
       display: flex;
       align-items: center;
       @include size(gap, 10);
+      flex-wrap: wrap;
     }
     .link {
       height: calc(46 / var(--screensize) * 100vw) !important;
       font-weight: 700 !important;
       font-size: calc(16 / var(--screensize) * 100vw) !important;
       line-height: calc(22 / var(--screensize) * 100vw) !important;
+      @media (max-width: $tab-sm) {
+        width: fit-content;
+      }
     }
   }
   .catalog-list {
@@ -22,6 +31,20 @@
     grid-template-columns: repeat(3, 1fr);
     @include size(gap, 24);
     @include size(margin-top, 36);
+    @media (max-width: $tab-sm) {
+      display: none;
+    }
+  }
+  .catalog-swiper {
+    display: none;
+    @include size(margin-top, 24);
+
+    @media (max-width: $tab-sm) {
+      display: block;
+    }
+    .swiper-slide {
+      height: auto;
+    }
   }
   .btn-wrapper {
     display: flex;

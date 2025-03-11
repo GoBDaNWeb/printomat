@@ -169,6 +169,10 @@ button {
     @include body-m;
     display: flex;
     align-items: center;
+    @media (max-width: $tab-sm) {
+      @include size(padding-left, 16);
+      @include size(padding-right, 16);
+    }
     &.gray {
       background: var(--back-color);
     }
@@ -177,6 +181,10 @@ button {
     }
     svg {
       pointer-events: none;
+      @media (max-width: $tab-sm) {
+        @include size(width, 15);
+        @include size(height, 20);
+      }
     }
     p {
       transition: var(--trs-cubic-600);
