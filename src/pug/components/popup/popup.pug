@@ -108,3 +108,82 @@ mixin popup()
 				.double-field
 					button(type="button").btn.outline.tab.close-modal Отменить
 					button(type="button").btn.primary Сохранить
+	
+	.overlay.modal.add-comment
+		.popup 
+			button(type="button").close-popup.close-modal
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+					<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="#2C2C2C"/>
+				</svg>
+			h3 Оставьте комментарий
+
+			.double-field.add-comment-info 
+					.field-wrap 
+						span Мы ответим вам на почту
+							b m.keyder@gmail.com
+					.field-wrap 
+						span Либо позвоните по номеру
+							a(href="tel:8 800 000 00 00") 8 800 000 00 00 
+			form.popup__form
+				.field-wrap 
+					span Комментарий
+					textarea(placeholder="Дополнительная информация (если требуется)")
+				.double-field
+					button(type="button").btn.primary Отправить
+	
+	.overlay.modal.edit-layout
+		.popup.tabs-wrapper 
+			button(type="button").close-popup.close-modal
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+					<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="#2C2C2C"/>
+				</svg>
+			h3 Макет не пропущен
+
+			.edit-layout__tabs 
+				button(type="button", data-tab="1").btn.tab.outline.active Загрузить отредактированный макет 
+				button(type="button", data-tab="2").btn.tab.outline Заказать доработку 
+
+			.tab-content(data-tab="1")
+				label.upload
+					input(type="file", name="")
+					span 
+						<svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_1868_13965)">
+							<rect width="14" height="18" fill="#F2DC00"/>
+							<rect x="2.5" y="2.5" width="9" height="7" stroke="#2C2C2C"/>
+							<path d="M7 6.5L7 15.5" stroke="#2C2C2C"/>
+							<path d="M3 12.5L7 15.5L11 12.5" stroke="#2C2C2C"/>
+							</g>
+							<defs>
+							<clipPath id="clip0_1868_13965">
+							<rect width="14" height="18" fill="white"/>
+							</clipPath>
+							</defs>
+						</svg> Прикрепите файл
+
+				p.edit-layout__result Результаты проверки макета:
+					span Не соблюдены требования макета к печати: разрешение растровых макетов и изображений (встроенных и приложенных в макету) менее 300 dpi"
+				form.popup__form
+					.field-wrap 
+						textarea(placeholder="Ваш комментарий")
+					.double-field
+						button(type="button").btn.primary Отправить
+				.edit-layout__bottom
+					p Вы можете создать макет в нашем конструкторе
+					a(href="#").btn.outline Создать макет в конструкторе
+			.tab-content.hidden(data-tab="2")
+				.edit-layout__message 
+					img(src="./img/edit-layout-pic.svg", alt="")
+					.edit-layout__message__inner 
+						p Если вы не хотите самостоятельно дорабатывать макет, наша команда дизайнеров может помочь вам! Мы приведем макет в соответствии с техническими требованиями к печати.
+						b Стоимость доработки макета – 600 рублей
+				p.edit-layout__result Результаты проверки макета:
+					span Не соблюдены требования макета к печати: разрешение растровых макетов и изображений (встроенных и приложенных в макету) менее 300 dpi"
+				form.popup__form
+					.field-wrap 
+						textarea(placeholder="Ваш комментарий")
+					.double-field
+						button(type="button").btn.primary Отправить
+			

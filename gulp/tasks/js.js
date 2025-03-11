@@ -13,14 +13,14 @@ export const js = () => {
             output: {
                 filename:'app.min.js',
             },
-            // module: {
-            //     rules: [
-            //       {
-            //       test: /\.(sass|less|css)$/,
-            //       use: ["style-loader", "css-loader", 'sass-loader'],
-            //       },
-            //     ],
-            //   },
+            module: {
+                rules: [
+                  {
+                  test: /\.(sass|less|css)$/,
+                  use: ["style-loader", "css-loader", 'sass-loader'],
+                  },
+                ],
+              },
         }))
         .pipe(app.gulp.dest(app.path.build.js))
         .pipe(app.plugins.browsersync.stream());

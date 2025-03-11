@@ -5,6 +5,14 @@ import { map } from "./modules/map.js";
 import { modals } from "./modules/modals.js";
 import IMask from "imask";
 
+import AirDatepicker from "air-datepicker";
+
+new AirDatepicker('#dat', {
+  range: true,
+  multipleDatesSeparator: ' - ',
+
+})
+
 accordionFunc();
 tabs();
 modals();

@@ -16,6 +16,39 @@
 		opacity: 1;
 		visibility: visible;
 	}
+
+	&.add-comment {
+		h3 {
+			width: 100%;
+		}
+
+		.popup__form {
+			width: 100%;
+		}
+
+		.btn {
+			@include size(width, 270);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 700;
+			@include size(font-size, 16);
+		}
+
+		.add-comment-info {
+			@include size(margin-bottom, 28);
+			a {
+				display: block;
+				font-weight: 700;
+			}
+
+			b {
+				display: block;
+				font-weight: 700;
+			}
+		}
+	}
+	
 }
 
 .popup {
@@ -151,5 +184,87 @@ span.show-password {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+	}
+}
+
+.edit-layout__tabs {
+	display: flex;
+	@include size(gap, 12);
+	@include size(margin-bottom, 28);
+
+	.tab {
+		@include size(padding-left, 24);
+		@include size(padding-right, 24);
+	}
+}
+
+.edit-layout__result {
+	@include size(font-size, 16);
+	color: #A0A0A0;
+	line-height: 140%;
+	@include size(margin-bottom, 28);
+	span {
+		color: #2C2C2C;
+		display: block;
+	}
+}
+
+.edit-layout {
+	.field-wrap {
+		textarea {
+			@include size(height, 90);
+		}
+	}
+
+	.popup__form {
+		width: 100%;
+	}
+
+	.upload {
+		@include size(margin-bottom, 28);
+	}
+
+	.edit-layout__bottom {
+		@include size(margin-top, 28);
+		p {
+			@include size(font-size, 20);
+			font-weight: 600;
+			@include size(margin-bottom, 12);
+		}
+
+		.btn.outline {
+			@include size(padding-top, 12);
+			@include size(padding-bottom, 12);
+			@include size(padding-right, 28);
+			@include size(padding-left, 28);
+			border: 1px solid #2C2C2C;
+			color: #2C2C2C;
+			font-weight: 700;
+			@include size(font-size, 16);
+			display: block;
+			@include size(border-radius, 96);
+			width: fit-content;
+		}
+	}
+}
+
+.edit-layout__message {
+	display: flex;
+	@include size(gap, 24);
+	@include size(margin-bottom, 28);
+	@include size(padding-bottom, 28);
+	border-bottom: 1px solid rgba(62, 62, 62, .15);
+	img {
+		@include size(width, 64);
+		@include size(height, 64);
+	}
+
+	p {
+		@include size(font-size, 16);
+	}
+
+	b {
+		@include size(font-size, 16);
+		font-weight: 700;
 	}
 }

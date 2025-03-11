@@ -50,7 +50,7 @@
 
 .orders__order__head {
 	display: grid;
-	grid-template-columns: calc(250 / var(--screensize) * 100vw) calc(540 / var(--screensize) * 100vw) 1fr;
+	grid-template-columns: calc(255 / var(--screensize) * 100vw) calc(540 / var(--screensize) * 100vw) 1fr;
 	@include size(gap, 63);
 	@include size(padding-bottom, 16);
 	border-bottom: 1px solid rgba(63, 63, 63, .15);
