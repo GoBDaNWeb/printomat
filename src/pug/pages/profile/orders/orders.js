@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
 	const handlers = document.querySelectorAll(".orders__order__handle");
 
@@ -8,4 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			parent.classList.toggle("active");
 		});
 	});
+
+
 });

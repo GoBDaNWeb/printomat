@@ -6,6 +6,14 @@ import { modals } from "./modules/modals.js";
 import { validateForm } from "./modules/validate.js";
 import IMask from "imask";
 
+import AirDatepicker from "air-datepicker";
+
+new AirDatepicker('#dat', {
+  range: true,
+  multipleDatesSeparator: ' - ',
+
+})
+
 accordionFunc();
 tabs();
 modals();

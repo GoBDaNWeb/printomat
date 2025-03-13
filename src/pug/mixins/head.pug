@@ -8,6 +8,7 @@ mixin head(styles = [])
     meta(name="keywords" content="template")
     meta(name="robots" content="index, follow")
     //- Подключение стилей
+    <link href="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.css" rel="stylesheet">
     link(rel="stylesheet", href=`./css/style.css`)
     each style in styles
       link(rel="stylesheet", href=`./css/${style}.css`)

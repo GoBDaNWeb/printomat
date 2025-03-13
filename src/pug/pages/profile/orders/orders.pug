@@ -20,7 +20,7 @@ mixin orders()
 				.orders__head 
 					label.field-wrap.orders__head__dates
 						span Даты
-						input(type="text", placeholder="Даты" value="11.05.2025 - 12.05.2025") 
+						input#dat(type="text", placeholder="Даты")
 						<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<rect width="28" height="28" fill="white"/>
 							<rect x="2.5" y="6.78564" width="23" height="17" rx="3.5" stroke="#2C2C2C"/>
@@ -218,7 +218,7 @@ mixin orders()
 										p 15 000 ₽
 								div
 								div
-								a.btn.primary Доработать макет 
+								a.btn.primary(data-modal-target="edit-layout") Доработать макет 
 
 
 
@@ -354,7 +354,7 @@ mixin orders()
 									p 15 000 ₽
 								div
 								div
-								a.btn.primary Доработать макет 
+								a.btn.primary(data-modal-target="edit-layout") Доработать макет 
 
 
 
@@ -494,7 +494,7 @@ mixin orders()
 									p 15 000 ₽
 								div
 								div
-								a.btn.primary Доработать макет 
+								a.btn.primary(data-modal-target="edit-layout") Доработать макет 
 
 
 
@@ -523,6 +523,148 @@ mixin orders()
  
 
 
+					
+					.orders__order
+						.orders__order__head 	
+							button.orders__order__handle 
+								img(src="./img/profile/arrow.svg", alt="")
+								span Заказ № PM-Z115243
+							.orders__order__info
+								span.orders__order__status.finished Завершен
+								span.orders__order__date от 26.08.24, 17:25
+							.orders__order__buttons 
+								a.btn.outline.tab
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect x="0.5" y="0.5" width="19" height="19" rx="9.5" fill="white"/>
+										<rect x="0.5" y="0.5" width="19" height="19" rx="9.5" stroke="#2C2C2C"/>
+										<path d="M10 8L10 15" stroke="#2C2C2C"/>
+										<path d="M10 5L10 7" stroke="#2C2C2C"/>
+									</svg>
+									span О заказе
+								a.btn.outline.tab
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<mask id="path-1-inside-1_3709_20937" fill="white">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M20 0H0V16H16L20 20V16V11V0Z"/>
+										</mask>
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M20 0H0V16H16L20 20V16V11V0Z" fill="white"/>
+										<path d="M0 0V-1H-1V0H0ZM20 0H21V-1H20V0ZM0 16H-1V17H0V16ZM16 16L16.7071 15.2929L16.4142 15H16V16ZM20 20L19.2929 20.7071L21 22.4142V20H20ZM0 1H20V-1H0V1ZM1 16V0H-1V16H1ZM16 15H0V17H16V15ZM20.7071 19.2929L16.7071 15.2929L15.2929 16.7071L19.2929 20.7071L20.7071 19.2929ZM19 16V20H21V16H19ZM19 11V16H21V11H19ZM19 0V11H21V0H19Z" fill="#2C2C2C" mask="url(#path-1-inside-1_3709_20937)"/>
+										<path d="M5 5H15" stroke="#2C2C2C"/>
+										<path d="M5 9H11" stroke="#2C2C2C"/>
+									</svg>
+									span Комментарий
+						.orders__order__body 
+							.orders__order__body__row 
+								div 
+									span Товаров:
+									b 5
+								div 
+									span Стоимость:
+									b 45 000 ₽
+								div.orders__order__body__row__payment 
+									span Оплата
+									a.orders__order__payment
+										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect width="20" height="20" rx="10" fill="#70C984"/>
+											<circle cx="10" cy="10" r="5.5" stroke="white"/>
+											<path d="M7.0625 9.33594L9.60714 11.5625L11.3036 9.78125L13 8" stroke="white"/>
+										</svg>
+										b По счёту
+										<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect width="28" height="28" rx="14" fill="#EEEEEE"/>
+											<line x1="6.5" y1="13.1875" x2="6.5" y2="17.1875" stroke="#2C2C2C"/>
+											<line x1="21.5" y1="13.1875" x2="21.5" y2="17.1875" stroke="#2C2C2C"/>
+											<line x1="18.5" y1="19.6875" x2="9.5" y2="19.6875" stroke="#2C2C2C"/>
+											<path d="M9.5 19.6875C9.10603 19.6875 8.71593 19.6099 8.35195 19.4591C7.98797 19.3084 7.65726 19.0874 7.37868 18.8088C7.1001 18.5302 6.87913 18.1995 6.72836 17.8356C6.5776 17.4716 6.5 17.0815 6.5 16.6875" stroke="#2C2C2C"/>
+											<path d="M18.5 19.6875C18.894 19.6875 19.2841 19.6099 19.6481 19.4591C20.012 19.3084 20.3427 19.0874 20.6213 18.8088C20.8999 18.5302 21.1209 18.1995 21.2716 17.8356C21.4224 17.4716 21.5 17.0815 21.5 16.6875" stroke="#2C2C2C"/>
+											<path d="M18.6875 10.6875L14 15.6875L9.6875 10.6875" stroke="#2C2C2C"/>
+											<path d="M14 5.375L14 15.1875" stroke="#2C2C2C"/>
+										</svg>
+										span.orders__order__payment__notice Скачать счет на оплату
+								div.orders__order__body__row__address 
+									span Адрес доставки:
+									p г. Москва, Нижний Сусальный пер., 9 стр. 6. Станция&nbsp;метро Курская.
+								div 
+								div 
+								div 
+								a.btn.primary Отследить заказ
+						.orders__order__bottom 
+							.orders__order__bottom__row
+								span Продукт
+								span Макет
+								span Статус макета
+								div.orders__order__bottom__row__more
+									span Тираж
+									span Стоимость
+									span Итого
+							.orders__order__bottom__row
+								b Наклейки
+								a.orders__order__bottom__row__maket
+									img(src="./img/profile/maket.png", alt="")
+									p Наклейки.ai
+								.orders__order__bottom__row__status.chec  
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect width="20" height="20" rx="10" fill="#F6B51E"/>
+									<circle cx="10" cy="10" r="5.5" stroke="white"/>
+									<path d="M12.8047 10H10.0008V7.21875" stroke="white"/>
+									</svg>
+
+									p На доработке
+								div.orders__order__bottom__row__more
+									p 100 шт
+									p 50 ₽/шт
+									p 15 000 ₽
+
+							.orders__order__bottom__row
+								b Визитки
+								a.orders__order__bottom__row__maket
+									img(src="./img/profile/maket.png", alt="")
+									p Визитки.ai
+								.orders__order__bottom__row__status.error 
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect width="20" height="20" rx="10" fill="#F26161"/>
+										<rect x="5.5" y="5.5" width="8.9375" height="10.2188" stroke="white"/>
+										<path d="M8 8.5L12.0003 12.5M12.0003 8.5L8 12.5" stroke="white"/>
+									</svg>
+									p Макет не пропущен 
+								div.orders__order__bottom__row__more
+									p 100 шт
+									p 50 ₽/шт
+									p 15 000 ₽
+								div
+								div
+								a.btn.primary(data-modal-target="edit-layout") Доработать макет 
+
+
+
+							.orders__order__bottom__row
+								b Наклейки
+								a.orders__order__bottom__row__maket
+									img(src="./img/profile/maket.png", alt="")
+									p Наклейки.ai
+								.orders__order__bottom__row__status.checking 
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect width="20" height="20" rx="10" fill="#F6B61E"/>
+										<path d="M17 9.69229C15.7315 7.14093 13.0735 5.38461 10 5.38461C6.92647 5.38461 4.26851 7.14093 3 9.69229C4.26851 12.2436 6.92647 14 10 14C13.0735 14 15.7315 12.2436 17 9.69229ZM17 9.69229H16.9494" stroke="white"/>
+										<circle cx="10.0586" cy="9.625" r="2.25" stroke="white"/>
+									</svg>
+
+									p Проверяем макет
+
+									span.orders__order__bottom__row__status__notice Прооверка занимает около 24 часов, в случае обнаружения ошибок в макете вам придёт уведомление на почту
+										
+								div.orders__order__bottom__row__more
+									p 100 шт
+									p 50 ₽/шт
+									p 15 000 ₽
+						button(type="button").orders__order__handle.orders__order__handle-mob 
+							img(src="./img/profile/arrow.svg", alt="")
+ 
+
+
+
+
+
+									
 
 
 
