@@ -72,7 +72,6 @@ export function validateForm() {
         }
       );
     }
-
     inputs.forEach(({ input, type, error }) => {
       if (input && !validateInput(input, type, error)) {
         isValid = false;
@@ -82,12 +81,12 @@ export function validateForm() {
     return isValid;
   };
 
-  const showSuccessMessage = () => {
-    document.querySelector(".success-modal").classList.add("active");
-    document
-      .querySelectorAll(".modal")
-      .forEach((modal) => modal.classList.remove("active"));
-  };
+  // const showSuccessMessage = () => {
+  //   document.querySelector(".success-modal").classList.add("active");
+  //   document
+  //     .querySelectorAll(".modal")
+  //     .forEach((modal) => modal.classList.remove("active"));
+  // };
 
   forms.forEach((form) => {
     form.addEventListener("submit", (e) => {
@@ -98,7 +97,7 @@ export function validateForm() {
 
       if (isValid) {
         console.log("Валидация пройдена");
-        showSuccessMessage();
+        // showSuccessMessage();
       } else {
         console.log("Валидация не пройдена");
       }

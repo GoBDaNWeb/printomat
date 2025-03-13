@@ -1,0 +1,22 @@
+extends ./pug/templates/template.pug
+
+block head 
+    +head(["header","mobile-menu","crumbs", "catalog", "catalog-content", "catalog-card", "accordion-item", "order", "contacts", "selector", "footer", "portfolio-modal", "orders-modal", "route-modal", "requisites-modal", "request-status-modal", "request-status-success-modal", "request-modal", "request-success-modal"])
+block header 
+    +header()
+    +mobile-menu()
+block content
+    +crumbs({items: [{title: 'Продукция', href: '#'}]})
+    +catalog-content()
+    +contacts()
+block footer 
+    +footer()
+block modals 
+    +portfolio-modal()
+    +orders-modal()
+    +route-modal()
+    +requisites-modal()
+    +request-status-modal()
+    +request-status-success-modal()
+    +request-modal()
+    +request-success-modal()

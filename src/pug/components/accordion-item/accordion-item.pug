@@ -1,6 +1,6 @@
 mixin accordion-item(data)
-    .accordion-item(class=data.class)
-        button.accordion-title 
+    .accordion-item(class=data.class)&attributes(attributes)
+        button(type='button').accordion-title 
             if data.delivery === 'true'
                 .title-wrapper
                     img(src=data.titleImg, alt="")
@@ -10,6 +10,23 @@ mixin accordion-item(data)
                         <rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#2C2C2C"/>
                         <path d="M20 14H14M14 14H8M14 14L14 8M14 14V20" stroke="white"/>
                     </svg>
+            else if data.step
+                .icon 
+                    <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L8 9L15 1" stroke="#2C2C2C"/>
+                    </svg>
+                .title-wrapper
+                    .left
+                        h6 #{data.title}
+                        if data.hint
+                            p(data-modal-target='modification-template-modal').hint ?
+                    p.price #{data.price}
+                .delete-icon 
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+                        <path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>
+                    </svg>
+
             else 
                 .title-wrapper
                     h6 #{data.title}
@@ -41,3 +58,12 @@ mixin accordion-item(data)
                         a(href="#")  Подготовка макетов
                     li 
                         a(href="#")  Подготовка макетов
+            else if data.step
+                label
+                    input(type="radio" name=data.name checked).custom-radio
+                    p Проверка макета и доработка под технические требования
+                label
+                    input(type="radio" name=data.name).custom-radio
+                    p Проверка макета и внесение изменений
+                textarea(placeholder='Описание, что нужно отредактировать').custom-textarea
+                button(type='button').btn.primary.add-btn Добавить

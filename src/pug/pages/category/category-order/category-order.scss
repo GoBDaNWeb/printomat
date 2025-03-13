@@ -1,0 +1,7 @@
+@use "src/scss/common/files/mixins" as *;
+
+.category-order {
+  background: var(--back-color);
+  @include border-radius(20);
+  @include size(margin-top, 128);
+}

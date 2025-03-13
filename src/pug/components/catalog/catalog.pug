@@ -1,5 +1,5 @@
 mixin catalog(data)
-    .catalog.tabs-wrapper.tabs-multiple
+    .catalog.tabs-wrapper.tabs-multiple(class=data.catalogSelector ? 'hasSelector' : '')
         h1 #{data.title}
         .tab-wrapper
             .tabs 
@@ -76,7 +76,17 @@ mixin catalog(data)
                         </defs>
                     </svg>
                     p POS материалы
-            a(href="#").btn.primary.link В каталог
+            if data.catalogSelector
+                +selector({name: 'info-tabs', title:'Все',  class: 'primary', items: [
+                    {title: 'Все', value: 0},
+                    {title: 'Для офиса', value: 1},
+                    {title: 'Для мероприятий', value: 2},
+                    {title: 'для HoReCa', value: 3},
+                    {title: 'Упаковка', value: 4},
+                    {title: 'POS материалы', value: 5},
+                ],isTabsSelector: true})
+            if data.hasLink
+                a(href="#").btn.primary.link В каталог
         .catalog-list
             +catalog-card({img: './img/catalog/1.jpg', title: 'Визитные карточки', tabs: '0 1 2'})
             +catalog-card({img: './img/catalog/2.jpg', title: 'Листовки и буклеты', tabs: '0 2 3'})

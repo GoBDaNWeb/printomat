@@ -1,0 +1,24 @@
+@use "src/scss/common/files/mixins" as *;
+
+.category-portfolio {
+  overflow: hidden;
+  @include size(margin-top, 96);
+  .category-portfolio-inner {
+    .title {
+      @include h2;
+    }
+    .category-portfolio-swiper {
+      @include size(margin-top, 28);
+      position: relative;
+    }
+    .navigation {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      @include size(left, -24);
+      @include size(right, -24);
+      z-index: 2;
+      justify-content: space-between;
+    }
+  }
+}

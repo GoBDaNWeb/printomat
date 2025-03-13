@@ -9,6 +9,9 @@
     @include size(margin-top, 80);
     flex-wrap: wrap;
   }
+  &.top-sm {
+    @include size(margin-top, 16);
+  }
   a {
     @include body-xs;
     color: var(--txt-gray-color);

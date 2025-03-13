@@ -119,12 +119,20 @@ h6 {
   display: flex;
   @include size(gap, 12);
   align-items: center;
+  pointer-events: none;
   @media (max-width: $tab-sm) {
     display: none;
+  }
+  button {
+    pointer-events: all !important;
   }
   .swiper-button-disabled {
     pointer-events: none;
     opacity: 0.2;
+    cursor: default;
+    &:hover {
+      background: var(--gray-color) !important;
+    }
   }
 }
 .pagination {

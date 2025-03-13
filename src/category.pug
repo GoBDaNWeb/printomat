@@ -1,0 +1,33 @@
+extends ./pug/templates/template.pug
+
+block head 
+    +head(["header","mobile-menu","crumbs", "delivery","badge", "payment", "cart-button","download-card", "category-about", "category-form", "category-hero", "category-info", "portfolio-card", "catalog-card", "category-portfolio", "category-popular", "category-similar", "accordion-item", "category-order", "order", "contacts", "selector", "footer", "portfolio-modal", "orders-modal", "route-modal", "requisites-modal", "request-status-modal", "request-status-success-modal", "request-modal", "request-success-modal", "modification-template-modal"])
+block header 
+    +header()
+    +mobile-menu()
+block content
+    +category-hero()
+    +crumbs({items: [{title: 'Продукция', href: '#'}]}).top-sm
+    +category-form()
+    +category-popular()
+    +category-about()
+    +delivery({hasText: true})
+    +payment({hasText: true})
+    +category-info()
+    +category-portfolio()
+    +category-similar()
+    +category-order()
+    +contacts()
+block footer 
+    +footer()
+    +cart-button()
+block modals 
+    +portfolio-modal()
+    +orders-modal()
+    +route-modal()
+    +requisites-modal()
+    +request-status-modal()
+    +request-status-success-modal()
+    +request-modal()
+    +request-success-modal()
+    +modification-template-modal()

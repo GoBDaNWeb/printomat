@@ -1,0 +1,21 @@
+mixin category-portfolio()
+    .category-portfolio
+        .category-portfolio-inner.container
+            p.title Портфолио
+            .category-portfolio-swiper 
+                .swiper-wrapper 
+                    +portfolio-card({title: 'Визитные карточки', badgeTitle: 'Визитки', img: './img/portfolio/1.jpg'}).swiper-slide
+                    +portfolio-card({title: 'Папка', badgeTitle: 'Полиграфия для офиса', img: './img/portfolio/2.jpg'}).swiper-slide
+                    +portfolio-card({title: 'Энергетический напиток Red Bull', badgeTitle: 'Упаковка и POS', img: './img/portfolio/3.jpg'}).swiper-slide
+                    +portfolio-card({title: 'Визитные карточки', badgeTitle: 'Визитки', img: './img/portfolio/1.jpg'}).swiper-slide
+                    +portfolio-card({title: 'Папка', badgeTitle: 'Полиграфия для офиса', img: './img/portfolio/2.jpg'}).swiper-slide
+                    +portfolio-card({title: 'Энергетический напиток Red Bull', badgeTitle: 'Упаковка и POS', img: './img/portfolio/3.jpg'}).swiper-slide
+                .navigation 
+                    button.btn.circle.lg.category-portfolio-prev 
+                        <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 8L8 1M1 8H21M1 8L8 15" stroke="white"/>
+                        </svg>
+                    button.btn.circle.lg.category-portfolio-next 
+                        <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 8L13 1M20 8H0M20 8L13 15" stroke="white"/>
+                        </svg>

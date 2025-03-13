@@ -1,7 +1,13 @@
-mixin payment()
-    .payment
+mixin payment(data)
+    .payment(class=data.hasText ? 'with-text': '')
         .payment-inner.container 
-            p.title Оплата
+            if data.hasText
+                .text-wrapper 
+                    .sticky-block 
+                        p.title Оплата
+                        p.descr Определившись с этими характеристиками, остаётся только загрузить макет и оплатить заказ с помощью одной из доступных вам электронных платёжных систем или банковским переводом.
+            else
+                p.title Оплата
             .payment-content 
                 .payment-item 
                     .payment-item-content
@@ -9,18 +15,18 @@ mixin payment()
                         span Онлайн
                         p через систему электронных платежей ASSIST
                     .image-wrapper 
-                        img(src="./img/payment/1.png", alt="")
+                        img(src="./img/payment/1.jpg", alt="payment")
                 .payment-item 
                     .payment-item-content
                         +badge({title: 'Для юридических лиц'})
                         span По счету
                         p Тут дописать описание способа оплаты
                     .image-wrapper 
-                        img(src="./img/payment/2.png", alt="")
+                        img(src="./img/payment/2.jpg", alt="payment")
                 .payment-item 
                     .payment-item-content
                         +badge({title: 'Для физических лиц'})
                         span По счету
                         p через систему банк-клиент или в отделении Сбербанка
                     .image-wrapper 
-                        img(src="./img/payment/3.png", alt="")
+                        img(src="./img/payment/3.jpg", alt="payment")
