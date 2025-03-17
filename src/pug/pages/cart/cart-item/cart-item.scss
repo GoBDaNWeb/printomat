@@ -1,0 +1,126 @@
+@use "src/scss/common/files/mixins" as *;
+.cart-item {
+  display: grid;
+  @include grid-columns(204, 522);
+  @include size(gap, 24);
+  @include size(padding-top, 28);
+  border-top: 1px solid var(--line-color);
+  &:last-child {
+    border-bottom: 1px solid var(--line-color);
+    @include size(padding-bottom, 28);
+  }
+  @media (max-width: $tab-sm) {
+    grid-template-columns: 1fr;
+  }
+  .image-wrapper {
+    @include size(width, 204);
+    @include size(height, 204);
+    @include border-radius(12);
+    background: var(--back-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: $tab-sm) {
+      width: 100%;
+    }
+    img {
+      width: 90%;
+      object-fit: contain;
+    }
+  }
+  .cart-item-info {
+    .top {
+      display: flex;
+      justify-content: space-between;
+      .title {
+        @include body-mb;
+      }
+      .features {
+        display: flex;
+        align-items: center;
+        @include size(gap, 12);
+        .btn {
+          border-radius: 999px;
+          @include size(width, 28);
+          @include size(height, 28);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .edit-btn {
+          background: var(--accent-color);
+          transition: var(--trs-cubic-600);
+          &:hover {
+            background: var(--gray-color);
+            svg {
+              path {
+                stroke: var(--white-color);
+              }
+            }
+          }
+          svg {
+            @include size(width, 14);
+            @include size(height, 14);
+          }
+        }
+        .delete-btn {
+          background: var(--back-color);
+          transition: var(--trs-cubic-600);
+          &:hover {
+            background: var(--accent-color);
+          }
+          svg {
+            @include size(width, 12);
+            @include size(height, 12);
+          }
+        }
+      }
+    }
+    .selectors {
+      @include size(margin-top, 24);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include size(gap, 25);
+      @include size(max-width, 431);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: repeat(1, 1fr);
+        @include size(gap, 16);
+        @include size(max-width, 312);
+      }
+      .selector-wrapper {
+        display: flex;
+        flex-direction: column;
+        @include size(gap, 12);
+        span {
+          color: var(--txt-gray-color);
+          @include body-s;
+        }
+      }
+    }
+    ul {
+      @include size(margin-top, 28);
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      @include size(gap, 8);
+      @media (max-width: $tab-sm) {
+        @include size(max-width, 312);
+      }
+      li {
+        display: grid;
+        @include grid-columns(90, 318);
+        @include size(gap, 24);
+        @media (max-width: $tab-sm) {
+          @include grid-columns(90, 198);
+        }
+        span {
+          color: var(--txt-gray-color);
+          @include body-s;
+        }
+        p {
+          @include body-s;
+        }
+      }
+    }
+  }
+}

@@ -79,6 +79,6 @@ mixin header()
                                 img(src="./img/star.svg", alt="star")
                                 img(src="./img/star.svg", alt="star")
                    .right-block
-                        button Подготовка макетов
+                        +selector({title: 'Подготовка макетов', isLinkSelector: true, items: [{title: 'ссылка1'},{title: 'ссылка2'},{title: 'ссылка3'},]})
                         a(href="#") Доставка и оплата
                         a(href="#") Контакты

@@ -32,6 +32,23 @@
       }
     }
   }
+  &.link-selector {
+    &.active {
+      .link-selector-btn {
+        .icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .link-selector-btn {
+      display: flex;
+      align-items: center;
+      @include size(gap, 10);
+      .icon {
+        transition: var(--trs-cubic-600);
+      }
+    }
+  }
   .selector-btn {
     display: flex;
     align-items: center;

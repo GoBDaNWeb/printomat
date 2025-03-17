@@ -1,0 +1,40 @@
+@use "src/scss/common/files/mixins" as *;
+
+.delete-modal {
+  .modal-content-wrapper {
+    @include size(max-width, 660);
+    @media (max-width: $tab-sm) {
+      @include size(max-width, 312);
+      @include padding(24);
+    }
+    h3 {
+      @include size(max-width, 432);
+      text-align: center;
+      @media (max-width: $tab-sm) {
+        @include size(max-width, 264);
+        text-align: left;
+      }
+    }
+    .btns {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include size(gap, 24);
+      @include size(max-width, 432);
+      @include size(margin-top, 28);
+      @media (max-width: $tab-sm) {
+        @include size(gap, 16);
+        @include size(max-width, 264);
+        text-align: left;
+        @include size(margin-top, 24);
+      }
+      .btn {
+        @include size(height, 46);
+        justify-content: center;
+        @include body-mb;
+        @media (max-width: $tab-sm) {
+          padding: 0 calc(16 / var(--screensize) * 100vw) !important;
+        }
+      }
+    }
+  }
+}

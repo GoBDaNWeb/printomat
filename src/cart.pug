@@ -1,0 +1,19 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "mobile-menu","accordion-item", "crumbs", "cart-content", "cart-item", "cart-order-fixed","contacts", "selector", "footer", "orders-modal", "route-modal", "requisites-modal", "delete-modal"])
+block header
+    +header()
+    +mobile-menu()
+block content
+    +crumbs({items: [{title: 'Корзина', href: 'cart.html'}]})
+    +cart-content()
+    +contacts()
+block footer 
+    +footer()
+    +cart-order-fixed()
+block modals 
+  +orders-modal()
+  +route-modal()
+  +requisites-modal()
+  +delete-modal({title: 'Действительно хотите удалить продукт?'})

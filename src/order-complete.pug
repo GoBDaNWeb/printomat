@@ -1,0 +1,14 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "mobile-menu","accordion-item", "crumbs","order-complete","selector", "footer", "orders-modal"])
+block header
+    +header()
+    +mobile-menu()
+block content
+    +crumbs({items: [{title: 'Корзина', href: 'cart.html'}]})
+    +order-complete()
+block footer 
+    +footer()
+block modals 
+  +orders-modal()

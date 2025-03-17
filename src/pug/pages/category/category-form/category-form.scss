@@ -301,6 +301,16 @@
             .title {
               @include body-mb;
             }
+            .delete-btn {
+              transition: var(--trs-cubic-600);
+              &:hover {
+                svg {
+                  rect {
+                    fill: var(--accent-color);
+                  }
+                }
+              }
+            }
           }
           ul {
             list-style: none;

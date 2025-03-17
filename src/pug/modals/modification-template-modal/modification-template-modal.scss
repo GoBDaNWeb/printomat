@@ -3,6 +3,10 @@
 .modification-template-modal {
   .modal-content-wrapper {
     @include size(width, 685);
+    @media (max-width: $tab-sm) {
+      @include size(width, 312);
+      @include padding(24);
+    }
     .image-wrapper {
       @include size(margin-top, 24);
       @include size(width, 564);
@@ -10,6 +14,11 @@
       @include border-radius(20);
       overflow: hidden;
       position: relative;
+      @media (max-width: $tab-sm) {
+        @include size(width, 264);
+        @include size(height, 148);
+        @include size(margin-top, 16);
+      }
       img {
         position: absolute;
         width: 100%;
@@ -22,7 +31,9 @@
       flex-direction: column;
       @include size(gap, 10);
       @include size(margin-top, 24);
-
+      @media (max-width: $tab-sm) {
+        @include size(margin-top, 16);
+      }
       p {
         @include body-m;
       }

@@ -8,16 +8,15 @@ import IMask from "imask";
 
 import AirDatepicker from "air-datepicker";
 
-new AirDatepicker('#dat', {
+new AirDatepicker("#dat", {
   range: true,
-  multipleDatesSeparator: ' - ',
-
-})
+  multipleDatesSeparator: " - ",
+});
 
 accordionFunc();
 tabs();
 modals();
-// swiper();
+swiper();
 map();
 modals();
 validateForm();
@@ -27,6 +26,7 @@ import "../pug/pages/info/info-content/info-content.js";
 import "../pug/pages/profile/orders/orders.js";
 import "../pug/pages/order/order-page.js";
 import "../pug/pages/category/category-form/category-form.js";
+import "../pug/pages/cart/cart-order-fixed/cart-order-fixed.js";
 import "../pug/components/popup/popup.js";
 import "../pug/components/mobile-menu/mobile-menu.js";
 
