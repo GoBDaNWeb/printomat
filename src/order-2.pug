@@ -1,0 +1,14 @@
+extends ./pug/templates/template.pug
+
+block head 
+  +head(["header", "mobile-menu", "order-page", "order-page-2", "checkbox", "radio-button", "accordion-item", "crumbs", "badge", "popup", "profile", "download-card", "article-card", "selector", "footer"])
+block header 
+    +header()
+    +mobile-menu()
+block content
+    +crumbs({items: [{title: 'Оформление заказа', href: '#'}]})
+    +order-page-2()
+block footer 
+    +footer()
+    +popup()
+    

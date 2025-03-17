@@ -1,0 +1,336 @@
+mixin order-page-2()
+
+	.order 
+		.container 
+			.order__head 
+				h1 Оформление заказа
+			.order__nav.order__nav-2 
+				.order__nav__item.done
+					p Параметры заказа
+				.order__nav__item.done
+					p Контакты
+				.order__nav__item.active 
+					p Доставка
+				.order__nav__item 
+					p Оплата
+			.order__body 
+				.order__left 
+					h6 Данные получателя
+					+checkbox('Данные получателя совпадают с контактным лицом')
+					label.field-wrap
+						span Имя *
+						input(type="text", placeholder="Введите") 
+					.double-field
+						label.field-wrap
+							span Телефон *
+							input.input__valid-phone(type="text", placeholder="Введите") 
+						label.field-wrap
+							span Почта *
+							input(type="text", placeholder="Введите") 
+					.order__delivery.tabs-wrapper 
+						h6 Выбор типа доставки
+						.order__delivery__radios 
+							label.radio-btn.tab.active(data-tab="1") 
+								input(type="radio" name='delivery' value='pickup' checked='checked')
+								span Самовывоз из офиса
+							label.radio-btn.tab(data-tab="2") 
+								input(type="radio" name='delivery' value='pvz')
+								span До пункта выдачи
+							label.radio-btn.tab(data-tab="3") 
+								input(type="radio" name='delivery' value='courier')
+								span Курьером
+						
+						.order__delivery__content.tab-content(data-delivery="pickup", data-tab="1")
+							p
+								b Забрать готовый заказ в офисе по адресу:
+								span г. Москва, Нижний Сусальный пер., 9 стр. 6. Станция метро Курская.
+							br
+							p Обратите внимание, что въезд на территорию бизнес центра платный 
+								b - 200 руб./час.
+							.order__delivery__pickup 
+								p 
+									b Вы можете забрать готовый заказ самостоятельно в офисе Printomat с понедельника по пятницу в следующие часы:
+
+								ul.list 
+									li В день готовности Вашего заказа с 18:00 до 20:00 (СуперЭкспресс и Экспресс)
+									li В день готовности Вашего заказа с 10:00 до 20:00 (Стандарт и Эконом)
+									li В последующие дни с 10:00 до 20:00
+						.order__delivery__content.tab-content.hidden(data-delivery="pvz", data-tab="2")
+							.order__delivery__boxes
+								label.radio-btn.radio-btn-pic
+									img(src="./img/cdek.png", alt="")
+									input(type="radio" name="delivery-method")
+									span CDEK 
+								label.radio-btn.radio-btn-pic
+									img(src="./img/boxberry.png", alt="")
+									input(type="radio" name="delivery-method")
+									span Boxberry 
+								label.radio-btn.radio-btn-pic
+									img(src="./img/yandexgo.png", alt="")
+									input(type="radio" name="delivery-method")
+									span Яндекс 
+							p К дате готовности прибавятся дни доставки. Расчетное время доставки можно увидеть после указания города и пункта выдачи заказа.
+
+							.order__delivery__pvz-fields 
+								label.field-wrap
+									span Город
+									+selector({
+										class: 'product-selector',
+										title: 'Выберите', 
+										items: [
+											{
+												title: 'Все', 
+												value: 0
+											},
+											{
+												title: 'Тут написать', 
+												value: 1
+											},
+											{
+												title: 'Тут написать 1', 
+												value: 2
+											},
+											{
+												title: 'Тут написать 2', 
+												value: 3
+											},
+											{
+												title: 'Тут написать 3', 
+												value: 4
+											},
+											{
+												title: 'Тут написать 4', 
+												value: 5
+											},],
+											name: 'city'
+										},)
+								label.field-wrap
+									span Пункт выдачи
+									+selector({
+										class: 'product-selector',
+										title: 'Выберите', 
+										items: [
+											{
+												title: 'Все', 
+												value: 0
+											},
+											{
+												title: 'Тут написать', 
+												value: 1
+											},
+											{
+												title: 'Тут написать 1', 
+												value: 2
+											},
+											{
+												title: 'Тут написать 2', 
+												value: 3
+											},
+											{
+												title: 'Тут написать 3', 
+												value: 4
+											},
+											{
+												title: 'Тут написать 4', 
+												value: 5
+											},],
+											name: 'pvz'
+										},)
+								button.order__delivery__pvz-fields__btn Выбрать пункт на карте
+								p 2-12 рабочих дней после дня готовности по городам России.
+								.field-wrap 
+									span Комментарий
+									textarea(placeholder="Комментарий") 
+								.order__left__total 
+									p.little Стоимость доставки (включая налог)
+										span 1 000 ₽
+									p Итого
+										span 19 720 ₽
+
+						.order__delivery__content.tab-content.hidden(data-delivery="courier", data-tab="3")
+							.order__delivery__boxes
+								label.radio-btn.radio-btn-pic
+									img(src="./img/cdek.png", alt="")
+									input(type="radio" name="delivery-method")
+									span CDEK 
+								label.radio-btn.radio-btn-pic
+									img(src="./img/boxberry.png", alt="")
+									input(type="radio" name="delivery-method")
+									span Boxberry 
+								label.radio-btn.radio-btn-pic
+									img(src="./img/yandexgo.png", alt="")
+									input(type="radio" name="delivery-method")
+									span Яндекс 
+							p К дате готовности прибавятся дни доставки. Расчетное время доставки можно увидеть после указания города и пункта выдачи заказа.
+
+							.order__delivery__pvz-fields 
+								label.field-wrap
+									span Адрес
+									input(type="text" placeholder="Введите")
+								.order__delivery__triple-field 
+									label.field-wrap
+										span Квартира
+										input(type="text" placeholder="Введите")
+									label.field-wrap
+										span Офис
+										input(type="text" placeholder="Введите")
+							
+								.field-wrap 
+									span Комментарий
+									textarea(placeholder="Комментарий") 
+								.order__left__total 
+									p.little Стоимость доставки (включая налог)
+										span 1 000 ₽
+									p Итого
+										span 19 720 ₽
+					.order__left__bottom 
+						a.btn.tab.outline(href="#") Назад
+						a.btn.primary(href="#") Далее 
+				.order__right
+					h6 Ваш заказ
+					.order__right__items 
+						.order__right__item 
+							.order__right__item__head 
+								button.order__right__item__name 
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M1 5L10 15L19 5" stroke="#2C2C2C"/>
+									</svg>
+									span Наклейки
+								button.order__right__item__remove 
+									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+										<path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>
+									</svg>
+							.order__right__item__body 
+								div.hide Тираж
+									+selector({
+										class: 'product-selector',
+										title: 'Тираж', 
+										items: [
+											{
+												title: '500 шт.', 
+												value: 0
+											},
+											{
+												title: '1000 шт.', 
+												value: 1
+											},
+											{
+												title: '1500 шт.', 
+												value: 2
+											},
+											],
+											name: 'count'
+										},)
+								div.hide Тариф
+									+selector({
+										class: 'product-selector',
+										title: 'Тариф', 
+										items: [
+											{
+												title: 'Эконом', 
+												value: 0
+											},
+											{
+												title: 'Комфорт', 
+												value: 1
+											},
+											{
+												title: 'Комфорт+', 
+												value: 2
+											},
+											],
+											name: 'tarif'
+										},)
+								p.hide Размер, мм
+									span 100×60
+								p.hide Печать
+									span Одна краска (1+0)
+								p.hide Бумага
+									span 300г Touche Cover
+								p.hide Макет
+									span Наклейки_новые.ai
+								p.hide Габариты
+									span 0,1 м3
+								p.hide Вес, кг
+									span 1,2
+								p Стоимость
+									span 1 000 шт
+								p Тираж
+									span 10 000 ₽
+						.order__right__item 
+							.order__right__item__head 
+								button.order__right__item__name 
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M1 5L10 15L19 5" stroke="#2C2C2C"/>
+									</svg>
+									span Наклейки
+								button.order__right__item__remove 
+									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+										<path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>
+									</svg>
+							.order__right__item__body 
+								div.hide Тираж
+									+selector({
+										class: 'product-selector',
+										title: 'Тираж', 
+										items: [
+											{
+												title: '500 шт.', 
+												value: 0
+											},
+											{
+												title: '1000 шт.', 
+												value: 1
+											},
+											{
+												title: '1500 шт.', 
+												value: 2
+											},
+											],
+											name: 'count'
+										},)
+								div.hide Тариф
+									+selector({
+										class: 'product-selector',
+										title: 'Тариф', 
+										items: [
+											{
+												title: 'Эконом', 
+												value: 0
+											},
+											{
+												title: 'Комфорт', 
+												value: 1
+											},
+											{
+												title: 'Комфорт+', 
+												value: 2
+											},
+											],
+											name: 'tarif'
+										},)
+								p.hide Размер, мм
+									span 100×60
+								p.hide Печать
+									span Одна краска (1+0)
+								p.hide Бумага
+									span 300г Touche Cover
+								p.hide Макет
+									span Наклейки_новые.ai
+								p.hide Габариты
+									span 0,1 м3
+								p.hide Вес, кг
+									span 1,2
+								p Стоимость
+									span 1 000 шт
+								p Тираж
+									span 10 000 ₽
+					.order__right__bottom 
+						p Общие габариты
+							span 0,7 м3
+						p Общий вес
+							span 5,7 кг
+						p.order__right__bottom__total Общая стоимость
+							span 19 720 ₽

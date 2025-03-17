@@ -98,19 +98,19 @@ export const tabs = () => {
         tab.addEventListener("click", (e) => {
           const activeTab = wrapper.querySelector(".tab.active");
           if (activeTab) activeTab.classList.remove("active");
-          e.target.classList.add("active");
+          tab.classList.add("active");
 
           tabsContent.forEach((content) => {
             content.classList.toggle(
               "hidden",
-              !content.dataset.tab.split(" ").includes(e.target.dataset.tab)
+              !content.dataset.tab.split(" ").includes(tab.dataset.tab)
             );
           });
 
           tabsItem.forEach((item) => {
             item.classList.toggle(
               "hidden",
-              !item.dataset.tabitem.split(" ").includes(e.target.dataset.tab)
+              !item.dataset.tabitem.split(" ").includes(tab.dataset.tab)
             );
           });
         });

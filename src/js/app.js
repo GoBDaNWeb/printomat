@@ -16,13 +16,14 @@ new AirDatepicker('#dat', {
 accordionFunc();
 tabs();
 modals();
-swiper();
+// swiper();
 map();
 modals();
 
 import "../pug/components/selector/selector.js";
 import "../pug/pages/info/info-content/info-content.js";
 import "../pug/pages/profile/orders/orders.js";
+import "../pug/pages/order/order-page.js";
 import "../pug/components/popup/popup.js";
 import "../pug/components/mobile-menu/mobile-menu.js";
 
