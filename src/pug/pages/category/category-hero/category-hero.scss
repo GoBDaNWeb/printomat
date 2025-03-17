@@ -1,0 +1,41 @@
+@use "src/scss/common/files/mixins" as *;
+
+.category-hero {
+  @include size(margin-top, 144);
+  overflow: hidden;
+  .category-hero-inner {
+    .category-hero-swiper {
+      position: relative;
+      .swiper-slide {
+        border: 4px solid var(--gray-color);
+        @include border-radius(20);
+        position: relative;
+        @include size(height, 248);
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity var(--trs-cubic-300);
+        &.swiper-slide-active {
+          opacity: 1;
+        }
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .pagination {
+        display: flex !important;
+      }
+      .navigation {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        @include size(left, -24);
+        @include size(right, -24);
+        z-index: 2;
+        justify-content: space-between;
+      }
+    }
+  }
+}

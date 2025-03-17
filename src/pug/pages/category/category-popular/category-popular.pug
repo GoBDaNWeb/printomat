@@ -1,0 +1,25 @@
+mixin category-popular()
+    .category-popular
+        .category-popular-inner.container 
+            h3 Популярные шаблоны
+            .category-popular-swiper 
+                .swiper-wrapper 
+                    +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide 
+                    +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide 
+                    +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide 
+                    +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide 
+                    +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide 
+                    +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide 
+                    +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide 
+                    +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide 
+                    +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide 
+                    +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide 
+                .navigation 
+                    button.btn.circle.lg.category-popular-prev 
+                        <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 8L8 1M1 8H21M1 8L8 15" stroke="white"/>
+                        </svg>
+                    button.btn.circle.lg.category-popular-next 
+                        <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 8L13 1M20 8H0M20 8L13 15" stroke="white"/>
+                        </svg>

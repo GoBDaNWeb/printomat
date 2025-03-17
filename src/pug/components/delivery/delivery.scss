@@ -5,6 +5,12 @@
   @media (max-width: $tab-sm) {
     @include size(padding-top, 48);
   }
+  &.with-text {
+    .delivery-inner {
+      @include grid-columns(409, 888);
+      @include size(gap, 47);
+    }
+  }
   .delivery-inner {
     display: grid;
     @include size(gap, 230);
@@ -14,8 +20,35 @@
       @include size(gap, 16);
     }
     .title-block {
-      p {
+      .title {
         @include h1;
+      }
+      .descr {
+        @include size(margin-top, 28);
+        @include body-m;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        @include size(gap, 10);
+        @include size(margin-top, 12);
+
+        li {
+          position: relative;
+          @include size(padding-left, 30);
+          @include body-m;
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            @include size(width, 8);
+            @include size(top, 7);
+            @include size(height, 8);
+            background: var(--accent-color);
+            border-radius: 999px;
+          }
+        }
       }
     }
     .content-block {

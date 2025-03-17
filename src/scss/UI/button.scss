@@ -6,7 +6,10 @@ button {
 }
 .btn {
   transition: var(--trs-cubic-600);
-
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
   &.social {
     @include size(width, 40);
     @include size(height, 40);
@@ -46,8 +49,10 @@ button {
       @include size(height, 48);
     }
     &.sm {
-      @include size(width, 28);
-      @include size(height, 28);
+      @include size(min-width, 28);
+      @include size(min-height, 28);
+      @include size(max-width, 28);
+      @include size(max-height, 28);
       padding: 0;
     }
     &.gray {
@@ -90,6 +95,9 @@ button {
     @include size(padding-left, 28);
     @include size(padding-right, 28);
     border-radius: 999px;
+    &:disabled {
+      background: var(--back-color) !important;
+    }
     p {
       transition: var(--trs-cubic-600);
     }
@@ -251,6 +259,17 @@ button {
     }
     &:hover {
       background: var(--accent-color);
+    }
+  }
+  &.outline {
+    border: 1px solid var(--gray-color);
+    @include size(height, 46);
+    @include padding(0, 25);
+    border-radius: 999px;
+    @include body-mb;
+    &:hover {
+      background: var(--accent-color);
+      border-color: var(--accent-color);
     }
   }
 }

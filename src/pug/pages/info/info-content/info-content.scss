@@ -5,6 +5,7 @@
   @include size(padding-bottom, 148);
   @media (max-width: $tab-sm) {
     @include size(padding-bottom, 50);
+    overflow: hidden;
   }
   .info-content-inner {
     .tabs {

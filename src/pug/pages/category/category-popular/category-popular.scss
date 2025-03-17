@@ -1,0 +1,22 @@
+@use "src/scss/common/files/mixins" as *;
+
+.category-popular {
+  @include size(margin-top, 96);
+  overflow: hidden;
+  .category-popular-swiper {
+    position: relative;
+    @include size(margin-top, 28);
+    .navigation {
+      position: absolute;
+      top: 0;
+      @include size(top, 54);
+      @include size(left, -24);
+      @include size(right, -24);
+      z-index: 2;
+      justify-content: space-between;
+    }
+    .swiper-slide {
+      height: auto;
+    }
+  }
+}

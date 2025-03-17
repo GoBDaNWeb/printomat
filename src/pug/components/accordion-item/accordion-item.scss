@@ -8,6 +8,13 @@
       }
     }
   }
+  &.step-accord {
+    .accordion-title {
+      .icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
   .accordion-title {
     .icon {
       transform: rotate(45deg);
@@ -19,7 +26,92 @@
   flex-direction: column;
   overflow: hidden;
   transition: var(--trs-cubic-600);
-
+  &.step-accord {
+    border: 1px solid var(--line-color);
+    @include size(border-radius, 20);
+    &.selected {
+      border-color: var(--gray-color);
+      .delete-icon {
+        opacity: 1 !important;
+        pointer-events: all !important;
+      }
+    }
+    .accordion-title {
+      justify-content: flex-start;
+      @include size(gap, 12);
+      @include size(padding-bottom, 23);
+      @include size(padding-top, 23);
+      @include size(padding-left, 21);
+      @include size(padding-right, 68);
+      position: relative;
+      .title-wrapper {
+        justify-content: space-between;
+        display: flex;
+        width: 100%;
+        .left {
+          display: flex;
+          align-items: center;
+          @include size(gap, 12);
+          .hint {
+            @include size(width, 18);
+            @include size(height, 18);
+            border: 1px solid var(--gray-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: calc(10 / var(--screensize) * 100vw);
+            line-height: calc(12 / var(--screensize) * 100vw);
+            pointer-events: all;
+          }
+        }
+        h6 {
+          @include body-mb;
+        }
+        .price {
+          @include body-mb;
+        }
+      }
+      .delete-icon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        @include size(right, 20);
+        display: flex;
+        align-items: center;
+        pointer-events: none;
+        opacity: 0;
+        transition: var(--trs-cubic-600);
+      }
+    }
+    .collapse {
+      @include size(padding-left, 52);
+      @include size(padding-right, 48);
+      @include size(padding-bottom, 28);
+      display: flex;
+      flex-direction: column;
+      @include size(gap, 12);
+      label {
+        display: flex;
+        @include size(gap, 12);
+        cursor: pointer;
+        align-items: center;
+      }
+      textarea {
+        resize: none;
+        @include size(height, 143);
+        @include size(margin-top, 8);
+      }
+      .btn {
+        @include size(height, 46);
+        @include size(width, 204);
+        justify-content: center;
+        @include body-mb;
+      }
+    }
+  }
   &.outline {
     border: 1px solid var(--line-color);
     @include size(border-radius, 20);

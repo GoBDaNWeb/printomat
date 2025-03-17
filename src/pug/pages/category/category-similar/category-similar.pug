@@ -1,0 +1,24 @@
+mixin category-similar()
+     .category-similar
+        .category-similar-inner.container 
+            h3 Популярные шаблоны
+            .category-similar-swiper 
+                .swiper-wrapper 
+                    +catalog-card({img: './img/catalog/1.jpg', title: 'Визитные карточки' }).swiper-slide
+                    +catalog-card({img: './img/catalog/2.jpg', title: 'Листовки и буклеты' }).swiper-slide
+                    +catalog-card({img: './img/catalog/3.jpg', title: 'Наклейки'}).swiper-slide
+                    +catalog-card({img: './img/catalog/4.jpg', title: 'Брошюры и каталоги' }).swiper-slide
+                    +catalog-card({img: './img/catalog/5.jpg', title: 'Открытки и пригласительные' }).swiper-slide
+                    +catalog-card({img: './img/catalog/6.jpg', title: 'Блокноты' }).swiper-slide
+                    +catalog-card({img: './img/catalog/7.jpg', title: 'Полиграфия для офиса'}).swiper-slide
+                    +catalog-card({img: './img/catalog/8.jpg', title: 'Календари' }).swiper-slide
+                    +catalog-card({img: './img/catalog/9.jpg', title: 'Печать с отделкой на нестандартных бумагах'}).swiper-slide
+                .navigation 
+                    button.btn.circle.lg.category-similar-prev 
+                        <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 8L8 1M1 8H21M1 8L8 15" stroke="white"/>
+                        </svg>
+                    button.btn.circle.lg.category-similar-next 
+                        <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 8L13 1M20 8H0M20 8L13 15" stroke="white"/>
+                        </svg>

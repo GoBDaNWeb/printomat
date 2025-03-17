@@ -37,6 +37,7 @@
 
     p {
       @include body-m;
+      text-align: center;
     }
     .btn {
       @include body-mb;

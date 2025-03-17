@@ -1,9 +1,15 @@
-mixin delivery()
-    .delivery
+mixin delivery(data)
+    .delivery(class=data.hasText ? 'with-text' : '')
         .delivery-inner.container 
             .title-block
                 .sticky-block 
-                    p Доставка
+                    p.title Доставка
+                    if data.hasText
+                        p.descr Одно из преимуществ обращения в «Принтомат» — это удобная доставка. В зависимости от того, что наиболее удобно клиенту, компания предоставляет следующие возможности:
+                        ul 
+                            li Самовывоз из московского офиса;
+                            li Курьерская доставка по указанному адресу;
+                            li Доставка в один из пунктов получения, которых существует 250 — и не только в Москве, но и в других городах России.
             .content-block.accordion 
                 +accordion-item({class: 'outline', delivery: 'true', title:'Самовывоз из московского офиса — м. Курская', titleImg: './img/delivery/1.jpg'})
                 +accordion-item({class: 'outline', delivery: 'true', title:'Пункты выдачи CDEK', titleImg: './img/delivery/2.jpg'})

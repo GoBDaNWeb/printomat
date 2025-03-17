@@ -1,0 +1,329 @@
+mixin category-form()
+    .category-form
+        .category-form-inner.container 
+            h1 Визитки
+            .steps 
+                .category-form-step
+                    p 1. Параметры
+                    .icon 
+                .category-form-step 
+                    p 2. Тариф
+                    .icon 
+                .category-form-step 
+                    p 3. Услуги
+                    .icon 
+                .category-form-step 
+                    p 4. Отделка, постпресс
+                    .icon 
+                .category-form-step 
+                    p 5. Макет
+                    .icon 
+            form.form
+                .form-steps
+                    .step
+                        h5 Выберите параметры
+                        .inputs 
+                            .input-wrapper
+                                .title-wrapper
+                                    p.title Продукт
+                                +selector({
+                                    title: 'Визитные карточки', 
+                                    items: [
+                                        {
+                                            title: 'Визитные карточки', 
+                                            value: 0
+                                        },
+                                        {
+                                            title: 'Визитные карточки 2', 
+                                            value: 1
+                                        },
+                                        {
+                                            title: 'Визитные карточки 3', 
+                                            value: 2
+                                        },
+                                        {
+                                            title: 'Визитные карточки 4', 
+                                            value: 3
+                                        },
+                                        ],
+                                        name: 'product',
+                                        required: true,
+                                        defaultRequired: true
+                                    },)
+                            .input-wrapper 
+                                .title-wrapper
+                                    p.title Тираж, шт.
+                                +selector({
+                                    title: 'Выберите', 
+                                    items: [
+                                        {
+                                            title: '100', 
+                                            value: 0
+                                        },
+                                        {
+                                            title: '200', 
+                                            value: 1
+                                        },
+                                        {
+                                            title: '300', 
+                                            value: 2
+                                        },
+                                        ],
+                                        name: 'circulation',
+                                        required: true
+                                    },).half
+                            .input-wrapper 
+                                .title-wrapper
+                                    p.title Размер, мм
+                                .row
+                                    +selector({
+                                        title: 'Выберите', 
+                                        items: [
+                                            {
+                                                title: '100', 
+                                                value: 0
+                                            },
+                                            {
+                                                title: '200', 
+                                                value: 1
+                                            },
+                                            {
+                                                title: '300', 
+                                                value: 2
+                                            },
+                                            ],
+                                            name: 'size',
+                                            required: true
+                                        },)
+                                    span или
+                                    .input__row
+                                        input(type="text" placeholder='Введите').custom-input.input.form__input-value.input__valid-number
+                                        .input__item-small
+                            .input-wrapper 
+                                .title-wrapper
+                                    p.title Печать
+                                    .hint(data-modal-target='modification-template-modal') 
+                                        p ?
+                                +selector({
+                                    title: 'Выберите', 
+                                    items: [
+                                        {
+                                            title: 'Печать 1', 
+                                            value: 0
+                                        },
+                                        {
+                                            title: 'Печать 2', 
+                                            value: 1
+                                        },
+                                        {
+                                            title: 'Печать 3', 
+                                            value: 2
+                                        },
+                                        ],
+                                        name: 'print',
+                                        required: true
+                                    },)
+                            .input-wrapper 
+                                .title-wrapper
+                                    p.title Бумага
+                                    .hint(data-modal-target='modification-template-modal') 
+                                        p ?
+                                +selector({
+                                    title: 'Выберите', 
+                                    items: [
+                                        {
+                                            title: 'Бумага 1', 
+                                            value: 0
+                                        },
+                                        {
+                                            title: 'Бумага 2', 
+                                            value: 1
+                                        },
+                                        {
+                                            title: 'Бумага 3', 
+                                            value: 2
+                                        },
+                                        ],
+                                        name: 'paper', 
+                                        required: true
+                                    })
+                            .input-wrapper 
+                                .title-wrapper
+                                    p.title Кол-во страниц
+                                .input__row
+                                    input(type="text" placeholder='Введите').sm.custom-input.input.form__input-value.input__valid-number
+                                    .input__item-small
+                        .btns-wrapper 
+                            button(type='button' disabled).btn.load.gray.prev-btn Назад
+                            button(type='button' disabled).btn.load.gray.next-btn Далее
+                    .step
+                        h5 Выберите тариф
+                        .inputs.grid 
+                            label
+                                input(type="radio" name='tariff' checked).custom-radio
+                                .radio-input-content
+                                    p.title Эконом
+                                    p.date 29 декабря 
+                            label
+                                input(type="radio" name='tariff').custom-radio
+                                .radio-input-content
+                                    p.title Стандарт
+                                    p.date 27 декабря 
+                            label
+                                input(type="radio" name='tariff').custom-radio
+                                .radio-input-content
+                                    p.title Экспресс
+                                    p.date 23 декабря 
+                            label
+                                input(type="radio" name='tariff').custom-radio
+                                .radio-input-content
+                                    p.title Супер экспресс
+                                    p.date 22 декабря 
+                        .btns-wrapper 
+                            button(type='button').btn.load.gray.prev-btn Назад
+                            button(type='button').btn.load.gray.next-btn Далее
+                    .step
+                        h5 Выберите дополнительные услуги
+                        .inputs.accordion 
+                            .accordion-list
+                                .visible-acc
+                                    +accordion-item({title:'Спецобслуживание', step: true, name: 'add-serv1', price: '900,00 ₽', hint: true}).step-accord
+                                    +accordion-item({title:'Ламинация плёнкой', step: true, name: 'add-serv2', price: 'от 507,48 ₽'}).step-accord
+                                    +accordion-item({title:'Доработка макета',step: true, name: 'add-serv3', price: '900,00 ₽', hint: true}).step-accord
+                                .hidden-acc 
+                                    +accordion-item({title:'Скругление углов',step: true, name: 'add-serv4', price: 'от 496,00 ₽'}).step-accord
+                                    +accordion-item({title:'УФ- и 3D-лакирование',step: true, name: 'add-serv5', price: 'от 6 706,20 ₽'}).step-accord
+                                    +accordion-item({title:'Вырубка с изготовлением штампа',step: true, name: 'add-serv6', price: 'от 6 706,20 ₽'}).step-accord
+                                    +accordion-item({title:'Горячее тиснение',step: true, name: 'add-serv7', price: 'от 6 706,20 ₽'}).step-accord
+                                    +accordion-item({title:'Биговка',step: true, name: 'add-serv8', price: 'от 6 706,20 ₽'}).step-accord
+                                    +accordion-item({title:'Фальцовка с включенной биговкой',step: true, name: 'add-serv9', price: 'от 6 706,20 ₽'}).step-accord
+                                    +accordion-item({title:'Сверление',step: true, name: 'add-serv10', price: 'от 6 706,20 ₽'}).step-accord
+                            button(type='button').btn.load.gray.more-acc Развернуть весь список 
+                        .btns-wrapper 
+                            button(type='button').btn.load.gray.prev-btn Назад
+                            button(type='button').btn.load.gray.next-btn Далее
+                    .step
+                        h5 Выберите отделку и послепечатные услуги
+                        .inputs.accordion 
+                            .accordion-list
+                                .visible-acc
+                                    +accordion-item({title:'Заголовок услуги', step: true, name: 'finishing1', price: '900,00 ₽', hint: true}).step-accord
+                                    +accordion-item({title:'Заголовок услуги', step: true, name: 'finishing2', price: 'от 507,48 ₽'}).step-accord
+                                    +accordion-item({title:'Заголовок услуги',step: true, name: 'finishing3', price: '900,00 ₽', hint: true}).step-accord
+                                .hidden-acc 
+                                    +accordion-item({title:'Заголовок услуги',step: true, name: 'finishing4', price: 'от 496,00 ₽'}).step-accord
+                                    +accordion-item({title:'Заголовок услуги',step: true, name: 'finishing5', price: 'от 6 706,20 ₽'}).step-accord
+                                    +accordion-item({title:'Заголовок услуги',step: true, name: 'finishing6', price: 'от 6 706,20 ₽'}).step-accord
+                                    +accordion-item({title:'Заголовок услуги',step: true, name: 'finishing7', price: 'от 6 706,20 ₽'}).step-accord
+                                    +accordion-item({title:'Заголовок услуги',step: true, name: 'finishing8', price: 'от 6 706,20 ₽'}).step-accord
+                                    +accordion-item({title:'Заголовок услуги',step: true, name: 'finishing9', price: 'от 6 706,20 ₽'}).step-accord
+                                    +accordion-item({title:'Заголовок услуги',step: true, name: 'finishing10', price: 'от 6 706,20 ₽'}).step-accord
+                            button(type='button').btn.load.gray.more-acc Развернуть весь список 
+                        .btns-wrapper 
+                            button(type='button').btn.load.gray.prev-btn Назад
+                            button(type='button').btn.load.gray.next-btn Далее
+                    .step
+                        h5 Добавьте макет
+                        .inputs.row 
+                            label.template-loader
+                                input(type="file").file-input
+                                button(type='button').clear-btn
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+                                        <path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>
+                                    </svg>
+                                .icon 
+                                    <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_2044_55906)">
+                                        <rect width="14" height="18" fill="#F2DC00"/>
+                                        <rect x="2.5" y="2.5" width="9" height="7" stroke="#2C2C2C"/>
+                                        <path d="M7 6.5L7 15.5" stroke="#2C2C2C"/>
+                                        <path d="M3 12.5L7 15.5L11 12.5" stroke="#2C2C2C"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_2044_55906">
+                                        <rect width="14" height="18" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                    </svg>
+                                p.title Загрузить свой макет
+                            a(href='#').template-loader.constructor
+                                input(type="file").file-input
+                                button(type='button').clear-btn
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+                                        <path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>
+                                    </svg>
+                                .icon 
+                                    <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_2044_55916)">
+                                        <rect width="14" height="18" fill="#F2DC00"/>
+                                        <rect x="2.5" y="2.5" width="9" height="7" stroke="#2C2C2C"/>
+                                        <line x1="2" y1="12.5" x2="6" y2="12.5" stroke="#2C2C2C"/>
+                                        <line x1="8" y1="12.5" x2="12" y2="12.5" stroke="#2C2C2C"/>
+                                        <line x1="2" y1="15.5" x2="12" y2="15.5" stroke="#2C2C2C"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_2044_55916">
+                                        <rect width="14" height="18" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                    </svg>
+                                p.title Создать макет в конструкторе
+                        .btns-wrapper 
+                            button(type='button').btn.load.gray.prev-btn Назад
+                .category-form-info 
+                    h5 Ваш заказ
+                    .category-form-info-center 
+                        .top
+                            p.title Буклет
+                            button(type='button').btn.delete-btn
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+                                    <path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>
+                                </svg>
+                        ul 
+                            li 
+                                p Тираж
+                                span 500 шт.
+                            li 
+                                p Размер, мм
+                                span 100×60
+                            li 
+                                p  Печать
+                                span Одна краска (1+0)
+                            li 
+                                p Бумага
+                                span 300г Touche Cover
+                            li 
+                                p Макет
+                                span Наклейки_новые.ai
+                            li 
+                                p Габариты
+                                span 0,1 м3
+                            li 
+                                p Вес, кг
+                                span 1,2
+                            li 
+                                p Тариф
+                                span Эконом (29.10. 24)
+                            li 
+                                p Стоимость
+                                span 1 000 шт
+                            li 
+                                p Тираж
+                                span 10 000 ₽
+                    .category-form-info-bottom 
+                        .price-wrapper
+                            p Общая стоимость
+                            span.price 0 ₽
+                        .inputs 
+                            label
+                                input(type="checkbox").custom-checkbox
+                                p Согласен, что при возникновении брака из-за несоответствия макета техническим требованиям, а также из-за ошибок в макете вся ответственность ложится на заказчика. 
+                            label
+                                input(type="checkbox").custom-checkbox
+                                p Согласен, что при возникновении брака из-за несоответствия макета техническим требованиям, а также из-за ошибок в макете вся ответственность ложится на заказчика. 
+                        .btns 
+                            button(type='button' disabled).btn.outline.add-to-cart-btn Добавить в корзину
+                            button(type='submit' disabled).btn.primary.submit-btn Оформить заказ

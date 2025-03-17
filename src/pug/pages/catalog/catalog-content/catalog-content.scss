@@ -1,0 +1,33 @@
+@use "src/scss/common/files/mixins" as *;
+
+.catalog-content {
+  .catalog {
+    @include size(margin-top, 20);
+    @include size(padding-bottom, 54);
+    .tabs {
+      .tab {
+        border: 1px solid var(--line-color);
+      }
+    }
+    .catalog-list {
+      .catalog-card {
+        border: 1px solid var(--line-color);
+      }
+    }
+    .btn-wrapper {
+      .btn {
+        background: var(--back-color);
+        &:hover {
+          background: var(--accent-color);
+        }
+      }
+    }
+  }
+}
+.order-wrapper {
+  background: var(--back-color);
+  @include padding(128, 0);
+  .order {
+    @include padding(0);
+  }
+}
