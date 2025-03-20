@@ -210,9 +210,28 @@
           display: flex;
           align-items: center;
           @include size(gap, 36);
+          .link-selector-btn {
+            p {
+              transition: var(--trs-cubic-600);
+            }
+            &:hover {
+              p {
+                color: var(--accent-color);
+              }
+              svg {
+                path {
+                  stroke: var(--accent-color);
+                }
+              }
+            }
+          }
           button,
           a {
             @include body-mb;
+            transition: var(--trs-cubic-600);
+            &:hover {
+              color: var(--accent-color);
+            }
           }
         }
       }

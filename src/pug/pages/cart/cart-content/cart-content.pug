@@ -1,0 +1,33 @@
+mixin cart-content()
+    .cart-content 
+        .cart-content-inner.container
+            h1 Корзина
+            .cart-content-main
+                .cart-items 
+                    +cart-item()
+                    +cart-item()
+                    +cart-item()
+                .cart-form-info-wrapper 
+                    .cart-form-info.sticky-block 
+                        h5 Ваш заказ
+                        .cart-form-info-center 
+                            ul 
+                                li 
+                                    p Общие габариты
+                                    span 0,7 м3
+                                li 
+                                    p Общий вес
+                                    span 5,7 кг
+                        .cart-form-info-bottom 
+                            .price-wrapper
+                                p Общая стоимость
+                                span.price 12 650 ₽
+                            .inputs 
+                                label
+                                    input(type="checkbox").custom-checkbox
+                                    p Согласен, что при возникновении брака из-за несоответствия макета техническим требованиям, а также из-за ошибок в макете вся ответственность ложится на заказчика. 
+                                label
+                                    input(type="checkbox").custom-checkbox
+                                    p Согласен, что при возникновении брака из-за несоответствия макета техническим требованиям, а также из-за ошибок в макете вся ответственность ложится на заказчика. 
+                            .btns 
+                                button(type='submit' ).btn.primary.submit-btn Оформить заказ

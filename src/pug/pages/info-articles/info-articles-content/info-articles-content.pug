@@ -1,0 +1,44 @@
+mixin info-articles-content()
+    .info-content
+        .info-content-inner.container
+            h1 Полезная информация
+            .tabs 
+                a(href='info.html').btn.tab.outline Подготовка макетов
+                a(href='info-order.html').btn.tab.outline Как сделать заказ
+                a(href='info-templates.html').btn.tab.outline Шаблоны макетов
+                a(href='info-articles.html').btn.tab.outline.active Статьи
+            +selector({name: 'info-tabs', title:'Статьи',  class: 'primary', items: [
+                {title: 'Подготовка макетов', href: 'info.html' },
+                {title: 'Как сделать заказ',href: 'info-order.html' },
+                {title: 'Шаблоны макетов', href: 'info-templates.html'},
+                {title: 'Статьи', href: 'info-articles.html'},
+            ],isLinkSelector: true})
+            .tab-content.tabs-inner-wrapper.tabs-multiple.grid2
+                .tabs-inner-block
+                    .tabs-inner.sticky-block 
+                        button.btn.tab-inner.gray.active(data-tab='0') Все
+                        button.btn.tab-inner.gray(data-tab='1') Разное
+                        button.btn.tab-inner.gray(data-tab='2') Визитки
+                        button.btn.tab-inner.gray(data-tab='3') Наклейки
+                        button.btn.tab-inner.gray(data-tab='4') Упаковка и POS
+                        button.btn.tab-inner.gray(data-tab='5') Блокноты
+                        button.btn.tab-inner.gray(data-tab='6') Календари
+                        button.btn.tab-inner.gray(data-tab='7') Полиграфия для офиса
+                        button.btn.tab-inner.gray(data-tab='8') Листовки и буклеты
+                        button.btn.tab-inner.gray(data-tab='9') Печать с отделкой и на нестандартных бумагах
+                        button.btn.tab-inner.gray(data-tab='10') Открытки и пригласительные
+                        button.btn.tab-inner.gray(data-tab='11') Брошюры и каталоги
+                        button.btn.tab-inner.gray(data-tab='12') Полиграфия для ресторанов
+                .tab-article-list-wrapper 
+                    .tab-article-list
+                        +article-card({img: './img/article/1.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Брошюра на скрепке'})(data-tabItemInner='0 1 4 3 5 12')
+                        +article-card({img: './img/article/2.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Полиграфия онлайн: удобный сервис заказа продукции'})(data-tabItemInner='0 2 10 4 6 7')
+                        +article-card({img: './img/article/1.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Брошюра на скрепке'})(data-tabItemInner='0 1 2 ')
+                        +article-card({img: './img/article/2.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Полиграфия онлайн: удобный сервис заказа продукции'})(data-tabItemInner='0 9')
+                        +article-card({img: './img/article/1.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Брошюра на скрепке'})(data-tabItemInner='0 7 9 12')
+                        +article-card({img: './img/article/2.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Полиграфия онлайн: удобный сервис заказа продукции'})(data-tabItemInner='0 8 1 4 11')
+                        +article-card({img: './img/article/1.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Брошюра на скрепке'})(data-tabItemInner='0 3 2')
+                        +article-card({img: './img/article/2.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Полиграфия онлайн: удобный сервис заказа продукции'})(data-tabItemInner='0 12')
+                        +article-card({img: './img/article/1.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Брошюра на скрепке'})(data-tabItemInner='0 5 4')
+                        +article-card({img: './img/article/2.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Полиграфия онлайн: удобный сервис заказа продукции'})(data-tabItemInner='0 7 9')
+                    button.btn.load-more.load.gray Показать ещё

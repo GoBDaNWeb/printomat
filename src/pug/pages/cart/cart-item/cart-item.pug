@@ -1,0 +1,89 @@
+mixin cart-item()
+    .cart-item 
+        .image-wrapper 
+            img(src="./img/cart/banner.jpg", alt="banner")
+        .cart-item-info
+            .top 
+                p.title Прямоугольные наклейки
+                .features 
+                    button.btn.clear.edit-btn
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.04053 9.0144L8.0021 3.05284L11.0105 5.93452L5.04899 11.8961L2.04053 9.0144ZM11.7178 5.22725L8.70937 2.34557L10.3478 0.707107L13.2929 3.65217L11.7178 5.22725ZM4.34172 12.6034L3.44507 13.5H0.5V10.5549L1.33326 9.72167L4.34172 12.6034Z" stroke="#2C2C2C"/>
+                        </svg>
+                    button(data-modal-target='delete-modal').btn.clear.delete-btn
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.24257 0.757359L4.99993 5M4.99993 5L0.757289 9.24264M4.99993 5L0.75729 0.757359M4.99993 5L9.24257 9.24264" stroke="#2C2C2C"/>
+                        </svg>
+            .selectors 
+                .selector-wrapper 
+                    span Тираж
+                    +selector({
+                        title: '500 шт.', 
+                        items: [
+                            {
+                                title: '500 шт.', 
+                                value: 0
+                            },
+                            {
+                                title: '600 шт.', 
+                                value: 1
+                            },
+                            {
+                                title: '700 шт.', 
+                                value: 2
+                            },
+                            ],
+                            name: 'circulation',
+                            required: true
+                        },)
+                .selector-wrapper 
+                    span Тариф
+                    +selector({
+                        title: 'Эконом (29.10. 24)', 
+                        items: [
+                            {
+                                title: 'Эконом (29.10. 24)', 
+                                value: 0
+                            },
+                            {
+                                title: 'Стандарт', 
+                                value: 1
+                            },
+                            {
+                                title: 'Экспресс', 
+                                value: 2
+                            },
+                            {
+                                title: 'Супер экспресс', 
+                                value: 3
+                            },
+                            ],
+                            name: 'tariff',
+                            required: true
+                        },)
+            ul 
+                li 
+                    span Размер, мм
+                    p 100×60
+                li 
+                    span Печать
+                    p Одна краска (1+0)
+                li 
+                    span Бумага
+                    p 300г Touche Cover
+                li 
+                    span Макет
+                    p Наклейки_новые.ai
+                li 
+                    span Габариты
+                    p 0,1 м3
+                li 
+                    span Вес, кг
+                    p 1,2
+                li 
+                    span Стоимость
+                    p 1 000 шт
+                li 
+                    span Тираж
+                    p 10 000 ₽
+                    

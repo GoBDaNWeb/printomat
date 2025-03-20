@@ -1,0 +1,30 @@
+mixin cart-order-fixed()
+    .cart-order-fixed 
+        .cart-order-fixed-inner.container
+            button.cart-order-fixed-top
+                h5 Ваш заказ
+                .icon 
+                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 11L10 0.999999L1 11" stroke="#2C2C2C"/>
+                    </svg>
+            .cart-order-info-center 
+                ul 
+                    li 
+                        p Общие габариты
+                        span 0,7 м3
+                    li 
+                        p Общий вес
+                        span 5,7 кг
+            .cart-order-info-bottom 
+                .price-wrapper
+                    p Общая стоимость
+                    span.price 12 650 ₽
+                .inputs 
+                    label
+                        input(type="checkbox").custom-checkbox
+                        p Согласен, что при возникновении брака из-за несоответствия макета техническим требованиям, а также из-за ошибок в макете вся ответственность ложится на заказчика. 
+                    label
+                        input(type="checkbox").custom-checkbox
+                        p Согласен, что при возникновении брака из-за несоответствия макета техническим требованиям, а также из-за ошибок в макете вся ответственность ложится на заказчика. 
+                .btns 
+                    button(type='submit' ).btn.primary.submit-btn Оформить заказ

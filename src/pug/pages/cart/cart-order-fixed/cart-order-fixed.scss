@@ -1,0 +1,111 @@
+@use "src/scss/common/files/mixins" as *;
+
+.cart-order-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  @include border-radius(20, 20, 0, 0);
+  background: var(--white-color);
+  z-index: 105;
+  box-shadow: var(--shadow-2);
+  @include size(max-height, 56);
+  @include size(padding-bottom, 16);
+  overflow: auto;
+  display: none;
+  transition: var(--trs-cubic-600);
+  @media (max-width: $tab-sm) {
+    display: block;
+  }
+  &.active {
+    max-height: calc(100vh - calc(50 / var(--screensize) * 100vw));
+    .cart-order-fixed-top {
+      .icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .cart-order-fixed-inner {
+    .cart-order-fixed-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include size(padding-top, 16);
+      @include size(padding-bottom, 16);
+      width: 100%;
+      .icon {
+        transition: var(--trs-cubic-600);
+
+        svg {
+          @include size(height, 10);
+          @include size(width, 18);
+        }
+      }
+    }
+    .cart-order-info-center {
+      @include size(margin-top, 3);
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        @include size(gap, 6);
+        li {
+          display: grid;
+          @include grid-columns(117, 180);
+          @include size(gap, 15);
+          p {
+            @include body-s;
+            color: var(--txt-gray-color);
+          }
+          span {
+            @include body-s;
+          }
+        }
+      }
+    }
+    .cart-order-info-bottom {
+      @include size(margin-top, 24);
+      @include size(padding-top, 16);
+      border-top: 1px solid var(--gray-color);
+      .price-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        p {
+          @include body-mb;
+        }
+        span {
+          font-weight: 700;
+          font-size: calc(24 / var(--screensize) * 100vw);
+          line-height: calc(26 / var(--screensize) * 100vw);
+        }
+      }
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        @include size(gap, 12);
+        @include size(margin-top, 20);
+
+        label {
+          cursor: pointer;
+          display: flex;
+          @include size(gap, 16);
+          p {
+            @include body-xs;
+          }
+        }
+      }
+      .btns {
+        @include size(margin-top, 24);
+        @include size(gap, 26);
+        button {
+          @include size(height, 46);
+          @include body-mb;
+          justify-content: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

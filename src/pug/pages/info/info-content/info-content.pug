@@ -1,19 +1,19 @@
 mixin info-content()
     .info-content
-        .info-content-inner.container.tabs-wrapper 
+        .info-content-inner.container
             h1 Полезная информация
             .tabs 
-                button.btn.tab.outline.active(data-tab='0') Подготовка макетов
-                button.btn.tab.outline(data-tab='1') Как сделать заказ
-                button.btn.tab.outline(data-tab='2') Шаблоны макетов
-                button.btn.tab.outline(data-tab='3') Статьи
+                a(href='info.html').btn.tab.outline.active Подготовка макетов
+                a(href='info-order.html').btn.tab.outline Как сделать заказ
+                a(href='info-templates.html').btn.tab.outline Шаблоны макетов
+                a(href='info-articles.html').btn.tab.outline Статьи
             +selector({name: 'info-tabs', title:'Подготовка макетов',  class: 'primary', items: [
-                {title: 'Подготовка макетов', value: 0},
-                {title: 'Как сделать заказ', value: 1},
-                {title: 'Шаблоны макетов', value: 2},
-                {title: 'Статьи', value: 3},
-            ],isTabsSelector: true})
-            .tab-content.grid(data-tab='0')
+                {title: 'Подготовка макетов', href: 'info.html' },
+                {title: 'Как сделать заказ',href: 'info-order.html' },
+                {title: 'Шаблоны макетов', href: 'info-templates.html'},
+                {title: 'Статьи', href: 'info-articles.html'},
+            ],isLinkSelector: true})
+            .tab-content.grid
                 .list-wrapper
                     ul.sticky-block 
                         li.info-list-item.active Форматы файлов
@@ -131,201 +131,3 @@ mixin info-content()
                             img(src="./img/mail-icon.svg", alt="mail")
                             p Если возникнут вопросы по макетам, напишите нам на почту <br>
                                 a(href="mailto:prepress@printomat.ru") prepress@printomat.ru   
-            .tab-content(data-tab='1')
-                .tab-content-order-list
-                    .tab-content-order-item 
-                        .text-block 
-                            .title-wrapper 
-                                span 1
-                                p.title Выберите нужный продукт, а затем его параметры в калькуляторе
-                            ul 
-                                li Начните с выбора продукта на главной странице. После этого Вы попадете на страницу продукта, где представлена базовая конфигурация. Если Вам требуется больший ассортимент бумаг или опций, нажмите на среднюю закладку «Больше опций».
-                                li Выберите нужную Вам бумагу.
-                                li Далее, в столбце «Размер», выберите размер Вашего продукта — это тот размер, который должен получиться после резки (но до сложения, если Вы его выбрали). Если Вы не нашли необходимый размер — выбираете «Свой размер» и вносите ширину и высоту изделия. Размер указан в миллиметрах.
-                                li В следующем столбце «Краски» к стандартной цветности (4+0 — полноцветная односторонняя печать, 4+4 — полноцветная двусторонняя печать), для продуктов на бумаге плотностью 350 г/м2 также можно выбрать печать с дополнительной пятой краской — золотым или серебряным Пантоном.
-                                li В следующем столбце выберите желаемый тираж. Правее показана стоимость изготовления Вашего продукта. Нажав на кнопку тираж, Вам предоставляются на выбор различные сроки изготовления данного продукта. Вы можете выбрать между стандарным, экономичным, экспресс или суперэкспресс (доступен для тиражей до 1000 экз.) сроком готовности.
-                        .image-wrapper 
-                            img(src="./img/info/order/1.jpg", alt="order")
-                    .tab-content-order-item 
-                        .text-block 
-                            .title-wrapper 
-                                span 2
-                                p.title Выберите послепечатную отделку
-                            ul 
-                                li На странице «Послепечатная отделка» выберите какую послепечатную обработку Вы желаете добавить к Вашему продукту. Обратите внимание, что дополнительная послепечатная обработка увеличивает срок производства на один или более рабочих дней в зависимости от выбранных опций. Кроме того, очень важно, чтобы предоставленный Вами макет был правильно подготовлен и содержал всю необходимую информацию для выполнения послепечатной обработки. Наши технические требования и инструкцию, как правильно подготовить макет, можно узнать здесь.
-                                li Параметры Вашего онлайн-заказа отображаются в левой части страницы; время запуска, дата готовности и цена — в правой. Кнопка «Дальше» позволит Вам перейти на следующий этап.
-                        .image-wrapper 
-                            img(src="./img/info/order/2.jpg", alt="order")
-                    .tab-content-order-item 
-                        .text-block 
-                            .title-wrapper 
-                                span 3
-                                p.title Загрузите макет или сохраните параметры заказа
-                            ul 
-                                li На этом этапе Вы можете загрузить макет, соответствующий техническим требованиям. Правильно подготовленный макет является залогом успешной печати и гарантией, что Вы получите именно то, что Вы хотели. Поэтому очень важно, при подготовке файлов макетов, следовать нашим инструкциям. Убедитесь сами - это совсем не сложно!
-                                li Если макет еще не готов или Вам пока необходимо просто сделать расчет стоимости, Вы можете сохранить информацию о параметрах Вашего заказа, чтобы оформить покупку позже. Загрузка файлов в этом случае не требуется. Выбрав данную опцию, Вы можете сохранить параметры данного заказа без информации о доставке или с информацией о доставке: продукт, бумага, размер, краски, тираж, сроки изготовления, послепечатная отделка, цена, а также стоимость доставки. Для авторизированных пользователей информация сохраняется в их личном кабинете.
-                                li Далее выберите файлы с Вашим макетом для лицевой и оборотной сторон продукта соответственно. В случае если изделие одностороннее или обе стороны изделия сохранены в одном файле, оборот загружать отдельно не надо.
-                                li Нажмите кнопку «Загрузить» и дождитесь окончания загрузки.
-                                li Еще раз проверьте все параметры заказа и нажмите «Продолжить», чтобы выбрать способ доставки.
-                        .image-wrapper 
-                            img(src="./img/info/order/3.jpg", alt="order")
-                    .tab-content-order-item 
-                        .text-block 
-                            .title-wrapper 
-                                span 4
-                                p.title Выберите способ доставки
-                            ul 
-                                li На этом этапе Вы можете выбрать способ доставки - самовывоз или доставка по адресу. Самовывоз осуществляется по адресу: Нижний Сусальный пер., 9 стр. 6, пн-пт, с 18:00 часов в день готовности, с 10:00 часов в последующие дни. 
-                                    a(href="#") Подробнее о доставке
-                                li Находясь на странице «Доставка» убедитесь, что все оформлено верно и приступайте к оформлению заказа, нажав кнопку «Продолжить».
-                        .image-wrapper 
-                            img(src="./img/info/order/4.jpg", alt="order")
-                    .tab-content-order-item 
-                        .text-block 
-                            .title-wrapper 
-                                span 5
-                                p.title Корзина
-                            ul 
-                                li Проверьте правильность указанных параметров. Если Вы обнаружили ошибку в продукте, её можно исправить.
-                                li Если Вы заказываете несколько продуктов, их можно оформить в одном заказе. Для этого нажмите «Добавить новый продукт» под описанием существующего продукта или на логотип Printomat наверху.
-                                li Если Вы заказываете несколько продуктов с одинаковыми параметрами (например 5 двусторонних визиток тиражом 500 шт. каждая), можно продублировать уже оформленный продукт. Для этого нажмите «+" в левой части окна описания продукта. Теперь осталось загрузить соответствующий макет для нового продукта, для этого нажмите «Изменить файлы».
-                        .image-wrapper 
-                            img(src="./img/info/order/5.jpg", alt="order")
-                    .tab-content-order-item 
-                        .text-block 
-                            .title-wrapper 
-                                span 6
-                                p.title Регистрация
-                            ul 
-                                li Справа в корзине Вы видите форму регистрации. Заполните, пожалуйста, все поля.
-                                li Если вы заказываете как юридическое лицо, выберите «Юридическое лицо» в поле «Физ/Юр лицо» и заполните открывшиеся поля для реквизитов. Обратите внимание, что платёж должен быть произведен от фирмы на реквизиты которой оформлен заказ. Отгрузочные документы к заказу будут сформированы автоматически в полном соответствии с банковскими реквизитами и адресом, внесенными Вами при регистрации.
-                                li Проверив все параметры заказа, поставьте галочку «Я согласен со всеми условиями договора-оферты» и нажмите кнопку «Я подтверждаю свой заказ». После подтверждения заказа Вам придет на почту автоматическое письмо с параметрами заказа и сроками запуска и сдачи.
-                        .image-wrapper 
-                            img(src="./img/info/order/6.jpg", alt="order")
-                    .tab-content-order-item 
-                        .text-block 
-                            .title-wrapper 
-                                span 7
-                                p.title Оплатите заказ
-                            ul 
-                                li Для этого Вы можете воспользоваться одним из вариантов мгновенной оплаты заказа предоставленных системой Assist: <br>- банковской картой VISA, MasterCard, DCI; <br>- банковской картой, используя Assist ID.
-                                li Юридические лица могут произвести оплату безналичным банковским переводом, однако следует иметь в виду, что такой платеж обычно занимает более одного рабочего дня. В этом случае, заказ следует оформить заблаговременно, за несколько дней до момента запуска тиража согласно расписанию, так как в печать поступают только полностью оплаченные заказы. Если оплата поступит позже момента запуска тиража, то Ваш заказ будет изготовлен со следующим по расписанию запуском.
-                            .quote
-                                img(src="./img/info/order/quot.svg", alt="quote") 
-                                p Если у Вас возникнут какие-нибудь вопросы, <br> Вы можете связаться с администратором <br>по телефону 
-                                    a(href="tel:+7 (499) 322-15-14.") +7 (499) 322-15-14.
-                        .image-wrapper 
-                            img(src="./img/info/order/7.jpg", alt="order")
-            .tab-content.grid(data-tab='2')
-                .list-wrapper
-                    ul.sticky-block 
-                        li.info-list-item.active Макеты штанц-форм для изготовления вырубных папок
-                        li.info-list-item Макеты штанц-форм для изготовления вырубных изделий
-                        li.info-list-item Макеты штанц-форм и схемы для изготовления тейбл-тентов
-                        li.info-list-item Макеты штанц-форм для изготовления кардхолдеров
-                        li.info-list-item Макеты штанц-форм для изготовления пакетов
-                        li.info-list-item Макеты штанц-форм для изготовления бирок
-                        li.info-list-item Макеты штанц-форм для изготовления коробок
-                        li.info-list-item Макеты штанц-форм для изготовления конвертов из картона
-                        li.info-list-item Макеты штанц-форм для изготовления двухслойных бумажных стаканчиков
-                        li.info-list-item Макеты обложек для блокнотов
-                        li.info-list-item Макеты шуберов
-                        li.info-list-item Макеты календарей
-                        li.info-list-item Макеты изделий для трафаретной печати (шелкографии)
-                        li.info-list-item Логотип для размещения в Вашем макете
-                        li.info-list-item Каталог шаблонов для оформления заказа на дизайн
-                        li.info-list-item Профиль цветоделения CMYK
-                .tab-content-list.download-list 
-                    .download-row.tab-content-item 
-                        h6 Макеты штанц-форм для изготовления вырубных папок
-                     
-                        .download-items-swiper 
-                            .swiper-wrapper 
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
-                                +download-card({title: 'Папка с корешком'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                            .pagination.download-pagination
-                    .download-row.tab-content-item
-                        h6 Макеты штанц-форм для изготовления вырубных изделий
-                    
-                        .download-items-swiper
-                            .swiper-wrapper
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
-                                +download-card({title: 'Папка с корешком'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
-                                +download-card({title: 'Папка с корешком'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                            .pagination.download-pagination
-                    .download-row.tab-content-item 
-                        h6 Макеты штанц-форм для изготовления вырубных папок
-                   
-                        .download-items-swiper
-                            .swiper-wrapper
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
-                            .pagination.download-pagination
-                    .download-row.tab-content-item 
-                        h6 Макеты штанц-форм для изготовления вырубных папок
-                   
-                        .download-items-swiper
-                            .swiper-wrapper
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
-                                +download-card({title: 'Папка с корешком'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                            .pagination.download-pagination
-                    .download-row.tab-content-item 
-                        h6 Макеты штанц-форм для изготовления вырубных изделий
-                    
-                        .download-items-swiper
-                            .swiper-wrapper
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
-                                +download-card({title: 'Папка с корешком'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
-                                +download-card({title: 'Папка с корешком'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                            .pagination.download-pagination
-                    .download-row.tab-content-item 
-                        h6 Макеты штанц-форм для изготовления вырубных папок
-                   
-                        .download-items-swiper
-                            .swiper-wrapper
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
-                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
-                            .pagination.download-pagination
-            .tab-content.tabs-inner-wrapper.tabs-multiple.grid2(data-tab="3")
-                .tabs-inner-block
-                    .tabs-inner.sticky-block 
-                        button.btn.tab-inner.gray.active(data-tab='0') Все
-                        button.btn.tab-inner.gray(data-tab='1') Разное
-                        button.btn.tab-inner.gray(data-tab='2') Визитки
-                        button.btn.tab-inner.gray(data-tab='3') Наклейки
-                        button.btn.tab-inner.gray(data-tab='4') Упаковка и POS
-                        button.btn.tab-inner.gray(data-tab='5') Блокноты
-                        button.btn.tab-inner.gray(data-tab='6') Календари
-                        button.btn.tab-inner.gray(data-tab='7') Полиграфия для офиса
-                        button.btn.tab-inner.gray(data-tab='8') Листовки и буклеты
-                        button.btn.tab-inner.gray(data-tab='9') Печать с отделкой и на нестандартных бумагах
-                        button.btn.tab-inner.gray(data-tab='10') Открытки и пригласительные
-                        button.btn.tab-inner.gray(data-tab='11') Брошюры и каталоги
-                        button.btn.tab-inner.gray(data-tab='12') Полиграфия для ресторанов
-                .tab-article-list-wrapper 
-                    .tab-article-list
-                        +article-card({img: './img/article/1.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Брошюра на скрепке'})(data-tabItemInner='0 1 4 3 5 12')
-                        +article-card({img: './img/article/2.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Полиграфия онлайн: удобный сервис заказа продукции'})(data-tabItemInner='0 2 10 4 6 7')
-                        +article-card({img: './img/article/1.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Брошюра на скрепке'})(data-tabItemInner='0 1 2 ')
-                        +article-card({img: './img/article/2.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Полиграфия онлайн: удобный сервис заказа продукции'})(data-tabItemInner='0 9')
-                        +article-card({img: './img/article/1.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Брошюра на скрепке'})(data-tabItemInner='0 7 9 12')
-                        +article-card({img: './img/article/2.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Полиграфия онлайн: удобный сервис заказа продукции'})(data-tabItemInner='0 8 1 4 11')
-                        +article-card({img: './img/article/1.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Брошюра на скрепке'})(data-tabItemInner='0 3 2')
-                        +article-card({img: './img/article/2.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Полиграфия онлайн: удобный сервис заказа продукции'})(data-tabItemInner='0 12')
-                        +article-card({img: './img/article/1.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Брошюра на скрепке'})(data-tabItemInner='0 5 4')
-                        +article-card({img: './img/article/2.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Полиграфия онлайн: удобный сервис заказа продукции'})(data-tabItemInner='0 7 9')
-                    button.btn.load-more.load.gray Показать ещё

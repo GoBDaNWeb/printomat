@@ -1,5 +1,11 @@
 const categoryForm = document.querySelector(".category-form");
 if (categoryForm) {
+  const deleteModal = document.querySelector(".delete-modal");
+  const deleteBtn = deleteModal.querySelector(".delete-btn");
+
+  const exitModal = document.querySelector(".exit-modal");
+  const exitBtn = exitModal.querySelector(".exit-btn");
+
   const categoryFormStepList = document.querySelectorAll(".category-form-step");
   const formStepContentList = document.querySelectorAll(".step");
   const categoryFormInfo = document.querySelector(".category-form-info ");
@@ -13,6 +19,9 @@ if (categoryForm) {
   const templateLoader = categoryForm.querySelectorAll(".template-loader");
 
   const moreAccBtns = categoryForm.querySelectorAll(".more-acc");
+  const originalOverflow = document.body.style.overflow;
+  const header = document.querySelector(".header");
+  const scrollBarWidth = window.innerWidth - document.body.offsetWidth;
 
   const screenSize = getComputedStyle(document.documentElement)
     .getPropertyValue("--screensize")
@@ -56,16 +65,29 @@ if (categoryForm) {
 
     loader.addEventListener("click", (e) => {
       if (file) {
-        file = null;
-        loader.classList.remove("active");
-        submitBtn.disabled = true;
-        addToCartBtn.disabled = true;
+        deleteModal.classList.add("active");
+        document.body.style.overflow = "hidden";
+        document.body.style.paddingRight = `${scrollBarWidth}px`;
+        if (header) header.style.paddingRight = `${scrollBarWidth}px`;
         e.preventDefault();
-        if (loader.className.includes("constructor")) {
-          title.innerHTML = "Создать макет в конструкторе";
-        } else {
-          title.innerHTML = "Загрузить свой макет";
-        }
+        deleteBtn.addEventListener("click", () => {
+          deleteModal.classList.remove("active");
+          setTimeout(() => {
+            document.body.style.overflow = originalOverflow;
+            document.body.style.paddingRight = "0px";
+            if (header) header.style.paddingRight = "0px";
+          }, 300);
+          file = null;
+          loader.classList.remove("active");
+          submitBtn.disabled = true;
+          addToCartBtn.disabled = true;
+          e.preventDefault();
+          if (loader.className.includes("constructor")) {
+            title.innerHTML = "Создать макет в конструкторе";
+          } else {
+            title.innerHTML = "Загрузить свой макет";
+          }
+        });
       } else {
         fileInput.addEventListener("input", (e) => {
           file = fileInput.files;
@@ -78,19 +100,32 @@ if (categoryForm) {
     });
   });
   categoryFormInfoDeleteBtn.addEventListener("click", () => {
-    const firstContentStep = document.querySelector(`.step[data-step="0"]`);
-    const firstFormStep = document.querySelector(
-      `.category-form-step[data-step="0"]`
-    );
-    categoryFormStepList.forEach((item) => {
-      item.classList.remove("active", "success");
+    exitModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+    document.body.style.paddingRight = `${scrollBarWidth}px`;
+    if (header) header.style.paddingRight = `${scrollBarWidth}px`;
+    exitBtn.addEventListener("click", () => {
+      exitModal.classList.remove("active");
+
+      setTimeout(() => {
+        document.body.style.overflow = originalOverflow;
+        document.body.style.paddingRight = "0px";
+        if (header) header.style.paddingRight = "0px";
+      }, 300);
+      const firstContentStep = document.querySelector(`.step[data-step="0"]`);
+      const firstFormStep = document.querySelector(
+        `.category-form-step[data-step="0"]`
+      );
+      categoryFormStepList.forEach((item) => {
+        item.classList.remove("active", "success");
+      });
+      formStepContentList.forEach((item) => {
+        item.classList.remove("active", "success");
+      });
+      firstContentStep.classList.add("active");
+      firstFormStep.classList.add("active");
+      categoryFormInfo.classList.remove("active");
     });
-    formStepContentList.forEach((item) => {
-      item.classList.remove("active", "success");
-    });
-    firstContentStep.classList.add("active");
-    firstFormStep.classList.add("active");
-    categoryFormInfo.classList.remove("active");
   });
   categoryFormStepList.forEach((step, index) => {
     step.setAttribute("data-step", index);

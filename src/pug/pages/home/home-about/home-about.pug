@@ -18,8 +18,20 @@ mixin home-about()
                         p.title Printomat доверяют множество компаний со всей России
                     .bottom-wrapper 
                         p.descr Наша цель — помочь вашему бизнесу выделиться с помощью полиграфии, которая отражает уникальность вашего бренда.
-                .image-block 
-                    img(src="./img/home/about/2.jpg", alt="about")
+                .image-block.marquee-wrapper 
+                    .marquee
+                        .marquee__group
+                            img(src="./img/company/1.jpg", alt="about")
+                            img(src="./img/company/2.jpg", alt="about")
+                            img(src="./img/company/1.jpg", alt="about")
+                        .marquee__group
+                            img(src="./img/company/3.jpg", alt="about")
+                            img(src="./img/company/4.jpg", alt="about")
+                            img(src="./img/company/5.jpg", alt="about")
+                        .marquee__group
+                            img(src="./img/company/6.jpg", alt="about")
+                            img(src="./img/company/7.jpg", alt="about")
+                            img(src="./img/company/6.jpg", alt="about")
             .home-about-item.txt-left    
                 .text-block 
                     .text-wrapper
