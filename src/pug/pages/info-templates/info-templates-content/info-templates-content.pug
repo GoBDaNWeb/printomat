@@ -1,0 +1,99 @@
+mixin info-templates-content()
+    .info-content
+        .info-content-inner.container
+            h1 Полезная информация
+            .tabs 
+                a(href='info.html').btn.tab.outline Подготовка макетов
+                a(href='info-order.html').btn.tab.outline Как сделать заказ
+                a(href='info-templates.html').btn.tab.outline.active Шаблоны макетов
+                a(href='info-articles.html').btn.tab.outline Статьи
+            +selector({name: 'info-tabs', title:'Шаблоны макетов',  class: 'primary', items: [
+                {title: 'Подготовка макетов', href: 'info.html' },
+                {title: 'Как сделать заказ',href: 'info-order.html' },
+                {title: 'Шаблоны макетов', href: 'info-templates.html'},
+                {title: 'Статьи', href: 'info-articles.html'},
+            ],isLinkSelector: true})
+            .tab-content.grid
+                .list-wrapper
+                    ul.sticky-block 
+                        li.info-list-item.active Макеты штанц-форм для изготовления вырубных папок
+                        li.info-list-item Макеты штанц-форм для изготовления вырубных изделий
+                        li.info-list-item Макеты штанц-форм и схемы для изготовления тейбл-тентов
+                        li.info-list-item Макеты штанц-форм для изготовления кардхолдеров
+                        li.info-list-item Макеты штанц-форм для изготовления пакетов
+                        li.info-list-item Макеты штанц-форм для изготовления бирок
+                        li.info-list-item Макеты штанц-форм для изготовления коробок
+                        li.info-list-item Макеты штанц-форм для изготовления конвертов из картона
+                        li.info-list-item Макеты штанц-форм для изготовления двухслойных бумажных стаканчиков
+                        li.info-list-item Макеты обложек для блокнотов
+                        li.info-list-item Макеты шуберов
+                        li.info-list-item Макеты календарей
+                        li.info-list-item Макеты изделий для трафаретной печати (шелкографии)
+                        li.info-list-item Логотип для размещения в Вашем макете
+                        li.info-list-item Каталог шаблонов для оформления заказа на дизайн
+                        li.info-list-item Профиль цветоделения CMYK
+                .tab-content-list.download-list 
+                    .download-row.tab-content-item 
+                        h6 Макеты штанц-форм для изготовления вырубных папок
+                     
+                        .download-items-swiper 
+                            .swiper-wrapper 
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                                +download-card({title: 'Папка с корешком'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                            .pagination.download-pagination
+                    .download-row.tab-content-item
+                        h6 Макеты штанц-форм для изготовления вырубных изделий
+                    
+                        .download-items-swiper
+                            .swiper-wrapper
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                                +download-card({title: 'Папка с корешком'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                                +download-card({title: 'Папка с корешком'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                            .pagination.download-pagination
+                    .download-row.tab-content-item 
+                        h6 Макеты штанц-форм для изготовления вырубных папок
+                   
+                        .download-items-swiper
+                            .swiper-wrapper
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                            .pagination.download-pagination
+                    .download-row.tab-content-item 
+                        h6 Макеты штанц-форм для изготовления вырубных папок
+                   
+                        .download-items-swiper
+                            .swiper-wrapper
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                                +download-card({title: 'Папка с корешком'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                            .pagination.download-pagination
+                    .download-row.tab-content-item 
+                        h6 Макеты штанц-форм для изготовления вырубных изделий
+                    
+                        .download-items-swiper
+                            .swiper-wrapper
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                                +download-card({title: 'Папка с корешком'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                                +download-card({title: 'Папка с корешком'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                            .pagination.download-pagination
+                    .download-row.tab-content-item 
+                        h6 Макеты штанц-форм для изготовления вырубных папок
+                   
+                        .download-items-swiper
+                            .swiper-wrapper
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой'}).swiper-slide
+                                +download-card({title: 'Папка с корешком 5 мм с визиткой три строчки'}).swiper-slide
+                            .pagination.download-pagination

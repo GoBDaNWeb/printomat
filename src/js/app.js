@@ -32,7 +32,7 @@ import "../pug/components/mobile-menu/mobile-menu.js";
 
 document.querySelectorAll(".input__valid-phone").forEach((el) => {
   IMask(el, {
-    mask: "+7 (000) 000-00-00",
+    mask: "+0 (000) 000-00-00",
   });
 });
 document.querySelectorAll(".input__valid-number").forEach((el) => {

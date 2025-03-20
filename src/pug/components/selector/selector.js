@@ -11,6 +11,7 @@ if (linkSelectors) {
     });
   });
 }
+
 if (selectors) {
   selectors.forEach((selector) => {
     const selectorBtn = selector.querySelector(".selector-btn");

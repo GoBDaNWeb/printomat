@@ -16,7 +16,7 @@ mixin selector(data)
                         label.radio-item
                             input(type='radio' name=data.name value=item.value)
                             p #{item.title}
-    if data.isLinkSelector
+    else if data.isLinkSelector
         .selector.link-selector(class=data.class)&attributes(attributes)
             button(type='button').link-selector-btn
                 .selector-title
@@ -28,9 +28,9 @@ mixin selector(data)
                     </svg>
             .selector-content
                 .selector-list
-                    each item,index in data.items
-                        a(href="#") #{item.title}
-    else
+                    each item in data.items
+                        a(href=item.href) #{item.title}
+    else 
         .selector(class=data.class)&attributes(attributes)
             button(type='button').selector-btn
                 .selector-title

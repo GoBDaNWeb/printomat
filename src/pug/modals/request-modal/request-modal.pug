@@ -12,17 +12,17 @@ mixin request-modal()
                     p.title Мы свяжемся с вами для обсуждения деталей
                     .inputs 
                         .input-wrapper 
-                            p Номер заказа
+                            p Ваше имя
                             .input__row
-                                input(type="text" placeholder="Введите").custom-input.input.form__input-value.input__valid-number
+                                input(type="text" placeholder="Введите").custom-input.input.form__input-value.input__valid-name
                                 .input__item-small
                         .input-wrapper 
                             p Номер телефона
                             .input__row
                                 input(type="tel" placeholder='+7 (').custom-input.input.form__input-value.input__valid-phone
                                 .input__item-small
-                    p.policy Нажимая на кнопку, вы даете согласие на
-                        a(href="#" target="_blank") обработку персональных данных
+                    p.policy Нажимая на кнопку, вы даете согласие на 
+                        a(href="#" target="_blank")  обработку персональных данных
                     button.btn.primary Оставить заявку
                 .image-wrapper 
                     img(src="./img/request/img.png", alt="request")
