@@ -173,6 +173,24 @@
             }
           }
         }
+        &.reviews {
+          display: flex;
+          flex-direction: column;
+          @include size(gap, 26px);
+          background: var(--white-color);
+          overflow: auto;
+          scrollbar-width: thin;
+          scrollbar-color: var(--accent-color) #ffffff;
+          &::-webkit-scrollbar {
+            width: 10px;
+          }
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            position: relative;
+          }
+        }
       }
     }
   }
