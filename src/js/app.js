@@ -40,3 +40,13 @@ document.querySelectorAll(".input__valid-number").forEach((el) => {
     mask: /^[0-9]+$/,
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const wrappers = document.querySelectorAll(".marquee__group");
+  if (wrappers.length) {
+    wrappers.forEach((wrapper) => {
+      wrapper.innerHTML += wrapper.innerHTML;
+    });
+  }
+});
+
+// Добавляем управление анимацией

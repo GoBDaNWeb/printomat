@@ -42,6 +42,19 @@
 
   padding: $result;
 }
+@mixin margin($values...) {
+  $result: ();
+
+  @each $value in $values {
+    $result: append(
+      $result,
+      calc(#{$value} / var(--screensize) * 100vw),
+      space
+    );
+  }
+
+  margin: $result;
+}
 
 @mixin h1 {
   font-weight: 500;
