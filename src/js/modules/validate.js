@@ -7,6 +7,7 @@ export function validateForm() {
   };
 
   const setFeedback = (input, isValid, message = "") => {
+    console.log(input);
     const inputRow = input.closest(".input__row");
     const feedbackElement = inputRow.querySelector(".input__item-small");
 
@@ -29,6 +30,9 @@ export function validateForm() {
       /^(0?[1-9]|[12][0-9]|3[01])\.(0?[1-9]|1[0-2])\.[1-2][0-9]{3}$/.test(
         value
       ),
+    numberData: (value) => value.length > 0,
+    email: (value) =>
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value),
   };
 
   const validateInput = (input, type, errorMessage) => {
@@ -51,6 +55,26 @@ export function validateForm() {
         type: "phone",
         error: "Введите номер телефона",
       },
+      {
+        input: form.querySelector(".input__valid-email"),
+        type: "email",
+        error: "Введите e-mail",
+      },
+      {
+        input: form.querySelector(".input__valid-inn"),
+        type: "numberData",
+        error: "Введите корректное значение",
+      },
+      {
+        input: form.querySelector(".input__valid-bik"),
+        type: "numberData",
+        error: "Введите корректное значение",
+      },
+      {
+        input: form.querySelector(".input__valid-rs"),
+        type: "numberData",
+        error: "Введите корректное значение",
+      },
     ];
 
     if (isExtended) {
@@ -69,7 +93,7 @@ export function validateForm() {
           input: form.querySelector(".input__valid-date"),
           type: "date",
           error: "Введите корректную дату",
-        }
+        },
       );
     }
     inputs.forEach(({ input, type, error }) => {

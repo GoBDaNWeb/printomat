@@ -14,7 +14,7 @@ mixin order-page-3()
 				.order__nav__item.active 
 					p Оплата
 			.order__body 
-				.order__left.tabs-wrapper 
+				form.form.order__left.tabs-wrapper 
 					h6 Оплата
 					.order__delivery__radios 
 							label.radio-btn.tab.active(data-tab="1") 
@@ -27,12 +27,14 @@ mixin order-page-3()
 						.order__payment-block 
 							p.text-l Реквизиты ЮЛ
 							.double-field
-								label.field-wrap
-									span ИНН
-									input.input__valid-phone(type="text", placeholder="Введите") 
+								.input__row 
+									label.field-wrap
+										span ИНН*
+										input.input__valid-inn.input__valid-number(type="text", placeholder="Введите") 
+									.input__item-small
 								label.field-wrap
 									span КПП
-									input(type="text", placeholder="Введите") 
+									input.input__valid-number(type="text", placeholder="Введите") 
 
 							
 							label.field-wrap
@@ -50,13 +52,17 @@ mixin order-page-3()
 						.order__payment-block 
 							p.text-l Банковские реквизиты
 						
-							label.field-wrap
-								span БИК *
-								input.input__valid-phone(type="text", placeholder="Введите") 
+							.input__row 
+								label.field-wrap
+									span БИК *
+									input.input__valid-number.input__valid-bik(type="text", placeholder="Введите")
+								.input__item-small
 
-							label.field-wrap
-								span Расчетный счет *
-								input(type="text", placeholder="Введите") 
+							.input__row 
+								label.field-wrap
+									span Расчетный счет *
+									input.input__valid-number.input__valid-rs(type="text", placeholder="Введите") 
+								.input__item-small
 
 							label.field-wrap
 								span Способ оплаты
@@ -85,14 +91,18 @@ mixin order-page-3()
 						
 							.order__promocode 
 								label.field-wrap
-									input.input__valid-phone(type="text", placeholder="Введите") 
-								button.btn.primary Активировать
+									input(type="text", placeholder="Введите") 
+								button.btn.primary(type="button") Активировать
 		
 						.order__left__total 
 									p.little Стоимость доставки (включая налог)
 										span 1 000 ₽
 									p Итого
 										span 19 720 ₽
+						+checkbox('Я даю согласие с политикой обработки персональных данных', 'checked')
+						.order__left__bottom 
+							a.btn.tab.outline(href="#") Назад
+							button.btn.primary(href="#") Оформить заказ 
 					.tab-content(data-tab="2")
 						
 						.order__payment-block 
@@ -118,12 +128,12 @@ mixin order-page-3()
 											name: 'method'
 								
 									},)
-						
+					
 						.order__payment-block
 							p.text-l Скидочный купон (если есть)
 							.order__promocode
 								label.field-wrap
-									input.input__valid-phone(type="text", placeholder="Введите") 
+									input(type="text", placeholder="Введите") 
 								button.btn.primary Активировать
 		
 						.order__left__total 
@@ -131,10 +141,10 @@ mixin order-page-3()
 										span 1 000 ₽
 									p Итого
 										span 19 720 ₽
-					+checkbox('Создать личный кабинет по завершению  оформления заказа')
-					.order__left__bottom 
-						a.btn.tab.outline(href="#") Назад
-						a.btn.primary(href="#") Оформить заказ 
+						+checkbox('Я даю согласие с политикой обработки персональных данных', 'checked')
+						.order__left__bottom 
+							a.btn.tab.outline(href="#") Назад
+							button.btn.primary(href="#") Оформить заказ 
 
 					
 					
@@ -148,7 +158,7 @@ mixin order-page-3()
 										<path d="M1 5L10 15L19 5" stroke="#2C2C2C"/>
 									</svg>
 									span Наклейки
-								button.order__right__item__remove 
+								button.order__right__item__remove(data-modal-target="delete-product")  
 									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
 										<path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>
@@ -217,7 +227,7 @@ mixin order-page-3()
 										<path d="M1 5L10 15L19 5" stroke="#2C2C2C"/>
 									</svg>
 									span Наклейки
-								button.order__right__item__remove 
+								button.order__right__item__remove(data-modal-target="delete-product")  
 									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
 										<path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>

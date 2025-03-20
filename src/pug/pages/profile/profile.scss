@@ -19,6 +19,24 @@
 	svg {
 		@include size(width, 46);
 		@include size(height, 46);
+
+		rect, path {
+			transition: .3s ease;
+		}
+	}
+
+	&:hover {
+		svg {
+			rect, path {
+				fill: var(--accent-color);
+				transition: .3s ease;
+			}
+
+			rect:first-child {
+				fill: #2c2c2c;
+			}
+
+		}
 	}
 }
 
@@ -129,4 +147,9 @@
 		top: 50%;
 		transform: translate(0, -50%);
 	}
+}
+
+.profile__block__btns {
+	display: flex;
+	justify-content: space-between;
 }

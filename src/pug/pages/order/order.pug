@@ -14,24 +14,30 @@ mixin order-page()
 				.order__nav__item 
 					p Оплата
 			.order__body 
-				.order__left 
+				form.form.order__left 
 					h6 С кем нам связаться, если возникнут вопросы по заказу
-					label.field-wrap
-						span Имя *
-						input(type="text", placeholder="Введите") 
+					.input__row 
+						label.field-wrap
+							span Имя *
+							input.input__valid-name.req(type="text", placeholder="Введите") 
+						.input__item-small
 					.double-field
-						label.field-wrap
-							span Телефон *
-							input.input__valid-phone(type="text", placeholder="Введите") 
-						label.field-wrap
-							span Почта *
-							input(type="text", placeholder="Введите") 
+						.input__row 
+							label.field-wrap
+								span Телефон *
+								input.input__valid-phone(type="tel", placeholder="Введите") 
+							.input__item-small 
+						.input__row 
+							label.field-wrap
+								span Почта *
+								input.input__valid-email(type="text", placeholder="Введите") 
+							.input__item-small
 					label.field-wrap
 						span Комментарий
 						textarea(placeholder="Комментарий")
 					.order__left__bottom 
 						a.btn.tab.outline(href="#") Назад
-						a.btn.primary(href="#") Далее 
+						button.btn.primary Далее 
 				.order__right
 					h6 Ваш заказ
 					.order__right__items 
@@ -42,7 +48,7 @@ mixin order-page()
 										<path d="M1 5L10 15L19 5" stroke="#2C2C2C"/>
 									</svg>
 									span Наклейки
-								button.order__right__item__remove 
+								button.order__right__item__remove(data-modal-target="delete-product")  
 									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
 										<path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>
@@ -111,7 +117,7 @@ mixin order-page()
 										<path d="M1 5L10 15L19 5" stroke="#2C2C2C"/>
 									</svg>
 									span Наклейки
-								button.order__right__item__remove 
+								button.order__right__item__remove(data-modal-target="delete-product")  
 									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
 										<path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>

@@ -86,6 +86,7 @@
 .order__left__bottom  {
 	display: flex;
 	justify-content: space-between;
+	@include size(margin-top, 20);
 
 	.btn {
 		@include size(width, 204);

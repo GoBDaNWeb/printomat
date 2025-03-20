@@ -32,7 +32,7 @@
 	display: flex;
 	@include size(gap, 24);
 
-	.field-wrap {
+	.field-wrap, .input__row {
 		flex: 1;
 	}
 

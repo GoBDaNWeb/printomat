@@ -23,6 +23,7 @@ modals();
 validateForm();
 
 import "../pug/components/selector/selector.js";
+import "../pug/pages/profile/profile.js";
 import "../pug/pages/info/info-content/info-content.js";
 import "../pug/pages/profile/orders/orders.js";
 import "../pug/pages/order/order-page.js";

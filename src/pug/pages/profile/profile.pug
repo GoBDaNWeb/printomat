@@ -17,15 +17,17 @@ mixin profile()
 							.profile__block__body
 								label.field-wrap
 									span Имя
-									input(type="text", placeholder="Ваше имя" value="Константин" readonly) 
+									input(type="text", placeholder="Ваше имя" value="Константин") 
 								.double-field.var-2
 									label.field-wrap
 										span Телефон
-										input(type="text", placeholder="Ваш телефон" value="+7 (962) 368-47-12" readonly) 
+										input(type="text", placeholder="Ваш телефон" value="+7 (962) 368-47-12") 
 									label.field-wrap
 										span E-mail
-										input(type="email", placeholder="Ваш e-mail" value="ivanov.konstantin@gmail.com" readonly) 
-								button.btn.primary(data-modal-target="change-password-modal") Изменить пароль
+										input(type="email", placeholder="Ваш e-mail" value="ivanov.konstantin@gmail.com") 
+								.profile__block__btns 
+									button.btn.primary(data-modal-target="change-password-modal") Изменить пароль
+									button.btn.primary.profile__save__btn(disabled) Сохранить
 						
 						.profile__block 
 							.profile__block__head 
@@ -45,7 +47,9 @@ mixin profile()
 										<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#2C2C2C"/>
 										<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="white"/>
 									</svg>
-								button.btn.primary(data-modal-target="add-address-modal") Добавить адрес
+								.profile__block__btns 
+									button.btn.primary(data-modal-target="add-address-modal") Добавить адрес
+									button.btn.primary.profile__save__btn(disabled) Сохранить
 
 					.profile__part 
 						.profile__block 
@@ -90,5 +94,6 @@ mixin profile()
 								label.field-wrap
 										span *Расчетный счет
 										input(type="text", placeholder="*Расчетный счет" value="772201001772201001") 
+								button.btn.primary.profile__save__btn(disabled) Сохранить
 							
 						

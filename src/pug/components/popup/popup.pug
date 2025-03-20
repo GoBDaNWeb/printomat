@@ -76,6 +76,17 @@ mixin popup()
 					p.error-text Новые пароли не совпадают!
 
 
+	.overlay.modal.delete-product
+		.popup.text-centered 
+			button(type="button").close-popup.close-modal
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+					<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="#2C2C2C"/>
+				</svg>
+			h3 Действительно хотите удалить&nbsp;продукт?
+			.double-field 
+				button.btn.outline.tab.close-modal(type="button") Не удалять
+				button.btn.primary Удалить
 	.overlay.modal.confirm-code
 		.popup.text-centered 
 			button(type="button").close-popup.close-modal
@@ -85,7 +96,6 @@ mixin popup()
 				</svg>
 			h3 Код подтверждения<br>выслан на новую почту
 			button(type="button").btn.primary.close-modal Ок 
-	
 	.overlay.modal.add-address-modal
 		.popup 
 			button(type="button").close-popup.close-modal
@@ -101,10 +111,10 @@ mixin popup()
 				.double-field 
 					.field-wrap 
 						span Подъезд
-						input(type="text")
+						input.input__valid-number(type="text")
 					.field-wrap 
 						span Квартира / офис
-						input(type="text")
+						input.input__valid-number(type="text")
 				.double-field
 					button(type="button").btn.outline.tab.close-modal Отменить
 					button(type="button").btn.primary Сохранить
@@ -186,4 +196,86 @@ mixin popup()
 						textarea(placeholder="Ваш комментарий")
 					.double-field
 						button(type="button").btn.primary Отправить
+
+
+	.overlay.modal.check-order
+		.popup
+			button(type="button").close-popup.close-modal
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+					<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="#2C2C2C"/>
+				</svg>
+			h3 Заказ
+
+			.order__right__items 
+				.order__right__item 
+					.order__right__item__head 
+						button.order__right__item__name 
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 5L10 15L19 5" stroke="#2C2C2C"/>
+							</svg>
+							span Наклейки
+						
+					.order__right__item__body 
+						
+						
+						p.hide Размер, мм
+							span 100×60
+						p.hide Печать
+							span Одна краска (1+0)
+						p.hide Бумага
+							span 300г Touche Cover
+						p.hide Макет
+							span Наклейки_новые.ai
+						p.hide Габариты
+							span 0,1 м3
+						p.hide Вес, кг
+							span 1,2
+						p Стоимость
+							span 1 000 шт
+						p Тираж
+							span 10 000 ₽
+				.order__right__item 
+					.order__right__item__head 
+						button.order__right__item__name 
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 5L10 15L19 5" stroke="#2C2C2C"/>
+							</svg>
+							span Наклейки
 			
+					.order__right__item__body 
+				
+						p.hide Размер, мм
+							span 100×60
+						p.hide Печать
+							span Одна краска (1+0)
+						p.hide Бумага
+							span 300г Touche Cover
+						p.hide Макет
+							span Наклейки_новые.ai
+						p.hide Габариты
+							span 0,1 м3
+						p.hide Вес, кг
+							span 1,2
+						p Стоимость
+							span 1 000 шт
+						p Тираж
+							span 10 000 ₽
+						
+						img.hide(src="img/profile/maket-big.png", alt="")
+			.order__right__bottom 
+				p Общие габариты
+					span 0,7 м3
+				p Общий вес
+					span 5,7 кг
+
+				p Дата получения:
+					span 29.08.24 16:32
+
+				p Доставка до ПВЗ
+					span г. Курган, ​ул. Коли Мяготина, 129​ ПВЗ — СДЭК
+
+				p Способ оплаты
+					span Банковский перевод
+				p.order__right__bottom__total Общая стоимость
+					span 19 720 ₽

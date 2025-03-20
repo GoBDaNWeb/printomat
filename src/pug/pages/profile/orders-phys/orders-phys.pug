@@ -19,7 +19,15 @@ mixin orders-phys()
 				.orders__head 
 					label.field-wrap.orders__head__dates
 						span Даты
-						input(type="text", placeholder="Фактический адрес" value="111250, г. Москва, Вн. Тер. г. Муниципальный округ Лефортово") 
+						input#dat(type="text", placeholder="Даты")
+						<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect width="28" height="28" fill="white"/>
+							<rect x="2.5" y="6.78564" width="23" height="17" rx="3.5" stroke="#2C2C2C"/>
+							<line x1="2.85547" y1="10.9285" x2="25.1412" y2="10.9285" stroke="#2C2C2C"/>
+							<line x1="7.64453" y1="3.71423" x2="7.64453" y2="8.85709" stroke="#2C2C2C"/>
+							<path d="M14 3.71423L14 8.85709" stroke="#2C2C2C"/>
+							<line x1="20.5" y1="3.71423" x2="20.5" y2="8.85709" stroke="#2C2C2C"/>
+						</svg>
 					label.field-wrap
 						span Товар
 						+selector({
@@ -78,13 +86,16 @@ mixin orders-phys()
 					.orders__order 
 						.orders__order__head 	
 							button.orders__order__handle 
-								img(src="./img/profile/arrow.svg", alt="")
+								<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect width="28" height="28" rx="14" fill="#2C2C2C"/>
+									<path d="M8 11L14 17.6667L20 11" stroke="white"/>
+								</svg>
 								span Заказ № PM-Z115243
 							.orders__order__info
 								span.orders__order__status.working В работе
 								span.orders__order__date от 26.08.24, 17:25
 							.orders__order__buttons 
-								a.btn.outline.tab
+								button.btn.outline.tab(type="button", data-modal-target="check-order")
 									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<rect x="0.5" y="0.5" width="19" height="19" rx="9.5" fill="white"/>
 										<rect x="0.5" y="0.5" width="19" height="19" rx="9.5" stroke="#2C2C2C"/>
@@ -92,7 +103,7 @@ mixin orders-phys()
 										<path d="M10 5L10 7" stroke="#2C2C2C"/>
 									</svg>
 									span О заказе
-								a.btn.outline.tab
+								button.btn.outline.tab(type="button", data-modal-target="add-comment")
 									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<mask id="path-1-inside-1_3709_20937" fill="white">
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M20 0H0V16H16L20 20V16V11V0Z"/>
@@ -121,7 +132,6 @@ mixin orders-phys()
 										</svg>
 
 										b Оплата картой
-										span.orders__order__payment__notice Возврат товара
 								div.orders__order__body__row__address 
 									span Адрес доставки:
 									p г. Москва, Нижний Сусальный пер., 9 стр. 6. Станция&nbsp;метро Курская.
@@ -175,12 +185,12 @@ mixin orders-phys()
 								div 
 									span Статус макета
 									.orders__order__bottom__row__status.error 
-									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<rect width="20" height="20" rx="10" fill="#F26161"/>
-										<rect x="5.5" y="5.5" width="8.9375" height="10.2188" stroke="white"/>
-										<path d="M8 8.5L12.0003 12.5M12.0003 8.5L8 12.5" stroke="white"/>
-									</svg>
-									p Макет не пропущен 
+										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect width="20" height="20" rx="10" fill="#F26161"/>
+											<rect x="5.5" y="5.5" width="8.9375" height="10.2188" stroke="white"/>
+											<path d="M8 8.5L12.0003 12.5M12.0003 8.5L8 12.5" stroke="white"/>
+										</svg>
+										p Макет не пропущен 
 								div.orders__order__bottom__row__more
 									div 
 										span Тираж
