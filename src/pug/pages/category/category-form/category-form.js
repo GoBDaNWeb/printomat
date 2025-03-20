@@ -15,6 +15,7 @@ if (categoryForm) {
   const accordionItems = categoryForm.querySelectorAll(".accordion-item");
   const addToCartBtn = categoryForm.querySelector(".add-to-cart-btn");
   const submitBtn = categoryForm.querySelector(".submit-btn");
+  const reqChkecboxes = categoryForm.querySelectorAll(".req-checkbox");
 
   const templateLoader = categoryForm.querySelectorAll(".template-loader");
 
@@ -22,6 +23,7 @@ if (categoryForm) {
   const originalOverflow = document.body.style.overflow;
   const header = document.querySelector(".header");
   const scrollBarWidth = window.innerWidth - document.body.offsetWidth;
+  let file;
 
   const screenSize = getComputedStyle(document.documentElement)
     .getPropertyValue("--screensize")
@@ -57,11 +59,23 @@ if (categoryForm) {
       item.classList.remove("selected");
     });
   });
-
+  reqChkecboxes.forEach((check) => {
+    check.addEventListener("change", () => {
+      const currentCheck = Array.from(reqChkecboxes).filter((checkbox) => {
+        return checkbox.checked;
+      });
+      if (currentCheck.length === reqChkecboxes.length && file) {
+        submitBtn.disabled = false;
+        addToCartBtn.disabled = false;
+      } else {
+        submitBtn.disabled = true;
+        addToCartBtn.disabled = true;
+      }
+    });
+  });
   templateLoader.forEach((loader, index) => {
     const fileInput = loader.querySelector(".file-input");
     const title = loader.querySelector(".title");
-    let file;
 
     loader.addEventListener("click", (e) => {
       if (file) {
@@ -79,8 +93,10 @@ if (categoryForm) {
           }, 300);
           file = null;
           loader.classList.remove("active");
+
           submitBtn.disabled = true;
           addToCartBtn.disabled = true;
+
           e.preventDefault();
           if (loader.className.includes("constructor")) {
             title.innerHTML = "Создать макет в конструкторе";
@@ -93,8 +109,13 @@ if (categoryForm) {
           file = fileInput.files;
           loader.classList.add("active");
           title.innerHTML = file[0].name;
-          submitBtn.disabled = false;
-          addToCartBtn.disabled = false;
+          const currentCheck = Array.from(reqChkecboxes).filter((checkbox) => {
+            return checkbox.checked;
+          });
+          if (currentCheck.length === reqChkecboxes.length) {
+            submitBtn.disabled = false;
+            addToCartBtn.disabled = false;
+          }
         });
       }
     });
@@ -204,9 +225,9 @@ if (categoryForm) {
   const inputs = firstStep.querySelectorAll(".custom-input");
   const currentNextBtn = firstStep.querySelector(".next-btn");
 
-  let reqSelectors = 0; // Количество .req инпутов в .selector
-  let reqInputs = 0; // Количество инпутов с value > 0
-  let reqTotal = 0; // Итоговое значение (сумма reqSelectors + reqInputs)
+  let reqSelectors = 0;
+  let reqInputs = 0;
+  let reqTotal = 0;
 
   // Функция обновления reqSelectors
   const updateReqSelectors = () => {

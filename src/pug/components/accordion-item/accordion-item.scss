@@ -236,6 +236,7 @@
 
     .icon {
       transition: var(--trs-cubic-600);
+      pointer-events: none;
     }
   }
   .collapse {

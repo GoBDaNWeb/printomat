@@ -7,7 +7,11 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-
+  transition: var(--trs-cubic-600);
+  border: 1px solid rgba(0, 0, 0, 0);
+  &:hover {
+    border-color: var(--accent-color) !important;
+  }
   .image-wrapper {
     width: 100%;
     @include size(height, 310);
