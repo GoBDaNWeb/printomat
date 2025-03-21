@@ -62,6 +62,9 @@
           @include body-mb;
           @media (max-width: $tab-sm) {
             @include size(margin-top, 24);
+            width: 100%;
+            @include padding(0, 20);
+            justify-content: center;
           }
         }
       }

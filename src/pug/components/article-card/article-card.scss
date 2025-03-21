@@ -10,6 +10,10 @@
     @include size(gap, 24);
     flex-direction: column;
   }
+  transition: var(--trs-cubic-600);
+  &:hover {
+    border-color: var(--accent-color);
+  }
   &.sm {
     @include size(gap, 20);
     @media (max-width: $tab-sm) {

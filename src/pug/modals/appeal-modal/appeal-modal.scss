@@ -1,0 +1,82 @@
+@use "src/scss/common/files/mixins" as *;
+.appeal-modal {
+  .modal-content-wrapper {
+    @include size(width, 888);
+    @media (max-width: $tab-sm) {
+      @include size(width, 312);
+    }
+    .modal-content {
+      @include size(gap, 24);
+      align-items: center;
+      display: flex;
+      @media (max-width: $tab-sm) {
+        flex-direction: column;
+      }
+      .form {
+        .title {
+          @include size(margin-top, 12);
+          @include body-l;
+          @media (max-width: $tab-sm) {
+            @include size(margin-top, 24);
+          }
+        }
+        .policy {
+          color: var(--txt-gray-color);
+          @include body-s;
+          @include size(margin-top, 24);
+          @media (max-width: $tab-sm) {
+            @include size(margin-top, 16);
+          }
+          a {
+            color: var(--txt-gray-color);
+            text-decoration: underline;
+          }
+        }
+        .inputs {
+          @include size(margin-top, 28);
+          @include size(gap, 24);
+          display: flex;
+          flex-direction: column;
+          @include size(width, 384);
+          @media (max-width: $tab-sm) {
+            @include size(width, 264);
+            @include size(margin-top, 24);
+          }
+          .input-wrapper {
+            @include size(gap, 12);
+            display: flex;
+            flex-direction: column;
+            textarea {
+              resize: none;
+              @include size(height, 150);
+            }
+          }
+        }
+        .btn {
+          @include size(height, 46);
+          @include size(margin-top, 24);
+          justify-content: center;
+          @include body-mb;
+        }
+      }
+      .image-wrapper {
+        @include size(width, 204);
+        @include size(height, 402);
+        @include border-radius(20);
+        border: 10px solid var(--gray-color);
+        position: relative;
+        overflow: hidden;
+        background: var(--back-color);
+        @media (max-width: $tab-sm) {
+          display: none;
+        }
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

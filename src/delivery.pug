@@ -1,7 +1,7 @@
 extends ./pug/templates/template.pug
 
 block head 
-  +head(["header", "mobile-menu", "crumbs", "delivery-content", "delivery", "accordion-item","payment", "badge","contacts", "selector", "footer", "orders-modal", "route-modal", "requisites-modal"])
+  +head(["header", "mobile-menu", "crumbs", "delivery-content", "delivery", "accordion-item","payment", "badge","contacts", "selector", "footer", "orders-modal", "route-modal", "requisites-modal", "appeal-modal"])
 block header 
     +header()
     +mobile-menu()
@@ -15,3 +15,4 @@ block modals
   +orders-modal()
   +route-modal()
   +requisites-modal()
+  +appeal-modal()

@@ -13,6 +13,8 @@
   @media (max-width: $tab-sm) {
     @include size(height, 521);
     @include size(padding-top, 88);
+    background-image: url("../img/home/alert/bg-mob.webp");
+    @include size(margin-top, -40);
   }
   .home-alert-inner {
     .title {

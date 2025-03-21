@@ -74,5 +74,10 @@
     align-items: center;
     justify-content: center;
     @include size(margin-top, 36);
+    @media (max-width: $tab-sm) {
+      &.hidden {
+        display: none;
+      }
+    }
   }
 }

@@ -11,7 +11,7 @@
   opacity: 0;
   transition: var(--trs-cubic-600);
   pointer-events: none;
-  max-height: calc(100vh - 200px);
+  max-height: calc(100vh);
 
   &.active {
     opacity: 1;
@@ -20,11 +20,12 @@
   }
   .mobile-menu-inner {
     overflow: auto;
-    max-height: calc(100vh - 200px);
-    height: fit-content;
+    height: calc(100vh - calc(72 / var(--screensize) * 100vw));
     @include size(padding-bottom, 16);
-
+    display: flex;
+    flex-direction: column;
     .secondary {
+      @include size(min-height, 46);
       @include size(height, 46);
       width: 100%;
       justify-content: center;
@@ -34,6 +35,7 @@
       display: flex;
       flex-direction: column;
       @include size(gap, 24);
+      flex: 1;
       a {
         @include body-mb;
       }
@@ -64,8 +66,10 @@
       border-top: 1px solid var(--line-color);
       display: flex;
       flex-direction: column;
-      @include size(gap, 24);
-
+      @include size(gap, 11);
+      .clock {
+        @include size(margin-top, 10);
+      }
       .mail,
       .clock {
         display: flex;
@@ -73,6 +77,25 @@
         @include size(gap, 10);
         p {
           @include body-s;
+        }
+      }
+      .socials-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a {
+          @include body-s;
+        }
+        .socials {
+          display: flex;
+          align-items: center;
+          @include size(gap, 10);
+          a {
+            svg {
+              @include size(width, 18);
+              @include size(height, 18);
+            }
+          }
         }
       }
     }

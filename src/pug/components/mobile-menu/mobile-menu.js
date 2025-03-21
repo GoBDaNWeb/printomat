@@ -22,7 +22,7 @@ burger.addEventListener("click", () => {
   } else {
     menu.classList.add("active");
     burger.classList.add("active");
-    menu.style.height = `${menuHeight}px`;
+    menu.style.height = `91%`;
     document.body.style.paddingRight = `${scrollBarWidth}px`;
     document.body.style.overflow = "hidden";
     header.style.paddingRight = `${scrollBarWidth}px`;

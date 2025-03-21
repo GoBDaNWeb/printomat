@@ -4,13 +4,23 @@ if (linkSelectors) {
   linkSelectors.forEach((selector) => {
     const selectorTitle = selector.querySelector(".link-selector-btn");
     selectorTitle.addEventListener("click", () => {
-      selector.classList.add("active");
+      if (selector.className.includes("active")) {
+        selector.classList.remove("active");
+      } else {
+        selector.classList.add("active");
+      }
     });
     selector.addEventListener("mouseleave", () => {
       selector.classList.remove("active");
     });
   });
 }
+
+window.addEventListener("touchmove", () => {
+  linkSelectors.forEach((selector) => {
+    selector.classList.remove("active");
+  });
+});
 
 if (selectors) {
   selectors.forEach((selector) => {

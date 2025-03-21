@@ -110,5 +110,5 @@ mixin catalog(data)
                     +catalog-card({img: './img/catalog/8.jpg', title: 'Календари', tabs: '0 1 2'}).swiper-slide
                     +catalog-card({img: './img/catalog/9.jpg', title: 'Печать с отделкой на нестандартных бумагах', tabs: '0 5'}).swiper-slide
                 .pagination.catalog-pagination
-        .btn-wrapper 
+        .btn-wrapper(class=data.mobClass)
             button.btn.load-more.load.white Показать ещё
