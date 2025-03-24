@@ -41,6 +41,37 @@ document.querySelectorAll(".input__valid-number").forEach((el) => {
     mask: /^[0-9]+$/,
   });
 });
+document.querySelectorAll(".input__valid-inn").forEach((el) => {
+  IMask(el, {
+    mask: /^[0-9]\d{0,11}$/
+
+
+  });
+});
+
+document.querySelectorAll(".input__valid-kpp").forEach((el) => {
+  IMask(el, {
+    mask: /^[0-9]\d{0,8}$/
+  });
+});
+
+document.querySelectorAll(".input__valid-bik").forEach((el) => {
+  IMask(el, {
+    mask: /^[0-9]\d{0,8}$/
+  });
+});
+
+document.querySelectorAll(".input__valid-corr").forEach((el) => {
+  IMask(el, {
+    mask: /^[0-9]\d{0,19}$/
+  });
+});
+
+document.querySelectorAll(".input__valid-ras").forEach((el) => {
+  IMask(el, {
+    mask: /^[0-9]\d{0,19}$/
+  });
+});
 document.addEventListener("DOMContentLoaded", function () {
   const wrappers = document.querySelectorAll(".marquee__group");
   if (wrappers.length) {
