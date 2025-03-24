@@ -444,3 +444,11 @@
 	}
 }
 
+.input__row.error {
+	.field-wrap {
+		input {
+			border-color: #f34040;
+		}
+	}
+}
+

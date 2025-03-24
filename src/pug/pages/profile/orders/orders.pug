@@ -6,7 +6,7 @@ mixin orders()
 				.profile__head__btns 
 					button.btn.secondary Мои заказы
 					button.btn.outline.tab Профиль
-					a(href="#").profile__head__notification
+					button(type="button", data-modal-target="notification-window").profile__head__notification
 						<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<rect width="46" height="46" rx="23" fill="#F2DC00"/>
 							<path d="M24.0231 14.1871C24.0678 14.9964 23.6037 15.0019 23.0925 14.9093C22.5271 14.9742 22.0622 15.0046 22.0968 14.2304C22.13 13.4754 22.482 12.9519 23.0783 13.0035C23.7689 13.0637 23.9869 13.5281 24.0231 14.1871Z" fill="#2C2C2C"/>
@@ -462,7 +462,6 @@ mixin orders()
 								button.btn.outline.tab
 									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<g clip-path="url(#clip0_1751_7016)">
-										<rect width="20" height="20" fill="white"/>
 										<path d="M16.824 8.2265C17.0123 10.1818 16.4808 12.1387 15.3308 13.7241C14.1808 15.3095 12.4927 16.4127 10.5882 16.8233C8.68371 17.2339 6.69605 16.9233 5.00402 15.9506C3.31199 14.9779 2.03391 13.4112 1.41337 11.5491C0.792828 9.68696 0.873214 7.6596 1.63921 5.85341C2.4052 4.04722 3.80324 2.5885 5.56687 1.75525C7.3305 0.922006 9.33641 0.772503 11.2023 1.33524C13.0682 1.89797 14.6636 3.1336 15.6844 4.80661M12.7551 11.1813L17.0958 7.40013L20 12.3889" stroke="#2C2C2C"/>
 										</g>
 										<defs>
@@ -471,6 +470,7 @@ mixin orders()
 										</clipPath>
 										</defs>
 									</svg>
+
 
 									span Повторить
 						.orders__order__body 
@@ -489,6 +489,7 @@ mixin orders()
 											<circle cx="10" cy="10" r="5.5" stroke="white"/>
 											<path d="M7.0625 9.33594L9.60714 11.5625L11.3036 9.78125L13 8" stroke="white"/>
 										</svg>
+										span.orders__order__payment__notice Оплата прошла успешно
 										b По счёту
 										<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="download">
 											<rect width="28" height="28" rx="14" fill="#EEEEEE"/>
@@ -605,7 +606,6 @@ mixin orders()
 								a.btn.outline.tab
 									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<g clip-path="url(#clip0_1751_7016)">
-										<rect width="20" height="20" fill="white"/>
 										<path d="M16.824 8.2265C17.0123 10.1818 16.4808 12.1387 15.3308 13.7241C14.1808 15.3095 12.4927 16.4127 10.5882 16.8233C8.68371 17.2339 6.69605 16.9233 5.00402 15.9506C3.31199 14.9779 2.03391 13.4112 1.41337 11.5491C0.792828 9.68696 0.873214 7.6596 1.63921 5.85341C2.4052 4.04722 3.80324 2.5885 5.56687 1.75525C7.3305 0.922006 9.33641 0.772503 11.2023 1.33524C13.0682 1.89797 14.6636 3.1336 15.6844 4.80661M12.7551 11.1813L17.0958 7.40013L20 12.3889" stroke="#2C2C2C"/>
 										</g>
 										<defs>
@@ -631,7 +631,7 @@ mixin orders()
 											<circle cx="10" cy="10" r="5.5" stroke="white"/>
 											<path d="M7.0625 9.33594L9.60714 11.5625L11.3036 9.78125L13 8" stroke="white"/>
 										</svg>
-										span.orders__order__payment__notice Возврат товара
+										span.orders__order__payment__notice Оплата прошла успешно
 										b По счёту
 										<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="download">
 											<rect width="28" height="28" rx="14" fill="#EEEEEE"/>

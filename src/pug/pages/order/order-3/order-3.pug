@@ -99,7 +99,10 @@ mixin order-page-3()
 										span 1 000 ₽
 									p Итого
 										span 19 720 ₽
-						+checkbox('Я даю согласие с политикой обработки персональных данных', 'checked')
+						label.checkbox 
+							input(type="checkbox" checked)
+							span Я даю согласие 
+								a(href="#" target="_blank") с политикой обработки персональных данных 
 						.order__left__bottom 
 							a.btn.tab.outline(href="#") Назад
 							button.btn.primary(href="#") Оформить заказ 

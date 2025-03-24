@@ -316,3 +316,189 @@ span.show-password {
 		}
 	}
 }
+
+
+.notification-window, .notification-window-empty {
+	overflow: hidden;
+	.popup {
+		height: 100vh;
+		margin-right: 0;
+		@include size(max-width, 528);
+		width: 100%;
+	}
+
+}
+
+.notification-window__content {
+	overflow-y: auto;
+	max-height: 80vh;
+
+	&.empty {
+		height: 80vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		svg {
+			@include size(width, 46);
+			@include size(height, 46);
+			@include size(margin-bottom, 10);
+		}
+
+		span {
+			@include size(font-size, 12);
+			color: #A0A0A0;
+			font-weight: 500;
+		}
+	}
+}
+
+.notification-window__item {
+	@include size(padding-top, 16);
+	@include size(padding-bottom, 16);
+	@include size(padding-left, 20);
+	@include size(padding-right, 80);
+	border: 1px solid rgba(62, 62, 62, .15);
+	@include size(border-radius, 12);
+	display: flex;
+	@include size(gap, 16);
+	position: relative;
+	@include size(margin-bottom, 10);
+	&:before {
+		content: "";
+		border-radius: 50%;
+		background: #EEEEEE;
+		@include size(width, 8);
+		@include size(height, 8);
+		flex-shrink: 0;
+		display: block;
+		@include size(margin-top, 5);
+	}
+
+	p {
+		@include size(font-size, 14);
+		font-weight: 600;
+		@include size(margin-bottom, 8);
+	}
+
+	span {
+		@include size(font-size, 12);
+		display: flex;
+		align-items: center;
+		@include size(gap, 12);
+
+		svg {
+			@include size(width, 12);
+			@include size(height, 12);
+		}
+	}
+
+	.remove-notification {
+		position: absolute;
+		@include size(top, 10);
+		@include size(right, 10);
+
+		svg {
+			@include size(width, 24);
+			@include size(height, 24);
+		}
+	}
+
+	&.new {
+		background: #DFF6E4;
+		border-color: #DFF6E4;
+
+		&:before {
+			background: #60BA74;
+		}
+
+		.remove-notification {
+			svg {
+				rect {
+					fill: #fff;
+				}
+			}
+		}
+	}
+}
+
+.signin-modal__reg, .signin-modal__signin {
+	@include size(padding-top, 28);
+	@include size(margin-top, 28);
+	width: 100%;
+	border-top: 1px solid rgba(62, 62, 62, .15);
+
+	p {
+		@include size(font-size, 16);
+		font-weight: 600;
+		@include size(margin-bottom, 16);
+	}
+}
+
+.signin-modal__signin {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.change-layout {
+	p {
+		@include size(font-size, 16);
+		@include size(margin-bottom, 12);
+
+		b {
+			font-weight: 600;
+		}
+	}
+}
+
+.change-layout__picture  {
+	@include size(padding, 10);
+	border: 1px solid rgba(62, 62, 62, .15);
+	@include size(border-radius, 12);
+	@include size(margin-top, 16);
+	position: relative;
+	@include size(height, 315);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.change-layout__download {
+		@include size(width, 28);
+		@include size(height, 28);
+		position: absolute;
+		@include size(top, 10);
+		@include size(right, 10);
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+.change-layout__bottom {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	@include size(gap, 24);
+	@include size(margin-top, 28);
+
+	.btn {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include size(font-size, 16);
+		@include size(height, 45);
+	}
+}
+
+.change-layout__name {
+	font-weight: 600;
+	@include size(font-size, 16);
+	text-decoration: underline;
+	@include size(margin-top, 20);
+}

@@ -17,14 +17,14 @@ mixin profile()
 							.profile__block__body
 								label.field-wrap
 									span Имя
-									input(type="text", placeholder="Ваше имя" value="Константин") 
+									input.input__valid-name(type="text", placeholder="Ваше имя" value="") 
 								.double-field.var-2
 									label.field-wrap
 										span Телефон
-										input(type="text", placeholder="Ваш телефон" value="+7 (962) 368-47-12") 
+										input.input__valid-phone(type="text", placeholder="Ваш телефон" value="") 
 									label.field-wrap
 										span E-mail
-										input(type="email", placeholder="Ваш e-mail" value="ivanov.konstantin@gmail.com") 
+										input(type="email", placeholder="Ваш e-mail" value="") 
 								.profile__block__btns 
 									button.btn.primary(data-modal-target="change-password-modal") Изменить пароль
 									button.btn.primary.profile__save__btn(disabled) Сохранить
@@ -67,33 +67,33 @@ mixin profile()
 								.double-field 
 									label.field-wrap
 										span ИНН
-										input(type="text", placeholder="ИНН" value="7721793895") 
+										input.input__valid-inn(type="text", placeholder="ИНН" value="") 
 									label.field-wrap
 										span КПП
-										input(type="text", placeholder="КПП" value="772201001") 
+										input.input__valid-kpp(type="text", placeholder="КПП" value="") 
 								label.field-wrap
 										span Название организации
-										input(type="text", placeholder="Название организации" value="ООО «Комус»") 
+										input(type="text", placeholder="Название организации" value="") 
 								label.field-wrap
 										span Юридический адрес
-										input(type="text", placeholder="Юридический адрес" value="111250, г. Москва, Вн. Тер. г. Муниципальный округ Лефортово") 
+										input(type="text", placeholder="Юридический адрес" value="") 
 								label.field-wrap
 										span Фактический адрес
-										input(type="text", placeholder="Фактический адрес" value="111250, г. Москва, Вн. Тер. г. Муниципальный округ Лефортово") 
+										input(type="text", placeholder="Фактический адрес" value="") 
 								p.section-subtitle.section-subtitle-2  Банковские реквизиты
 								.double-field 
 									label.field-wrap
 										span *БИК
-										input(type="text", placeholder="*БИК" value="283741243") 
+										input.input__valid-bik(type="text", placeholder="*БИК" value="") 
 									label.field-wrap
 										span Корр. счет
-										input(type="text", placeholder="Корр. счет" value="772201001") 
+										input.input__valid-corr(type="text", placeholder="Корр. счет" value="") 
 								label.field-wrap
 										span Название банка
-										input(type="text", placeholder="Название банка" value="СБЕР") 
+										input(type="text", placeholder="Название банка" value="") 
 								label.field-wrap
 										span *Расчетный счет
-										input(type="text", placeholder="*Расчетный счет" value="772201001772201001") 
+										input.input__valid-ras(type="text", placeholder="*Расчетный счет" value="") 
 								button.btn.primary.profile__save__btn(disabled) Сохранить
 							
 						

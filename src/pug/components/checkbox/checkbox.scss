@@ -7,6 +7,10 @@
     display: flex;
     @include size(font-size, 16);
     cursor: pointer;
+
+    a {
+        text-decoration: underline;
+    }
 }
 
 .checkbox input {
