@@ -461,7 +461,7 @@ mixin popup()
 				</svg>
 				span Нет уведомлений
  
-	.overlay.modal.change-layout.active
+	.overlay.modal.change-layout
 		.popup
 			button(type="button").close-popup.close-modal
 				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -492,4 +492,21 @@ mixin popup()
 
 			.change-layout__bottom 
 				button(type="button").btn.primary Согласен
-				button(type="button" data-modal-target="add-comment").btn.outline.tab.close-modal Не согласен
+				button(type="button" data-modal-target="add-comment-2").btn.outline.tab.close-modal Не согласен
+
+	.overlay.modal.add-comment-2
+		.popup 
+			button(type="button").close-popup.close-modal
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+					<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="#2C2C2C"/>
+				</svg>
+			h3 Опишите, что требуется доработать
+			form.popup__form
+				.field-wrap 
+					span Комментарий
+					textarea(placeholder="Дополнительная информация (если требуется)")
+				p.change-layout__name Визитки на конференцию.ai
+				.change-layout__bottom 
+					button(type="button").btn.primary Отправить
+					button(type="button" data-modal-target="change-layout").btn.outline.tab.close-modal Назад

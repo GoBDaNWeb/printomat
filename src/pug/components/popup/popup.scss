@@ -18,13 +18,17 @@
 		visibility: visible;
 	}
 
-	&.add-comment {
+	&.add-comment, &.add-comment-2 {
 		h3 {
 			width: 100%;
 		}
 
 		.popup__form {
 			width: 100%;
+		}
+
+		.change-layout__bottom, .change-layout__name {
+			margin-top: 0;
 		}
 
 		.btn {
