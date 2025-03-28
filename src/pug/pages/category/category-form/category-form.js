@@ -43,11 +43,30 @@ if (categoryForm) {
       }
     });
   });
-
+  window.addEventListener("resize", () => {
+    accordionItems.forEach((item) => {
+      if (window.innerWidth > 767) {
+        setTimeout(() => {
+          item.style.maxHeight = `calc(68 /${screenSize} * 100vw)`;
+        }, 1000);
+      } else {
+        setTimeout(() => {
+          item.style.maxHeight = `calc(80 /${screenSize} * 100vw)`;
+        }, 1000);
+      }
+    });
+  });
   accordionItems.forEach((item) => {
-    setTimeout(() => {
-      item.style.maxHeight = `calc(68 /${screenSize} * 100vw)`;
-    }, 1000);
+    if (window.innerWidth > 767) {
+      setTimeout(() => {
+        item.style.maxHeight = `calc(68 /${screenSize} * 100vw)`;
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        item.style.maxHeight = `calc(80 /${screenSize} * 100vw)`;
+      }, 1000);
+    }
+
     const addBtn = item.querySelector(".add-btn");
     const deleteBtn = item.querySelector(".delete-icon");
     addBtn.addEventListener("click", () => {

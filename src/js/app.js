@@ -4,6 +4,7 @@ import { swiper } from "./modules/swiper.js";
 import { map } from "./modules/map.js";
 import { modals } from "./modules/modals.js";
 import { validateForm } from "./modules/validate.js";
+import { hideText } from "./modules/hide-text.js";
 import IMask from "imask";
 
 import AirDatepicker from "air-datepicker";
@@ -20,6 +21,7 @@ swiper();
 map();
 modals();
 validateForm();
+hideText();
 
 import "../pug/components/selector/selector.js";
 import "../pug/pages/profile/profile.js";
@@ -43,33 +45,31 @@ document.querySelectorAll(".input__valid-number").forEach((el) => {
 });
 document.querySelectorAll(".input__valid-inn").forEach((el) => {
   IMask(el, {
-    mask: /^[0-9]\d{0,11}$/
-
-
+    mask: /^[0-9]\d{0,11}$/,
   });
 });
 
 document.querySelectorAll(".input__valid-kpp").forEach((el) => {
   IMask(el, {
-    mask: /^[0-9]\d{0,8}$/
+    mask: /^[0-9]\d{0,8}$/,
   });
 });
 
 document.querySelectorAll(".input__valid-bik").forEach((el) => {
   IMask(el, {
-    mask: /^[0-9]\d{0,8}$/
+    mask: /^[0-9]\d{0,8}$/,
   });
 });
 
 document.querySelectorAll(".input__valid-corr").forEach((el) => {
   IMask(el, {
-    mask: /^[0-9]\d{0,19}$/
+    mask: /^[0-9]\d{0,19}$/,
   });
 });
 
 document.querySelectorAll(".input__valid-ras").forEach((el) => {
   IMask(el, {
-    mask: /^[0-9]\d{0,19}$/
+    mask: /^[0-9]\d{0,19}$/,
   });
 });
 document.addEventListener("DOMContentLoaded", function () {

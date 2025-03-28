@@ -225,53 +225,59 @@ mixin category-form()
                     .step
                         h5 Добавьте макет
                         .inputs.row 
-                            label.template-loader
-                                input(type="file").file-input
-                                button(type='button').clear-btn
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
-                                        <path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>
-                                    </svg>
-                                .icon 
-                                    <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_2044_55906)">
-                                        <rect width="14" height="18" fill="#F2DC00"/>
-                                        <rect x="2.5" y="2.5" width="9" height="7" stroke="#2C2C2C"/>
-                                        <path d="M7 6.5L7 15.5" stroke="#2C2C2C"/>
-                                        <path d="M3 12.5L7 15.5L11 12.5" stroke="#2C2C2C"/>
-                                        </g>
-                                        <defs>
-                                        <clipPath id="clip0_2044_55906">
-                                        <rect width="14" height="18" fill="white"/>
-                                        </clipPath>
-                                        </defs>
-                                    </svg>
-                                p.title Загрузить свой макет
-                            a(href='#').template-loader.constructor
-                                input(type="file").file-input
-                                button(type='button').clear-btn
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
-                                        <path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>
-                                    </svg>
-                                .icon 
-                                    <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_2044_55916)">
-                                        <rect width="14" height="18" fill="#F2DC00"/>
-                                        <rect x="2.5" y="2.5" width="9" height="7" stroke="#2C2C2C"/>
-                                        <line x1="2" y1="12.5" x2="6" y2="12.5" stroke="#2C2C2C"/>
-                                        <line x1="8" y1="12.5" x2="12" y2="12.5" stroke="#2C2C2C"/>
-                                        <line x1="2" y1="15.5" x2="12" y2="15.5" stroke="#2C2C2C"/>
-                                        </g>
-                                        <defs>
-                                        <clipPath id="clip0_2044_55916">
-                                        <rect width="14" height="18" fill="white"/>
-                                        </clipPath>
-                                        </defs>
-                                    </svg>
-                                p.title Создать макет в конструкторе
+                            .template-wrapper 
+                                label.template-loader
+                                    input(type="file").file-input
+                                    button(type='button').clear-btn
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+                                            <path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>
+                                        </svg>
+                                    .icon 
+                                        <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_2044_55906)">
+                                            <rect width="14" height="18" fill="#F2DC00"/>
+                                            <rect x="2.5" y="2.5" width="9" height="7" stroke="#2C2C2C"/>
+                                            <path d="M7 6.5L7 15.5" stroke="#2C2C2C"/>
+                                            <path d="M3 12.5L7 15.5L11 12.5" stroke="#2C2C2C"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_2044_55906">
+                                            <rect width="14" height="18" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                        </svg>
+                                    p.title Загрузить свой макет
+                                p.descr Перед загрузкой макета убедитесь, что он соответствует 
+                                    a(href="#" target="_blank") техническим требованиям
+                            .template-wrapper 
+                                a(href='#').template-loader.constructor
+                                    input(type="file").file-input
+                                    button(type='button').clear-btn
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+                                            <path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>
+                                        </svg>
+                                    .icon 
+                                        <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_2044_55916)">
+                                            <rect width="14" height="18" fill="#F2DC00"/>
+                                            <rect x="2.5" y="2.5" width="9" height="7" stroke="#2C2C2C"/>
+                                            <line x1="2" y1="12.5" x2="6" y2="12.5" stroke="#2C2C2C"/>
+                                            <line x1="8" y1="12.5" x2="12" y2="12.5" stroke="#2C2C2C"/>
+                                            <line x1="2" y1="15.5" x2="12" y2="15.5" stroke="#2C2C2C"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_2044_55916">
+                                            <rect width="14" height="18" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                        </svg>
+                                    p.title Создать макет в конструкторе
+                                p.descr Если у вас ещё нет макета, вы можете создать его в конструкторе
                         .btns-wrapper 
                             button(type='button').btn.load.gray.prev-btn Назад
+                            button(type='button' data-modal-target='category-order-modal').btn.load.gray.modal-btn Далее
                 .category-form-info 
                     h5 Ваш заказ
                     .category-form-info-center 

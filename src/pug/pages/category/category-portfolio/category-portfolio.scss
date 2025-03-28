@@ -3,6 +3,9 @@
 .category-portfolio {
   overflow: hidden;
   @include size(margin-top, 96);
+  @media (max-width: $tab-sm) {
+    @include size(margin-top, 64);
+  }
   .category-portfolio-inner {
     .title {
       @include h2;

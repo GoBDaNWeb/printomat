@@ -1,7 +1,7 @@
 extends ./pug/templates/template.pug
 
 block head 
-    +head(["header","mobile-menu","crumbs", "delivery","badge", "payment", "cart-button","download-card", "category-about", "category-form", "category-hero", "category-info", "portfolio-card", "catalog-card", "category-portfolio", "category-popular", "category-similar", "accordion-item", "category-order", "order", "contacts", "selector", "footer", "portfolio-modal", "orders-modal", "route-modal", "requisites-modal", "request-status-modal", "request-status-success-modal", "request-modal", "request-success-modal", "modification-template-modal", "delete-modal", "exit-modal", "appeal-modal"])
+    +head(["header","mobile-menu","crumbs", "delivery","badge", "payment", "cart-button","download-card", "category-about", "category-form", "category-hero", "category-info", "portfolio-card", "catalog-card", "category-portfolio", "category-popular", "category-similar", "accordion-item", "category-order", "order", "contacts", "selector", "footer", "portfolio-modal", "orders-modal", "route-modal", "requisites-modal", "request-status-modal", "request-status-success-modal", "request-modal", "request-success-modal", "modification-template-modal", "delete-modal", "exit-modal", "appeal-modal", "category-order-modal", "category-alert"])
 block header 
     +header()
     +mobile-menu()
@@ -9,6 +9,7 @@ block content
     +category-hero()
     +crumbs({items: [{title: 'Продукция', href: '#'}]}).top-sm
     +category-form()
+    +category-alert()
     +category-popular()
     +category-about()
     +delivery({hasText: false})
@@ -16,7 +17,7 @@ block content
     +category-info()
     +category-portfolio()
     +category-similar()
-    +category-order()
+    +category-order({withBtn: true})
     +contacts()
 block footer 
     +footer()
@@ -32,5 +33,6 @@ block modals
     +request-success-modal()
     +modification-template-modal()
     +appeal-modal()
+    +category-order-modal()
     +delete-modal({title: 'Действительно хотите удалить макет?'})
     +exit-modal({title: 'Действительно хотите выйти без сохранения?'})

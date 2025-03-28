@@ -14,21 +14,23 @@ mixin info-articles-content()
                 {title: 'Статьи', href: 'info-articles.html'},
             ],isLinkSelector: true})
             .tab-content.tabs-inner-wrapper.tabs-multiple.grid2
-                .tabs-inner-block
-                    .tabs-inner.sticky-block 
-                        button.btn.tab-inner.gray.active(data-tab='0') Все
-                        button.btn.tab-inner.gray(data-tab='1') Разное
-                        button.btn.tab-inner.gray(data-tab='2') Визитки
-                        button.btn.tab-inner.gray(data-tab='3') Наклейки
-                        button.btn.tab-inner.gray(data-tab='4') Упаковка и POS
-                        button.btn.tab-inner.gray(data-tab='5') Блокноты
-                        button.btn.tab-inner.gray(data-tab='6') Календари
-                        button.btn.tab-inner.gray(data-tab='7') Полиграфия для офиса
-                        button.btn.tab-inner.gray(data-tab='8') Листовки и буклеты
-                        button.btn.tab-inner.gray(data-tab='9') Печать с отделкой и на нестандартных бумагах
-                        button.btn.tab-inner.gray(data-tab='10') Открытки и пригласительные
-                        button.btn.tab-inner.gray(data-tab='11') Брошюры и каталоги
-                        button.btn.tab-inner.gray(data-tab='12') Полиграфия для ресторанов
+                .tabs-inner-block.noFix
+                    .tabs-inner.sticky-block.mob-hide
+                        button.btn.tab-inner.gray.info-list-item-mob.active(data-tab='0') Все
+                        button.btn.tab-inner.gray.info-list-item-mob(data-tab='1') Разное
+                        button.btn.tab-inner.gray.info-list-item-mob(data-tab='2') Визитки
+                        .hidden-content 
+                            button.btn.tab-inner.gray.info-list-item-mob(data-tab='3') Наклейки
+                            button.btn.tab-inner.gray.info-list-item-mob(data-tab='4') Упаковка и POS
+                            button.btn.tab-inner.gray.info-list-item-mob(data-tab='5') Блокноты
+                            button.btn.tab-inner.gray.info-list-item-mob(data-tab='6') Календари
+                            button.btn.tab-inner.gray.info-list-item-mob(data-tab='7') Полиграфия для офиса
+                            button.btn.tab-inner.gray.info-list-item-mob(data-tab='8') Листовки и буклеты
+                            button.btn.tab-inner.gray.info-list-item-mob(data-tab='9') Печать с отделкой и на нестандартных бумагах
+                            button.btn.tab-inner.gray.info-list-item-mob(data-tab='10') Открытки и пригласительные
+                            button.btn.tab-inner.gray.info-list-item-mob(data-tab='11') Брошюры и каталоги
+                            button.btn.tab-inner.gray.info-list-item-mob(data-tab='12') Полиграфия для ресторанов
+                        button.btn.load-more Еще 16 
                 .tab-article-list-wrapper 
                     .tab-article-list
                         +article-card({img: './img/article/1.jpg', badgeTitle: 'Полиграфия для офиса', title: 'Брошюра на скрепке'})(data-tabItemInner='0 1 4 3 5 12')

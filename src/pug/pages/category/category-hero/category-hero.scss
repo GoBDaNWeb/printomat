@@ -3,6 +3,9 @@
 .category-hero {
   @include size(margin-top, 144);
   overflow: hidden;
+  @media (max-width: $tab-sm) {
+    @include size(margin-top, 72);
+  }
   .category-hero-inner {
     .category-hero-swiper {
       position: relative;
@@ -14,6 +17,9 @@
         overflow: hidden;
         opacity: 0;
         transition: opacity var(--trs-cubic-300);
+        @media (max-width: $tab-sm) {
+          @include size(height, 312);
+        }
         &.swiper-slide-active {
           opacity: 1;
         }
@@ -22,10 +28,22 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
+          @media (max-width: $tab-sm) {
+            display: none;
+          }
+          &.mob {
+            display: none;
+            @media (max-width: $tab-sm) {
+              display: block;
+            }
+          }
         }
       }
       .pagination {
         display: flex !important;
+        @media (max-width: $tab-sm) {
+          @include size(margin-top, 12);
+        }
       }
       .navigation {
         position: absolute;

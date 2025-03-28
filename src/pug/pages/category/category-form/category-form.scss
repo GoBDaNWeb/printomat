@@ -2,12 +2,29 @@
 
 .category-form {
   @include size(margin-top, 20);
+  @media (max-width: $tab-sm) {
+    @include size(margin-top, 12);
+  }
   .category-form-inner {
     .steps {
       display: flex;
       @include size(gap, 10);
       @include size(margin-top, 28);
       align-items: center;
+      @media (max-width: $tab-sm) {
+        @include size(gap, 2);
+        @include size(margin-top, 20);
+        @include size(margin-left, -20);
+        @include size(padding-left, 20);
+        @include size(padding-right, 20);
+        @include size(margin-right, -20);
+        overflow: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+      }
       .category-form-step {
         background: var(--back-color);
         @include size(height, 56);
@@ -19,6 +36,11 @@
         width: 100%;
         transition: var(--trs-cubic-300);
         border: 1px solid rgba(0, 0, 0, 0);
+        @media (max-width: $tab-sm) {
+          white-space: nowrap;
+          @include size(gap, 8);
+          @include size(height, 40);
+        }
         &.success {
           border-color: var(--gray-color);
           background: var(--white-color);
@@ -70,6 +92,10 @@
       display: grid;
       @include grid-columns(661, 546);
       align-items: flex-start;
+      @media (max-width: $tab-sm) {
+        @include size(margin-top, 20);
+        grid-template-columns: repeat(1, 1fr);
+      }
       .form-steps {
         .step {
           display: none;
@@ -82,10 +108,18 @@
             display: flex;
             flex-direction: column;
             @include size(gap, 24);
+            @media (max-width: $tab-sm) {
+              @include size(margin-top, 16);
+              @include size(gap, 16);
+            }
             &.grid {
               display: grid;
               grid-template-columns: repeat(2, 1fr);
               @include size(gap, 24);
+              @media (max-width: $tab-sm) {
+                grid-template-columns: repeat(1, 1fr);
+                @include size(gap, 10);
+              }
               label {
                 border: 1px solid var(--line-color);
                 transition: var(--trs-cubic-300);
@@ -96,16 +130,25 @@
                 @include size(gap, 20);
                 justify-content: space-between;
                 cursor: pointer;
-
+                @media (max-width: $tab-sm) {
+                  @include padding(16, 20, 16, 24);
+                  align-items: center;
+                }
                 .radio-input-content {
                   display: flex;
                   flex-direction: column;
                   @include size(gap, 2);
                   .title {
                     @include body-l;
+                    @media (max-width: $tab-sm) {
+                      @include body-mb;
+                    }
                   }
                   .date {
                     @include body-mb;
+                    @media (max-width: $tab-sm) {
+                      @include body-s;
+                    }
                   }
                 }
               }
@@ -124,6 +167,9 @@
                   display: flex;
                   flex-direction: column;
                   @include size(gap, 12);
+                  @media (max-width: $tab-sm) {
+                    @include size(gap, 0);
+                  }
                 }
                 &.active {
                   .hidden-acc {
@@ -150,6 +196,9 @@
               display: grid;
               grid-template-columns: repeat(2, 1fr);
               @include size(gap, 24);
+              @media (max-width: $tab-sm) {
+                grid-template-columns: repeat(1, 1fr);
+              }
               .template-loader {
                 @include border-radius(12);
                 @include size(height, 130);
@@ -207,11 +256,38 @@
                 }
               }
             }
+            .template-wrapper {
+              display: flex;
+              flex-direction: column;
+              @include size(gap, 20);
+              @media (max-width: $tab-sm) {
+                @include size(gap, 12);
+              }
+              .descr {
+                @include body-sb;
+                color: #a0a0a0;
+                a {
+                  color: #2c2c2c;
+                  text-decoration: underline;
+                }
+              }
+            }
             .input-wrapper {
               display: grid;
               @include grid-columns(100, 546);
               @include size(gap, 15);
               align-items: center;
+              @media (max-width: $tab-sm) {
+                @include grid-columns(72, 228);
+                @include size(gap, 13);
+                align-items: flex-start;
+              }
+              .selector-btn,
+              .selector {
+                @media (max-width: $tab-sm) {
+                  @include size(height, 46);
+                }
+              }
               .title-wrapper {
                 display: flex;
                 @include size(gap, 10);
@@ -228,6 +304,10 @@
                   justify-content: center;
                   border-radius: 9999px;
                   cursor: pointer;
+                  @media (max-width: $tab-sm) {
+                    @include size(min-width, 18);
+                    @include size(min-height, 18);
+                  }
                   p {
                     font-weight: 500;
                     font-size: calc(10 / var(--screensize) * 100vw);
@@ -240,15 +320,28 @@
                 @include grid-columns(318, 28, 180);
                 align-items: center;
                 @include size(gap, 8);
+                @media (max-width: $tab-sm) {
+                  grid-template-columns: repeat(1, 1fr);
+                  @include size(gap, 16);
+                }
                 span {
                   @include body-m;
+                  @media (max-width: $tab-sm) {
+                    display: none;
+                  }
                 }
               }
               .half {
                 @include size(width, 318);
+                @media (max-width: $tab-sm) {
+                  width: 100%;
+                }
               }
               .sm {
                 @include size(width, 204);
+                @media (max-width: $tab-sm) {
+                  width: 100%;
+                }
               }
             }
           }
@@ -256,6 +349,9 @@
             display: flex;
             justify-content: space-between;
             @include size(margin-top, 48);
+            @media (max-width: $tab-sm) {
+              @include size(margin-top, 24);
+            }
             .btn {
               &:nth-child(1) {
                 &:before {
@@ -272,6 +368,12 @@
                 }
               }
             }
+            .modal-btn {
+              display: none;
+              @media (max-width: $tab-sm) {
+                display: flex;
+              }
+            }
           }
         }
       }
@@ -279,6 +381,9 @@
         @include padding(48);
         @include border-radius(20);
         border: 1px solid var(--line-color);
+        @media (max-width: $tab-sm) {
+          display: none;
+        }
         &.active {
           .category-form-info-center {
             display: block;

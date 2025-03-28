@@ -15,18 +15,26 @@
 .input-wrapper {
   p {
     @include body-m;
+    @media (max-width: $tab-sm) {
+      @include body-s;
+    }
   }
   input {
     &:placeholder-shown {
       @include body-m;
+      @media (max-width: $tab-sm) {
+        @include body-s;
+      }
     }
   }
 }
 
 .custom-radio {
   appearance: none;
-  @include size(width, 20);
-  @include size(height, 20);
+  @include size(min-width, 20);
+  @include size(min-height, 20);
+  @include size(max-width, 20);
+  @include size(max-height, 20);
   border-radius: 999px;
   border: 1px solid var(--line-color);
   position: relative;

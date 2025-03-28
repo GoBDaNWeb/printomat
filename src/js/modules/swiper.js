@@ -74,9 +74,17 @@ export const swiper = () => {
       prevEl: ".category-popular-prev",
       nextEl: ".category-popular-next",
     },
-    // pagination: {
-    //   el: ".category-hero-pagination",
-    // },
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+      },
+      767: {
+        slidesPerView: 6,
+      },
+    },
+    pagination: {
+      el: ".pagination",
+    },
   });
   const categoryPortfolioSwiper = new Swiper(".category-portfolio-swiper ", {
     modules: [Pagination, Navigation],
@@ -86,9 +94,17 @@ export const swiper = () => {
       prevEl: ".category-portfolio-prev",
       nextEl: ".category-portfolio-next",
     },
-    // pagination: {
-    //   el: ".category-hero-pagination",
-    // },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      767: {
+        slidesPerView: 3,
+      },
+    },
+    pagination: {
+      el: ".pagination",
+    },
   });
   const categorySimilarSwiper = new Swiper(".category-similar-swiper ", {
     modules: [Pagination, Navigation],
@@ -98,9 +114,17 @@ export const swiper = () => {
       prevEl: ".category-similar-prev",
       nextEl: ".category-similar-next",
     },
-    // pagination: {
-    //   el: ".category-hero-pagination",
-    // },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      767: {
+        slidesPerView: 3,
+      },
+    },
+    pagination: {
+      el: ".pagination",
+    },
   });
   const catalogSwiper = new Swiper(".catalog-swiper ", {
     modules: [Pagination, Navigation],

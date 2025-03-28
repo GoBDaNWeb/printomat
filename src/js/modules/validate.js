@@ -7,7 +7,6 @@ export function validateForm() {
   };
 
   const setFeedback = (input, isValid, message = "") => {
-    console.log(input);
     const inputRow = input.closest(".input__row");
     const feedbackElement = inputRow.querySelector(".input__item-small");
 
@@ -32,7 +31,9 @@ export function validateForm() {
       ),
     numberData: (value) => value.length > 0,
     email: (value) =>
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value),
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        value
+      ),
   };
 
   const validateInput = (input, type, errorMessage) => {
@@ -93,7 +94,7 @@ export function validateForm() {
           input: form.querySelector(".input__valid-date"),
           type: "date",
           error: "Введите корректную дату",
-        },
+        }
       );
     }
     inputs.forEach(({ input, type, error }) => {

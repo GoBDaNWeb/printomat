@@ -12,6 +12,12 @@
   align-items: center;
   justify-content: center;
   z-index: 50;
+  @media (max-width: $tab-sm) {
+    @include size(bottom, 10);
+    @include size(right, 13);
+    @include size(width, 40);
+    @include size(height, 40);
+  }
   span {
     @include size(width, 20);
     @include size(height, 20);
@@ -25,5 +31,11 @@
     @include size(top, -3);
     @include size(right, -3);
     @include body-xs;
+    @media (max-width: $tab-sm) {
+      @include size(width, 16);
+      @include size(height, 16);
+      font-size: 10px;
+      line-height: 120%;
+    }
   }
 }

@@ -1,0 +1,106 @@
+@use "src/scss/common/files/mixins" as *;
+
+.category-alert {
+  @include size(margin-top, 64);
+
+  .category-alert-inner {
+    border: 6px solid var(--gray-color);
+    @include border-radius(20);
+    overflow: hidden;
+    @include padding(66, 105, 66, 66);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(242, 241, 241, 1) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $tab-sm) {
+      flex-direction: column;
+      @include size(gap, 32);
+      @include padding(20);
+    }
+    .content {
+      display: flex;
+      align-items: center;
+      @include size(gap, 28);
+      @media (max-width: $tab-sm) {
+        flex-direction: column;
+        align-items: flex-start;
+        @include size(gap, 10);
+      }
+      img {
+        @include size(width, 64);
+        @include size(height, 64);
+      }
+      .text {
+        display: flex;
+        flex-direction: column;
+        @include size(gap, 10);
+        .title {
+          font-weight: 700;
+          @include size(font-size, 32);
+          line-height: 120%;
+          @media (max-width: $tab-sm) {
+            @include size(font-size, 22);
+          }
+        }
+        .descr {
+          font-weight: 700;
+          @include size(font-size, 16);
+          line-height: 140%;
+          @media (max-width: $tab-sm) {
+            @include size(font-size, 14);
+          }
+        }
+      }
+    }
+    .btn-wrapper {
+      position: relative;
+      @media (max-width: $tab-sm) {
+        width: 100%;
+      }
+      .btn {
+        @include size(height, 64);
+        font-weight: 600;
+        @include size(font-size, 20);
+        @include padding(0, 40);
+        line-height: 120%;
+        @media (max-width: $tab-sm) {
+          @include padding(0, 16);
+          width: 100%;
+          justify-content: center;
+        }
+      }
+      .wave {
+        position: absolute;
+        @include size(height, 133);
+        @include size(width, 133);
+        pointer-events: none;
+        @media (max-width: $tab-sm) {
+          display: none;
+        }
+        &.wave1 {
+          bottom: -70%;
+          left: -17%;
+        }
+        &.wave2 {
+          top: -70%;
+          right: -17%;
+        }
+      }
+      .cursor {
+        position: absolute;
+        bottom: -34%;
+        right: -8%;
+        @include size(height, 48);
+        @include size(width, 48);
+        pointer-events: none;
+        @media (max-width: $tab-sm) {
+          display: none;
+        }
+      }
+    }
+  }
+}

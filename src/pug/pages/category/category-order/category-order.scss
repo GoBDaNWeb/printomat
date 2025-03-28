@@ -2,6 +2,9 @@
 
 .category-order {
   background: var(--back-color);
-  @include border-radius(20);
+  @include border-radius(20, 20, 0, 0);
   @include size(margin-top, 128);
+  @media (max-width: $tab-sm) {
+    @include size(margin-top, 64);
+  }
 }

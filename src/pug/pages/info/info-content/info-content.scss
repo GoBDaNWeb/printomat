@@ -59,7 +59,7 @@
     .tab-content {
       @include size(margin-top, 48);
       @media (max-width: $tab-sm) {
-        @include size(margin-top, 32);
+        @include size(margin-top, 24);
       }
       &.grid {
         display: grid;
@@ -68,6 +68,8 @@
         @media (max-width: $tab-sm) {
           display: flex;
           flex-direction: column;
+          @include size(gap, 32);
+
           // grid-template-columns: 1fr;
         }
       }
@@ -80,6 +82,43 @@
           display: flex;
           flex-direction: column;
           // grid-template-columns: 1fr;
+        }
+      }
+      .list-wrapper-mob {
+        display: none;
+        flex-wrap: wrap;
+        @include size(gap, 4);
+        @media (max-width: $tab-sm) {
+          display: flex;
+        }
+        .hidden-content {
+          display: none;
+          flex-wrap: wrap;
+          @include size(gap, 4);
+          &.active {
+            display: flex;
+          }
+        }
+        .info-list-item-mob {
+          @include size(height, 26);
+          border-radius: 999px;
+          background: var(--back-color);
+          @include body-xs;
+          @include padding(0, 16);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .btn {
+          background: var(--gray-color);
+          @include size(height, 26);
+          @include body-xs;
+          @include padding(0, 16);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 999px;
+          color: var(--white-color);
         }
       }
       .list-wrapper {
@@ -159,6 +198,9 @@
         display: flex;
         flex-direction: column;
         @include size(gap, 64);
+        @media (max-width: $tab) {
+          @include size(margin-top, 32);
+        }
         .tab-content-order-item {
           display: grid;
           @include grid-columns(605, 661);
@@ -349,7 +391,45 @@
         }
       }
       .tabs-inner-block {
+        .hidden-content {
+          display: flex;
+          flex-wrap: wrap;
+          @include size(gap, 4);
+          @media (max-width: $tab-sm) {
+            display: none;
+            &.active {
+              display: flex !important;
+            }
+          }
+        }
+        .load-more {
+          background: var(--gray-color);
+          @include size(height, 26);
+          @include body-xs;
+          @include padding(0, 16);
+          display: none;
+          align-items: center;
+          justify-content: center;
+          border-radius: 999px;
+          color: var(--white-color);
+          @media (max-width: $tab-sm) {
+            display: flex;
+          }
+        }
         @media (max-width: $tab-sm) {
+          &.noFix {
+            position: static !important;
+            z-index: 1;
+
+            .tabs-inner {
+              position: static !important;
+              overflow: visible !important;
+              flex-wrap: wrap;
+              padding: 0;
+              height: fit-content;
+              z-index: 1;
+            }
+          }
           position: fixed;
           bottom: 0;
           right: 0;

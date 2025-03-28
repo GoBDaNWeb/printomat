@@ -157,3 +157,39 @@ h6 {
     }
   }
 }
+.collapse-text-wrapper {
+  .collapse-text {
+    @media (max-width: $tab-sm) {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 5; /* Ограничиваем текст до 3 строк */
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      &.expanded {
+        -webkit-line-clamp: unset; /* Убираем ограничение при раскрытии */
+        text-overflow: clip; /* Убираем троеточие при раскрытии */
+      }
+    }
+  }
+  .hidden-content {
+    &.show {
+      display: block;
+    }
+    @media (max-width: $tab-sm) {
+      display: none;
+    }
+  }
+  .show-text {
+    @include size(margin-top, 20);
+    display: none !important;
+    &.active {
+      &:before {
+        transform: rotate(45deg);
+      }
+    }
+    @media (max-width: $tab-sm) {
+      display: flex !important;
+      align-items: center;
+    }
+  }
+}

@@ -6,11 +6,19 @@
     display: grid;
     @include grid-columns(407, 890);
     @include size(gap, 47);
+    @media (max-width: $tab-sm) {
+      grid-template-columns: repeat(1, 1fr);
+      @include size(gap, 24);
+    }
     .image-wrapper {
       @include size(width, 407);
       @include size(height, 407);
       overflow: hidden;
       @include border-radius(12);
+      @media (max-width: $tab-sm) {
+        @include size(width, 312);
+        @include size(height, 312);
+      }
       //   position: relative;
       img {
         position: absolute;
@@ -20,6 +28,12 @@
       }
     }
     .text-block {
+      h2 {
+        @media (max-width: $tab-sm) {
+          @include size(font-size, 28);
+          line-height: 110%;
+        }
+      }
       .text {
         @include size(margin-top, 28);
         display: flex;
@@ -29,6 +43,10 @@
           @include body-m;
         }
       }
+
+      .show-text {
+        @include size(margin-top, 20);
+      }
       .alert {
         @include size(margin-top, 28);
         @include padding(28);
@@ -36,12 +54,19 @@
         @include size(gap, 20);
         border: 1px solid var(--line-color);
         @include border-radius(20);
+        @media (max-width: $tab-sm) {
+          flex-direction: column;
+          @include padding(20);
+        }
         img {
           @include size(width, 64);
           @include size(height, 64);
         }
         p {
           @include body-l;
+          @media (max-width: $tab-sm) {
+            @include body-mb;
+          }
         }
       }
     }

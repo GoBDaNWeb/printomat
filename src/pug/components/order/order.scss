@@ -65,6 +65,16 @@
           @include body-mb;
         }
       }
+      .btn {
+        display: none;
+        @media (max-width: $tab) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          @include size(height, 46);
+        }
+      }
     }
     .form-block {
       @include size(height, 544);

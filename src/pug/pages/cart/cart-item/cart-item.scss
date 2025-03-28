@@ -50,6 +50,7 @@
         .edit-btn {
           background: var(--accent-color);
           transition: var(--trs-cubic-600);
+          padding: 0 !important;
           &:hover {
             background: var(--gray-color);
             svg {
@@ -61,11 +62,16 @@
           svg {
             @include size(width, 14);
             @include size(height, 14);
+            @include size(min-width, 14);
+            @include size(min-height, 14);
+            @include size(max-width, 14);
+            @include size(max-height, 14);
           }
         }
         .delete-btn {
           background: var(--back-color);
           transition: var(--trs-cubic-600);
+          padding: 0 !important;
           &:hover {
             background: var(--accent-color);
           }

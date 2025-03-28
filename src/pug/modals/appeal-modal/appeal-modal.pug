@@ -8,7 +8,7 @@ mixin appeal-modal()
                     </svg>
             .modal-content 
                 form.form
-                    h3 Оставьте заявку
+                    h3 Написать обращение
                     .inputs 
                         .input-wrapper 
                             p E-mail
@@ -16,10 +16,15 @@ mixin appeal-modal()
                                 input(type="text" placeholder="Введите").custom-input.input.form__input-value.input__valid-mail
                                 .input__item-small
                         .input-wrapper 
+                            p Номер телефона
+                            .input__row
+                                input(type="tel" placeholder='+7 (').custom-input.input.form__input-value.input__valid-phone
+                                .input__item-small
+                        .input-wrapper 
                             p Комментарий
-                            textarea(placeholder='текст обращения').custom-textarea
+                            textarea(placeholder='Текст обращения').custom-textarea
                     p.policy Нажимая на кнопку, вы даете согласие на 
                         a(href="#" target="_blank")  обработку персональных данных
-                    button.btn.primary Оставить заявку
+                    button.btn.primary Отправить
                 .image-wrapper 
                     img(src="./img/request/img.png", alt="request")

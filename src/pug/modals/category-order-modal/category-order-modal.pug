@@ -1,0 +1,63 @@
+mixin category-order-modal()
+    .category-order-modal.modal
+        .modal-content-wrapper
+            .close-modal-wrapper
+                button.btn.circle.sm.gray.close-modal 
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.24257 0.757359L4.99993 5M4.99993 5L0.757289 9.24264M4.99993 5L0.75729 0.757359M4.99993 5L9.24257 9.24264" stroke="#2C2C2C"/>
+                    </svg>
+            .modal-content.active 
+                h5 Ваш заказ
+                .category-form-info-center 
+                    .top
+                        p.title Буклет
+                        button(type='button').btn.delete-btn
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+                                <path d="M18.2435 9.75736L14.0009 14M14.0009 14L9.75827 18.2426M14.0009 14L9.75827 9.75736M14.0009 14L18.2435 18.2426" stroke="#2C2C2C"/>
+                            </svg>
+                    ul 
+                        li 
+                            p Тираж
+                            span 500 шт.
+                        li 
+                            p Размер, мм
+                            span 100×60
+                        li 
+                            p  Печать
+                            span Одна краска (1+0)
+                        li 
+                            p Бумага
+                            span 300г Touche Cover
+                        li 
+                            p Макет
+                            span Наклейки_новые.ai
+                        li 
+                            p Габариты
+                            span 0,1 м3
+                        li 
+                            p Вес, кг
+                            span 1,2
+                        li 
+                            p Тариф
+                            span Эконом (29.10. 24)
+                        li 
+                            p Стоимость
+                            span 1 000 шт
+                        li 
+                            p Тираж
+                            span 10 000 ₽
+                .category-form-info-bottom 
+                    .price-wrapper
+                        p Общая стоимость
+                        span.price 0 ₽
+                    .inputs 
+                        label
+                            input(type="checkbox").custom-checkbox.req-checkbox
+                            p Согласен, что при возникновении брака из-за несоответствия макета техническим требованиям, а также из-за ошибок в макете вся ответственность ложится на заказчика. 
+                        label
+                            input(type="checkbox").custom-checkbox.req-checkbox
+                            p Согласен, что при возникновении брака из-за несоответствия макета техническим требованиям, а также из-за ошибок в макете вся ответственность ложится на заказчика. 
+                    .btns 
+                        button(type='button').btn.outline.add-to-cart-btn Добавить в корзину
+                        button(type='submit').btn.primary.submit-btn Оформить заказ
