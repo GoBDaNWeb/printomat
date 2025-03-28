@@ -22,7 +22,21 @@
 		}
 	}
 
+	@media (max-width: $mob) {
+		@include size(margin-top, 24);
+		@include size(margin-bottom, 24);
 
+		h1 {
+			@include size(font-size, 32);
+		}
+	}
+
+}
+
+.order__head {
+	@media (max-width: $mob) {
+		@include size(margin-top, 20);
+	}
 }
 
 .order__nav__item {
@@ -78,6 +92,10 @@
 
 	@media (max-width: $mob) {
 		width: 100%;
+
+		h6 {
+			@include size(font-size, 26);
+		}
 	}
 }
 
@@ -97,6 +115,19 @@
 		@include size(padding-top, 12);
 		@include size(padding-bottom, 12);
 		height: auto;
+	}
+
+	@media (max-width: $mob) {
+		flex-direction: column;
+		@include size(gap, 16);
+		.btn {
+			width: 100%;
+			@include size(height, 46);
+
+			&:last-child {
+				order: -1;
+			}
+		}
 	}
 }
 
@@ -123,30 +154,58 @@
 		@include size(padding-left, 24);
 		@include size(padding-bottom, 16);
 		@include size(padding-right, 24);
+		max-height: 90vh;
 		background: #FFFFFF;
 		box-shadow: 0px 18px 20px 8px rgba(0, 0, 0, 0.25);
 		border-radius: 20px 20px 0px 0px;
 		position: fixed;
-
+		overflow-y: hidden;
+		transition: .4s ease;
+		@include size(height, 55);
 		left: 0;
-		bottom: 0;
+		@include size(bottom, 0);
+		z-index: 5;
 
 		.order__right__items, .order__right__bottom  {
-			display: none;
+			// display: none;
 		}
 
 		h6 {
 			margin-bottom: 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			svg {
+				@include size(width, 18);
+				transition: .3s ease;
+				@include size(height, 10);
+			}
+		}
+
+		.order__right__items {
+			@include size(margin-top, 16);
 		}
 
 		&.active {
+			bottom: 0;
+			height: 90%;
+			transition: .4s ease;
+			overflow-y: auto;
 			h6 {
 				@include size(padding-bottom, 16);
+
+				svg {
+					transform: rotate(180deg);
+					transition: .3s ease;
+				}
 			}
 
 			.order__right__items, .order__right__bottom  {
 				display: block;
 			}
+
+			
 		}
 	}
 }
@@ -296,6 +355,22 @@
 
 	@media (max-width: $mob) {
 		padding-left: 0;
+
+		p {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			@include size(gap, 4);
+			@include size(margin-bottom, 8);
+		}
+
+		.order__right__bottom__total {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			@include size(gap, 8);
+			@include size(margin-top, 28);
+		}
 	}
 }
 
@@ -313,7 +388,7 @@
 	@media (max-width: $mob) {
 		flex-direction: column;
 		@include size(gap, 16);
-		@include size(margin-bottom, 32);
+		@include size(margin-bottom, 0);
 	}
 }
 
@@ -371,6 +446,11 @@
 	display: flex;
 	flex-direction: column;
 	@include size(gap, 24);
+
+	@media (max-width: $mob) {
+		@include size(gap, 16);
+		@include size(margin-top, 32);
+	}
 }
 
 .order__delivery__pvz-fields__btn {
@@ -415,6 +495,12 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	@include size(gap, 24); 
+
+	@media (max-width: $mob) {
+		display: flex;
+		flex-direction: column;
+		@include size(gap, 16);
+	}
 }
 
 
@@ -426,6 +512,15 @@
 
 	.text-l {
 		@include size(font-size, 20);
+	}
+
+	@media (max-width: $mob) {
+		@include size(margin-bottom, 32);
+		.selector {
+			.selector-btn {
+				@include size(height, 46);
+			}
+		}
 	}
 }
 
@@ -441,6 +536,12 @@
 	@media (max-width: $mob) {
 		flex-direction: column;
 		@include size(gap, 11);
+
+		.btn {
+			justify-content: center;
+			@include size(height, 46);
+			@include size(font-size, 16);
+		}
 	}
 }
 

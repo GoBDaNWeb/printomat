@@ -52,6 +52,23 @@
 				font-weight: 700;
 			}
 		}
+
+		@media (max-width: $mob) {
+			.field-wrap textarea {
+				@include size(height, 200);
+				@include size(padding-right, 28);
+				@include size(padding-left, 28);
+				@include size(padding-top, 12);
+				@include size(padding-bottom, 12);
+			}
+		}
+	}
+
+	@media (max-width: $mob) {
+		@include size(padding-right, 24);
+		@include size(padding-left, 24);
+		@include size(padding-top, 24);
+		@include size(padding-bottom, 24);
 	}
 	
 }
@@ -69,6 +86,7 @@
 		position: absolute;
 		@include size(top, 28);
 		@include size(right, 28);
+		padding: 0;
 
 		svg {
 			@include size(width, 28);
@@ -99,6 +117,29 @@
 			justify-content: center;
 		}
 	}
+
+	@media (max-width: $mob) {
+		@include size(padding-top, 24);
+		@include size(padding-right, 24);
+		@include size(padding-left, 24);
+		@include size(padding-bottom, 32);
+		overflow: hidden;
+
+		h3 {
+			@include size(margin-bottom, 24);
+			width: 80%;
+		}
+
+		&.text-centered {
+			text-align: left;
+
+			.btn {
+				margin-left: 0;
+				width: fit-content;
+				@include size(font-size, 16);
+			}
+		}
+	}
 }
 
 .popup__bird {
@@ -107,6 +148,10 @@
 	@include size(top, 121);
 	@include size(width, 188);
 	@include size(height, 172);
+
+	@media (max-width: $mob) {
+		display: none;
+	}
 }
 
 .popup__form {
@@ -114,6 +159,11 @@
 	display: flex;
 	flex-direction: column;
 	@include size(gap, 24);
+
+	@media (max-width: $mob) {
+		width: 100%;
+		@include size(gap, 16);
+	}
 }
 
 .popup__form__bottom {
@@ -190,6 +240,12 @@ span.show-password {
 		align-items: center;
 		justify-content: center;
 	}
+
+	@media (max-width: $mob) {
+		h3 {
+			width: 85%;
+		}
+	}
 }
 
 .edit-layout__tabs {
@@ -202,7 +258,25 @@ span.show-password {
 		@include size(padding-right, 20);
 		@include size(font-size, 16);
 	}
+
+	@media (max-width: $mob) {
+		flex-direction: column;
+
+		.btn {
+			@include size(font-size, 14);
+			line-height: 120%;
+			justify-content: center;
+			font-weight: 400;
+
+			&:hover {
+				background: var(--gray-color);
+				border-color: var(--gray-color);
+			}
+		}
+	}
 }
+
+
 
 .edit-layout__result {
 	@include size(font-size, 16);
@@ -236,6 +310,10 @@ span.show-password {
 			@include size(font-size, 20);
 			font-weight: 600;
 			@include size(margin-bottom, 12);
+
+			@media (max-width: $mob) {
+				@include size(font-size, 16);
+			}
 		}
 
 		.btn.outline {
@@ -250,6 +328,24 @@ span.show-password {
 			display: block;
 			@include size(border-radius, 96);
 			width: fit-content;
+
+			@media (max-width: $mob) {
+				height: auto;
+				@include size(font-size, 14);
+				@include size(padding-right, 24);
+				@include size(padding-left, 24);
+			}
+		}
+	}
+
+	@media (max-width: $mob) {
+		.tab-content {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.edit-layout__result {
+			order: -1;
 		}
 	}
 }
@@ -272,6 +368,15 @@ span.show-password {
 	b {
 		@include size(font-size, 16);
 		font-weight: 700;
+	}
+
+	@media (max-width: $mob) {
+		order: -2;
+		flex-direction: column;
+		@include size(gap, 16);
+		p {
+			line-height: 140%;
+		}
 	}
 }
 
@@ -317,6 +422,15 @@ span.show-password {
 
 		span {
 			text-align: left;
+		}
+	}
+
+	@media (max-width: $mob) {
+		.order__right__item__head {
+			@include size(margin-bottom, 16);
+			span {
+				@include size(font-size, 16);
+			}
 		}
 	}
 }
@@ -482,6 +596,10 @@ span.show-password {
 	img {
 		width: 100%;
 	}
+
+	@media (max-width: $mob) {
+		@include size(height, 150);
+	}
 }
 
 .change-layout__bottom {
@@ -498,6 +616,12 @@ span.show-password {
 		@include size(font-size, 16);
 		@include size(height, 45);
 	}
+
+	@media (max-width: $mob) {
+		display: flex;
+		flex-direction: column;
+		@include size(gap, 16);
+	}
 }
 
 .change-layout__name {
@@ -505,4 +629,19 @@ span.show-password {
 	@include size(font-size, 16);
 	text-decoration: underline;
 	@include size(margin-top, 20);
+}
+
+.popup {
+	.double-field {
+		.btn {
+			@media (max-width: $mob) {
+				@include size(padding-top, 12);
+				@include size(padding-bottom, 12);
+				height: auto;
+				line-height: 140%;
+				font-weight: 700;
+				justify-content: center;
+			}
+		}
+	}
 }

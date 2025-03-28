@@ -183,6 +183,10 @@
 			justify-content: center;
 			@include size(font-size, 14);
 			width: auto;
+			@include size(height, 40);
+			&:last-child {
+				width: auto;
+			}
 		}
 	}
 }
@@ -294,6 +298,12 @@
 .orders__order__bottom {
 	@include size(margin-top, 52);
 	display: none;
+
+	@media (max-width: $mob) {
+		@include size(margin-top, 16);
+		@include size(padding-top, 16);
+		border-top: 1px solid rgba(63, 63, 63, .15);
+	}
 }
 .orders__order__bottom__row {
 	grid-template-columns: calc(250 / var(--screensize) * 100vw) calc(279 / var(--screensize) * 100vw) calc(220 / var(--screensize) * 100vw)  1fr;
@@ -519,4 +529,13 @@ span.orders__order__payment__notice  {
 			display: none;
 		}
 	}
+}
+
+.hidden-mob {
+	display: none;
+}
+
+.track-order-btn {
+	grid-column-start: 1;
+	grid-column-end: 3;
 }

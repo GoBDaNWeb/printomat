@@ -19,6 +19,12 @@
 		@include size(font-size, 16);
 		outline: none;
 		width: 100%;
+
+		@media (max-width: $mob) {
+			@include size(padding-top, 15);
+			@include size(padding-bottom, 15);
+			@include size(padding-right, 40);
+		}
 	}
 
 	textarea {
@@ -44,6 +50,7 @@
 
 	@media (max-width: $mob) {
 		flex-direction: column;
+		@include size(gap, 16);
 
 		&.var-2 {
 			display: flex;

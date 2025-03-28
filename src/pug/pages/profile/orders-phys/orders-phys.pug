@@ -201,8 +201,8 @@ mixin orders-phys()
 									div 
 										span Итого
 										p 15 000 ₽
-								div
-								div
+								div.hidden-mob
+								div.hidden-mob
 								a.btn.primary Доработать макет 
 
 
@@ -228,7 +228,8 @@ mixin orders-phys()
 									p 50 ₽/шт
 									p 15 000 ₽
 
-
+						button(type="button").orders__order__handle.orders__order__handle-mob 
+							img(src="./img/profile/arrow.svg", alt="")
 
 
 
