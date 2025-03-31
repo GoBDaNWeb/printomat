@@ -253,6 +253,10 @@ span.show-password {
 	@include size(gap, 12);
 	@include size(margin-bottom, 28);
 
+	span {
+		display: none;
+	}
+
 	.tab {
 		@include size(padding-left, 20);
 		@include size(padding-right, 20);
@@ -261,7 +265,13 @@ span.show-password {
 
 	@media (max-width: $mob) {
 		flex-direction: column;
-
+		@include size(gap, 8);
+		span {
+			@include size(font-size, 16);
+			color: #A0A0A0;
+			text-align: center;
+			display: block;
+		}
 		.btn {
 			@include size(font-size, 14);
 			line-height: 120%;

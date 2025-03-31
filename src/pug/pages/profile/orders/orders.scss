@@ -532,7 +532,9 @@ span.orders__order__payment__notice  {
 }
 
 .hidden-mob {
-	display: none;
+	@media (max-width: $mob) {
+		display: none;
+	}
 }
 
 .track-order-btn {

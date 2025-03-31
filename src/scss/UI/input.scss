@@ -27,6 +27,10 @@
 		}
 	}
 
+	input.error {
+		border-color: #f34040;
+	}
+
 	textarea {
 		resize: none;
 		@include size(height, 134);
