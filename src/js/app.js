@@ -14,6 +14,7 @@ new AirDatepicker("#dat", {
   multipleDatesSeparator: " - ",
 });
 
+
 accordionFunc();
 tabs();
 modals();

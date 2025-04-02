@@ -23,6 +23,10 @@ export function validateForm() {
   const validators = {
     name: (value) => /^[А-Яа-яA-Za-zёЁ \-]+$/.test(value),
     phone: (value) => value.length >= 18,
+    inn: (value) => value.length >= 10,
+    kpp: (value) => value.length >= 9,
+    ras: (value) => value.length >= 19,
+    bik: (value) => value.length >= 9,
     count: (value) => /^[0-9]+$/.test(value),
     time: (value) => /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/.test(value),
     date: (value) =>
@@ -63,17 +67,23 @@ export function validateForm() {
       },
       {
         input: form.querySelector(".input__valid-inn"),
-        type: "numberData",
+        type: "inn",
         error: "Введите корректное значение",
       },
       {
         input: form.querySelector(".input__valid-bik"),
-        type: "numberData",
+        type: "bik",
         error: "Введите корректное значение",
       },
       {
-        input: form.querySelector(".input__valid-rs"),
-        type: "numberData",
+        input: form.querySelector(".input__valid-ras"),
+        type: "ras",
+        error: "Введите корректное значение",
+      },
+
+      {
+        input: form.querySelector(".input__valid-kpp"),
+        type: "kpp",
         error: "Введите корректное значение",
       },
     ];

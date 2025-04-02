@@ -655,3 +655,71 @@ span.show-password {
 		}
 	}
 }
+
+
+.overlay {
+	&.orders-filter {
+		padding: 0;
+
+		.popup {
+			height: 100vh;
+			border-radius: 0;
+			display: flex;
+			flex-direction: column;
+			.close-modal {
+				@include size(top, 12);
+				@include size(right, 12);
+			}
+
+			h3 {
+				text-align: center;
+				width: calc(100% + calc(48 / var(--screensize) * 100vw));
+				@include size(margin-left, -24);
+				@include size(padding-bottom, 17);
+				border-bottom: 1px solid rgba(62, 62, 62, 0.15);
+			}
+
+			.orders__head__dates, .orders__head__products {
+				display: block;
+
+				input, .selector-btn {
+					@include size(height, 46);
+				}
+			}
+		}
+
+		.popup__form {
+			height: 100%;
+		}
+
+		.orders-filter__bottom {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: auto;
+
+			.primary.btn {
+				@include size(font-size, 16);
+				font-weight: 700;
+			}
+			.clear-btn {
+				display: flex;
+				align-items: center;
+				@include size(gap, 10);
+				@include size(font-size, 16);
+				span {
+					color: #A0A0A0;
+				}
+
+				svg {
+					@include size(width, 28);
+					@include size(height, 28);
+				}
+			}
+		}
+	}
+}
+
+.air-datepicker-global-container {
+	z-index: 201;
+}

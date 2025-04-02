@@ -511,3 +511,65 @@ mixin popup()
 				.change-layout__bottom 
 					button(type="button").btn.primary Отправить
 					button(type="button" data-modal-target="change-layout").btn.outline.tab.close-modal Назад
+
+	.overlay.modal.orders-filter
+		.popup 
+			button(type="button").close-popup.close-modal
+				<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="#EEEEEE"/>
+					<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="#2C2C2C"/>
+				</svg>
+			h3 Фильтр
+			form.popup__form
+				label.field-wrap.orders__head__dates
+					span Даты
+					input#date-mob(type="text", placeholder="Даты")
+					<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect width="28" height="28" fill="white"/>
+						<rect x="2.5" y="6.78564" width="23" height="17" rx="3.5" stroke="#2C2C2C"/>
+						<line x1="2.85547" y1="10.9285" x2="25.1412" y2="10.9285" stroke="#2C2C2C"/>
+						<line x1="7.64453" y1="3.71423" x2="7.64453" y2="8.85709" stroke="#2C2C2C"/>
+						<path d="M14 3.71423L14 8.85709" stroke="#2C2C2C"/>
+						<line x1="20.5" y1="3.71423" x2="20.5" y2="8.85709" stroke="#2C2C2C"/>
+					</svg>
+				label.field-wrap.orders__head__products
+					span Товар
+					+selector({
+						class: 'product-selector',
+						title: 'Все', 
+						items: [
+							{
+								title: 'Все', 
+								value: 0
+							},
+							{
+								title: 'Тут написать товар', 
+								value: 1
+							},
+							{
+								title: 'Тут написать товар', 
+								value: 2
+							},
+							{
+								title: 'Тут написать товар', 
+								value: 3
+							},
+							{
+								title: 'Тут написать товар', 
+								value: 4
+							},
+							{
+								title: 'Тут написать товар', 
+								value: 5
+							},],
+							name: 'product'
+						},) 
+				.orders-filter__bottom 
+					button.btn.primary.close-modal(type="button") Применить
+					button(type="button").clear-btn
+						<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect width="28" height="28" rx="14" transform="matrix(-1 0 0 1 28 0)" fill="white"/>
+							<rect x="-0.5" y="0.5" width="27" height="27" rx="13.5" transform="matrix(-1 0 0 1 27 0)" stroke="#3E3E3E" stroke-opacity="0.15"/>
+							<path d="M18.2426 9.75736L13.9999 14M13.9999 14L9.75729 18.2426M13.9999 14L9.75729 9.75736M13.9999 14L18.2426 18.2426" stroke="#A0A0A0"/>
+						</svg>
+						span Сбросить

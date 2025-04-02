@@ -1,3 +1,5 @@
+import AirDatepicker from "air-datepicker";
+
 // hide/show pass
 try {
   const allHandlers = document.querySelectorAll(".show-password");
@@ -42,6 +44,47 @@ try {
       }
     });
   }
+} catch (e) {
+  console.log(e);
+}
+
+try {
+  
+  const popup = document.querySelector(".orders-filter");
+  const productFields = popup.querySelectorAll(".radio-item");
+  const filterBtn = document.querySelector(".orders__head__dates-mob");
+  const clearBtn = popup.querySelector(".clear-btn");
+
+  const dateField = new AirDatepicker("#date-mob", {
+    range: true,
+    multipleDatesSeparator: " - ",
+    isMobile: true,
+    onSelect({date}) {
+      if (date.length > 0) {
+        filterBtn.classList.add("active");
+      } else {
+        filterBtn.classList.remove("active");
+      }
+    },
+  });
+  
+  productFields.forEach(el => {
+    el.addEventListener("click", function () {
+      filterBtn.classList.add("active");
+    });
+  })
+
+
+  clearBtn.addEventListener("click", function () {
+    console.log('a')
+    const productField = popup.querySelector(".orders__head__products .product-selector input");
+    console.log(productField)
+    productFields[0].querySelector('input').checked = 'checked';
+    productField.closest(".selector-title").querySelector("p").innerText = 'Все'
+    productField.value = '';
+
+    dateField.clear();
+  });
 } catch (e) {
   console.log(e);
 }

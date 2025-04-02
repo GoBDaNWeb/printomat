@@ -17,6 +17,7 @@
 
 	@media (max-width: $mob) {
 		align-items: center;
+		flex-direction: row-reverse;
 		@include size(gap, 8);
 		.field-wrap {
 			
@@ -488,6 +489,22 @@ span.orders__order__payment__notice  {
 		@include size(bottom, 10);
 	}
 
+	
+}
+
+.orders__head__search {
+	@media (max-width: $mob) {
+		input {
+			@include size(font-size, 14);
+			@include size(padding-top, 8);
+			@include size(padding-bottom, 8);
+			@include size(padding-left, 20);
+			@include size(height, 46);
+		}
+	}
+}
+
+.orders__head__dates, .orders__head__products {
 	@media (max-width: $mob) {
 		display: none;
 	}
@@ -502,6 +519,31 @@ span.orders__order__payment__notice  {
 		svg {
 			@include size(width, 46);
 			@include size(height, 46);
+		}
+	}
+}
+
+.orders__head__dates-mob {
+	position: relative;
+	padding: 0;
+	&.active {
+
+		&:before {
+			content: "";
+			@include size(width, 10);
+			@include size(height, 10);
+			background: #2c2c2c;
+			position: absolute;
+			@include size(top, 0);
+			@include size(right, 0);
+			border-radius: 50%;
+		}
+		rect {
+			fill: var(--accent-color);
+		}
+
+		line,circle {
+			stroke: #2C2C2C;
 		}
 	}
 }
